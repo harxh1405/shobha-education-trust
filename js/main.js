@@ -3,7 +3,7 @@
  * Master Frontend Controller
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initMobileMenu();
   initHeaderScroll();
   initCampusGallery();
@@ -15,7 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgrammeFilter();
   initContactForm();
   initSmoothAnchorScroll();
-});
+}
+
+// Ensure execution whether document is still loading or already parsed (fixes Vercel production bundles)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /**
  * Mobile Navigation Drawer Toggle & Backdrop
@@ -26,7 +33,7 @@ function initMobileMenu() {
 
   if (!toggleBtns.length || !navMenu) return;
 
-  // Hoist drawer to document.body to ensure ancestor CSS (display:none on header-nav-strip) never hides it
+  // Hoist drawer to document.body to ensure ancestor CSS never hides or clips it
   if (navMenu.parentElement && navMenu.parentElement !== document.body) {
     document.body.appendChild(navMenu);
   }
@@ -41,21 +48,25 @@ function initMobileMenu() {
 
   const openDrawer = () => {
     navMenu.classList.add('open');
+    navMenu.setAttribute('aria-hidden', 'false');
     toggleBtns.forEach(btn => {
       btn.classList.add('active');
       btn.setAttribute('aria-expanded', 'true');
     });
     backdrop.classList.add('active');
+    document.body.classList.add('nav-drawer-open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeDrawer = () => {
     navMenu.classList.remove('open');
+    navMenu.setAttribute('aria-hidden', 'true');
     toggleBtns.forEach(btn => {
       btn.classList.remove('active');
       btn.setAttribute('aria-expanded', 'false');
     });
     backdrop.classList.remove('active');
+    document.body.classList.remove('nav-drawer-open');
     document.body.style.overflow = '';
   };
 
@@ -77,14 +88,14 @@ function initMobileMenu() {
   });
 
   // Close when clicking explicit close buttons inside drawer
-  const closeBtns = document.querySelectorAll('.nav-drawer-close, [data-close-drawer]');
+  const closeBtns = navMenu.querySelectorAll('.nav-drawer-close, [data-close-drawer]');
   closeBtns.forEach(btn => btn.addEventListener('click', (e) => {
     e.preventDefault();
     closeDrawer();
   }));
 
-  // Close when clicking any nav link
-  navMenu.querySelectorAll('.nav-link, .nav-strip-link').forEach(link => {
+  // Close when clicking any nav link or enquiry trigger inside drawer
+  navMenu.querySelectorAll('.nav-link, .nav-strip-link, [data-open-enquiry]').forEach(link => {
     link.addEventListener('click', () => {
       closeDrawer();
     });

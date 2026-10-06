@@ -258,9 +258,50 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Mobile Drawer Hidden on Desktop */
+/* ==========================================================================
+   MOBILE NAVIGATION DRAWER & TOGGLE (Base Definitions)
+   ========================================================================== */
+
+/* Mobile Drawer Hidden on Desktop (> 1080px) */
+@media (min-width: 1081px) {
+  .nav-mobile-drawer,
+  .mobile-menu-toggle,
+  .nav-backdrop {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Mobile Drawer (Tablets & Mobile Viewports <= 1080px) */
 .nav-mobile-drawer {
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 86vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-bg-white);
+  box-shadow: -6px 0 32px rgba(10, 23, 66, 0.28);
+  transform: translateX(105%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border-left: 3px solid var(--color-accent-yellow);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nav-mobile-drawer.open {
+  display: flex !important;
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 /* Nav Actions */
@@ -291,27 +332,62 @@
   color: var(--color-navy-dark);
 }
 
+/* Mobile Menu Toggle Button (44px Apple HIG Touch Target) */
 .mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: var(--radius-xs);
-  transition: var(--transition-fast);
-}
-
-.mobile-menu-toggle:hover {
-  background-color: var(--color-bg-offwhite);
-}
-
-.hamburger-line {
-  display: block;
-  width: 24px;
-  height: 2.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   background-color: var(--color-primary-navy);
-  margin: 5px 0;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  border: 1.5px solid var(--color-accent-yellow);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 101;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.mobile-menu-toggle .hamburger-line {
+  background-color: var(--color-accent-yellow);
+  width: 22px;
+  height: 2.5px;
+  border-radius: 2px;
+  margin: 0;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus-visible,
+.mobile-menu-toggle.active {
+  background-color: var(--color-accent-yellow);
+  border-color: var(--color-accent-yellow);
+}
+
+.mobile-menu-toggle:hover .hamburger-line,
+.mobile-menu-toggle:focus-visible .hamburger-line,
+.mobile-menu-toggle.active .hamburger-line {
+  background-color: var(--color-primary-navy);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* Mobile Drawer Elements */
@@ -323,21 +399,37 @@
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1040;
 }
 
 .nav-backdrop.active {
-  opacity: 1;
-  visibility: visible;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .nav-drawer-header {
-  display: none; /* Desktop default */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background-color: var(--color-primary-navy);
+  color: var(--color-bg-white);
+  border-bottom: 2px solid var(--color-accent-yellow);
+  flex-shrink: 0;
 }
 
 .nav-drawer-footer {
-  display: none; /* Desktop default */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 18px max(20px, env(safe-area-inset-bottom));
+  background-color: var(--color-bg-offwhite);
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
