@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Story | Shobha Education Trust | Jaunpur, Uttar Pradesh</title>
+  <meta name="description" content="Discover the story, vision, guiding inspiration, and educational journey of Shobha Education Trust, established in 2005 to make quality higher and vocational education accessible across Jaunpur, UP.">
+  <meta name="keywords" content="About Shobha Education Trust, Sarveshwaree Mahavidyalaya, Sarveshwaree ITI, Jaunpur college, Parmpujya Baba Gurupad Sambhav Ram Ji, Dr. Parmendra Kumar Singh, Dr. Sanjay Kumar Singh">
+
+  <!-- Favicon / Institutional Crest -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts: Inter, Oswald, and Rozha One for Slogan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (Shared Design System) -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FIXED INSTITUTIONAL HEADER
+       Top Strip: Brand (Logo + Name), Centre Rozha One Slogan, Right Enquiry Button
+       Bottom Strip: Deep Navy Blue Strip with Responsive Spaced Navlinks
+       ========================================================================== -->
+  <header class="site-header-fixed" id="siteHeader">
+    
+    <!-- 1. Top Strip: White Brand Strip -->
+    <div class="header-brand-strip">
+      <div class="container header-brand-container">
+        
+        <!-- Left: Logo & Institutional Name -->
+        <a href="index.html" class="brand-identity" aria-label="Sarveshwaree Mahavidyalaya & Affiliated Institutions">
+          <img src="assets/logo.png" alt="Sarveshwaree Mahavidyalaya Emblem" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS</span>
+          </div>
+        </a>
+
+        <!-- Centre: Institutional Slogan in Rozha One Google Font -->
+        <div class="header-slogan-wrapper">
+          <span class="header-slogan-text">अंधेरे से उजाले की ओर</span>
+        </div>
+
+        <!-- Right End: Admission Enquiry Button + Mobile Toggle -->
+        <div class="header-action-group">
+          <button type="button" class="btn btn-header-enquire" data-open-enquiry>Admission Enquiry</button>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Bottom Strip: Deep Navy Blue Navigation Bar -->
+    <nav class="header-nav-strip" id="primaryNav" aria-label="Main Navigation">
+      <div class="container header-nav-container">
+        <div class="nav-links-wrap">
+          <a href="index.html" class="nav-strip-link">Home</a>
+          <a href="about.html" class="nav-strip-link active">About</a>
+          <a href="institutions.html" class="nav-strip-link">Institutions</a>
+          <a href="programmes.html" class="nav-strip-link">Programmes</a>
+          <a href="admissions.html" class="nav-strip-link">Admissions</a>
+          <a href="campus.html" class="nav-strip-link">Campus</a>
+          <a href="news.html" class="nav-strip-link">News & Events</a>
+          <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="contact.html" class="nav-strip-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Sliding Drawer -->
+    <div class="nav-mobile-drawer">
+      <div class="nav-drawer-header">
+        <div class="nav-drawer-brand">
+          <img src="assets/logo.png" alt="Emblem" class="nav-drawer-brand-img">
+          <div class="nav-drawer-brand-text">SARVESHWAREE<br>MAHAVIDYALAYA</div>
+        </div>
+        <button type="button" class="nav-drawer-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="nav-drawer-slogan">अंधेरे से उजाले की ओर</div>
+
+      <div class="nav-drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="institutions.html" class="nav-link">Institutions</a>
+        <a href="programmes.html" class="nav-link">Programmes</a>
+        <a href="admissions.html" class="nav-link">Admissions</a>
+        <a href="campus.html" class="nav-link">Campus</a>
+        <a href="news.html" class="nav-link">News & Events</a>
+        <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-drawer-footer">
+        <button type="button" class="btn btn-accent" data-open-enquiry style="width: 100%;">ADMISSION ENQUIRY</button>
+        <div class="nav-drawer-helpline">
+          <strong>Campus Helplines</strong>
+          <span>8318784268 • 8765926859</span>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Floating Right Admission Tab -->
+  <button type="button" class="floating-enquiry-tab" data-open-enquiry aria-label="Quick Admission Enquiry">
+    Admission Enquiry
+  </button>
+
+  <main id="mainContent">
+
+    <!-- ==========================================================================
+         4. DIRECT EDITORIAL HEADER (Strictly NO separate hero image banner!)
+         ========================================================================== -->
+    <section class="inner-page-header" aria-label="About Page Header">
+      <div class="container">
+        
+        <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+          <a href="index.html">HOME</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" style="color: var(--color-primary-navy);">ABOUT</span>
+        </nav>
+
+        <span class="inner-header-label">ABOUT SHOBHA EDUCATION TRUST</span>
+
+        <h1 class="inner-header-title">
+          EDUCATION<br>
+          WITH A PURPOSE.
+        </h1>
+
+        <p class="inner-header-lead">
+          Founded in 2005 with a vision to make purposeful education, academic capability, and vocational opportunity accessible to rural learners and communities across eastern Uttar Pradesh.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. INTRODUCTION / WHO WE ARE
+         Editorial 2-Column Section with Oversized "2005" Typographic Watermark
+         ========================================================================== -->
+    <section class="section section-offwhite" id="who-we-are" aria-label="Who We Are">
+      <div class="container">
+        
+        <div class="who-we-are-grid">
+          
+          <!-- Left Column: Bold Editorial Statement -->
+          <div class="who-we-are-quote animate-reveal">
+            CREATING ACCESS.<br>
+            CREATING OPPORTUNITY.
+          </div>
+
+          <!-- Right Column: Concise Narrative with 2005 Watermark -->
+          <div class="who-we-are-narrative animate-reveal">
+            <div class="who-we-are-watermark">2005</div>
+            <div class="about-hallmark-badge">ESTABLISHED WITH A PURPOSE</div>
+
+            <p class="who-we-are-p">
+              Shobha Education Trust was established in 2005 in Jaunpur, Uttar Pradesh, as a non-profit charitable educational organization dedicated to educational empowerment, character building, and vocational skill development.
+            </p>
+
+            <p class="who-we-are-p">
+              Recognizing that quality higher education and technical training were predominantly concentrated in urban centers, the Trust undertook a conscious mission to bridge the rural-urban divide, bringing accredited academic disciplines directly to the youth of eastern Uttar Pradesh.
+            </p>
+
+            <p class="who-we-are-p" style="margin-bottom: 0;">
+              Today, the Trust serves as the governing institutional umbrella for <strong>Sarveshwaree Mahavidyalaya</strong>, <strong>Sarveshwaree Private ITI</strong>, our emerging <strong>Sarveshwaree Paraveterinary initiative</strong>, and ongoing community-centered welfare programs.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. OUR STORY
+         Primary Storytelling Section (Asymmetrical Editorial Image/Text Composition)
+         ========================================================================== -->
+    <section class="section section-white" id="our-story" aria-label="Our Origin Story">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">OUR</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">STORY</span>
+        </div>
+
+        <div class="our-story-split">
+          
+          <!-- Left Column: Large Rectangular Image -->
+          <div class="story-image-wrap animate-reveal">
+            <img src="images/homepage/hero.png" alt="Campus grounds and building of Sarveshwaree Mahavidyalaya, Jaunpur" loading="lazy">
+            <div class="story-image-plaque">
+              <span>SARVESHWAREE MAHAVIDYALAYA CAMPUS</span>
+              <span>JAUNPUR, UP</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Story Narrative -->
+          <div class="story-text-column animate-reveal">
+            <h2 class="story-heading">
+              FROM A RURAL VISION<br>
+              TO AN EDUCATIONAL JOURNEY.
+            </h2>
+
+            <p>
+              The institution was established with the intention of bringing meaningful educational opportunities closer to communities in a remote, predominantly rural part of Jaunpur.
+            </p>
+
+            <p>
+              The founding vision was not simply to create another college, but to build an accessible, supportive educational environment where learners could pursue university undergraduate degrees, technical vocational trades, and future career pathways without being forced to migrate far from their families and communities.
+            </p>
+
+            <p>
+              Under the inspirational guidance of Parampujya Baba Gurupad Sambhav Ram Ji, the spiritual successor and current head associated with Sri Sarveshwari Samooh, Padav, Varanasi, the Trust was established on values of selfless service, moral integrity, and social upliftment.
+            </p>
+
+            <div class="story-highlight-box">
+              “Education is the most potent catalyst to guide humanity from ignorance to enlightenment — अँधेरे से उजाले की ओर. Our responsibility is to ensure that light shines in every village.”
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. OUR GUIDING INSPIRATION
+         Dedicated Editorial Section for PARMPUJYA BABA GURUPAD SAMBHAV RAM JI
+         ========================================================================== -->
+    <section class="section inspiration-section" id="inspiration" aria-label="Our Guiding Inspiration">
+      <div class="container">
+        
+        <div class="inspiration-container">
+          
+          <!-- Left: Large Rectangular Portrait -->
+          <div class="inspiration-portrait-frame animate-reveal">
+            <img src="images/homepage/sambhav baba.png" alt="Parmpujya Baba Gurupad Sambhav Ram Ji - Guiding Inspiration" loading="lazy">
+            <div class="inspiration-portrait-plaque">
+              <div class="inspiration-portrait-name">PARMPUJYA BABA GURUPAD SAMBHAV RAM JI</div>
+              <div class="inspiration-portrait-title">Guiding Inspiration • Sri Sarveshwari Samooh, Padav, Varanasi</div>
+            </div>
+          </div>
+
+          <!-- Right: Dignified Editorial Narrative -->
+          <div class="inspiration-content-column animate-reveal">
+            <span class="inspiration-eyebrow">OUR GUIDING INSPIRATION</span>
+            
+            <h2 class="inspiration-title">
+              PARMPUJYA BABA<br>
+              GURUPAD SAMBHAV RAM JI
+            </h2>
+
+            <div class="inspiration-quote-banner">
+              “Knowledge that does not alleviate the suffering of society and awaken compassion in the heart remains incomplete. Real education must serve the neglected and empower the rural soul.”
+            </div>
+
+            <p class="inspiration-p">
+              As the spiritual successor and current head associated with Sri Sarveshwari Samooh, Padav, Varanasi, Parmpujya Baba Gurupad Sambhav Ram Ji has consistently championed social welfare, healthcare for the underprivileged, and educational accessibility in rural India.
+            </p>
+
+            <p class="inspiration-p">
+              His moral vision and compassionate ideals inspired the foundation of Shobha Education Trust in 2005. Rather than focusing on conventional commercialization, the Trust was mandated to dedicate its energies to rural youth, female learners, and vocational empowerment.
+            </p>
+
+            <p class="inspiration-p">
+              His presence remains our institutional compass — reminding faculty, administrators, and students alike that learning attains its highest dignity when joined with humility, ethical discipline, and active community service.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. LEADERSHIP
+         The People Behind the Vision (3 Rectangular Portrait Blocks)
+         ========================================================================== -->
+    <section class="section section-offwhite" id="leadership" aria-label="Institutional Leadership">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">LEADERSHIP</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">THE VOICES GUIDING OUR PATH</span>
+        </div>
+
+        <p class="lead-text" style="max-width: 820px; margin-bottom: 42px;">
+          Guided by our founding ideals, the leadership of Shobha Education Trust stewards institutional governance, academic standards, and community service with deep personal dedication.
+        </p>
+
+        <!-- Penned Note 01: Founder / Manager Dr. Parmendra Kumar Singh -->
+        <article class="penned-note-card animate-reveal" id="manager-note">
+          <div class="penned-note-grid">
+            
+            <!-- Portrait Column -->
+            <div class="penned-note-portrait-box">
+              <img src="images/homepage/parmendra.png" alt="Dr. Parmendra Kumar Singh - Founder / Manager" class="penned-note-photo">
+              <div class="penned-note-plaque">
+                <div class="penned-note-name">DR. PARMENDRA KUMAR SINGH</div>
+                <div class="penned-note-role">Founder &amp; Manager • Shobha Education Trust</div>
+              </div>
+            </div>
+
+            <!-- Penned Note Content -->
+            <div class="penned-note-content">
+              <span class="penned-note-badge">FROM THE DESK OF THE MANAGER</span>
+              <h3 class="penned-note-title">BUILDING ROOTED PATHWAYS FOR RURAL YOUTH</h3>
+              
+              <div class="penned-note-lead">
+                “When we laid the cornerstone of Shobha Education Trust in 2005, our purpose was clear: no talented village youth should be denied higher learning or vocational dignity simply because of where they were born.”
+              </div>
+
+              <div class="penned-note-body">
+                <p>
+                  For generations across eastern Uttar Pradesh, rural families faced an agonizing dilemma: either send their children far away to expensive metropolitan centers, or watch their educational aspirations wither. In Kamruddinpur, Rampur, Jaunpur, we resolved to change that reality permanently.
+                </p>
+                <p>
+                  Guided by the ethical ideals of Parmpujya Baba Gurupad Sambhav Ram Ji, we established <strong>Sarveshwaree Mahavidyalaya</strong> in 2010 to provide university undergraduate studies affiliated with Veer Bahadur Singh Purvanchal University. In 2016, recognizing that strong primary schools need disciplined, qualified local teachers, we introduced the <strong>D.El.Ed (BTC)</strong> pathway. In 2018, we built <strong>Sarveshwaree Private ITI</strong> with modern workshops to equip rural youth with certified industrial trades in Electrician and Fitter.
+                </p>
+                <p>
+                  Throughout this journey, our founding philosophy remains uncompromised: zero capitation, zero hidden fees, and absolute transparency. As we now prepare emerging initiatives in paraveterinary and agricultural education, our promise to every family remains unchanged — disciplined education, authentic mentorship, and honest service.
+                </p>
+              </div>
+
+              <div class="penned-note-signoff">
+                <span class="penned-note-signature-name">Dr. Parmendra Kumar Singh</span>
+                <span class="penned-note-signature-title">Founder &amp; Manager, Shobha Education Trust</span>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Penned Note 02: Director Dr. Sanjay Kumar Singh -->
+        <article class="penned-note-card animate-reveal" id="director-note">
+          <div class="penned-note-grid">
+            
+            <!-- Portrait Column -->
+            <div class="penned-note-portrait-box">
+              <img src="images/homepage/sanjay.png" alt="Dr. Sanjay Kumar Singh - Director" class="penned-note-photo">
+              <div class="penned-note-plaque">
+                <div class="penned-note-name">DR. SANJAY KUMAR SINGH</div>
+                <div class="penned-note-role">Director • Shobha Education Trust</div>
+              </div>
+            </div>
+
+            <!-- Penned Note Content -->
+            <div class="penned-note-content">
+              <span class="penned-note-badge">FROM THE DESK OF THE DIRECTOR</span>
+              <h3 class="penned-note-title">ACADEMIC RIGOR, VOCATIONAL EXCELLENCE &amp; MORAL DISCIPLINE</h3>
+              
+              <div class="penned-note-lead">
+                “A college degree is only as valuable as the competence, moral spine, and genuine self-reliance it instills in the student. Our classroom is a crucible for real capability.”
+              </div>
+
+              <div class="penned-note-body">
+                <p>
+                  As educators, our duty goes far beyond completing syllabi and holding examinations. In a developing regional economy, students need both conceptual depth in humanities and hard practical skills in technical fields to compete with confidence.
+                </p>
+                <p>
+                  Across Sarveshwaree Mahavidyalaya and Sarveshwaree Private ITI, we insist on continuous lecture attendance, direct laboratory practice, and rigorous workshop discipline. Our faculty members work closely with students from rural backgrounds, cultivating analytical thinking, spoken communication, and digital fluency.
+                </p>
+                <p>
+                  Equal opportunity is at the core of our daily operations. Through initiatives like the <strong>Saheli Book Bank</strong>, we ensure that no female student or economically challenged learner is held back by the inability to purchase prescribed textbooks. Coupled with physical athletics, yoga conditioning, and community service camps, we prepare graduates who are academically capable, technically proficient, and morally grounded.
+                </p>
+              </div>
+
+              <div class="penned-note-signoff">
+                <span class="penned-note-signature-name">Dr. Sanjay Kumar Singh</span>
+                <span class="penned-note-signature-title">Director, Shobha Education Trust</span>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <div class="leadership-footer-action">
+          <a href="#purpose" class="btn-link">EXPLORE OUR INSTITUTIONAL PURPOSE &nbsp;→</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. VISION & MISSION
+         Full-Width Deep Navy Section with Yellow Accents
+         ========================================================================== -->
+    <section class="purpose-vision-mission-section" id="purpose" aria-label="Vision and Mission">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">OUR</span>
+          <span class="divider-yellow"></span>
+          <span class="part-white">PURPOSE</span>
+        </div>
+
+        <div class="purpose-grid">
+          
+          <!-- Left: Vision -->
+          <div class="purpose-card animate-reveal">
+            <h3 class="purpose-card-heading">VISION</h3>
+            <p class="vision-quote">
+              “Meaningful education and skill development should be accessible to learners and communities, enabling individuals to become responsible, capable and confident contributors to society.”
+            </p>
+            <p style="margin-top: 24px; font-size: 15px; color: #D1DBEB; line-height: 1.6;">
+              We envision an educational landscape where geography and socioeconomic background never limit a student's aspirations, fostering self-reliance and civic responsibility across eastern Uttar Pradesh.
+            </p>
+          </div>
+
+          <!-- Right: Mission -->
+          <div class="purpose-card animate-reveal">
+            <h3 class="purpose-card-heading">MISSION</h3>
+            <div class="mission-pillars-list stagger-grid">
+              
+              <div class="mission-pillar-item">
+                <span class="mission-pillar-icon">▪</span>
+                <span><strong>Accessible Higher Education:</strong> Provide quality university undergraduate education right at the doorstep of rural communities.</span>
+              </div>
+
+              <div class="mission-pillar-item">
+                <span class="mission-pillar-icon">▪</span>
+                <span><strong>Practical & Vocational Pathways:</strong> Deliver industry-recognized technical trade skills through modern ITI workshops.</span>
+              </div>
+
+              <div class="mission-pillar-item">
+                <span class="mission-pillar-icon">▪</span>
+                <span><strong>Real-World Skill Integration:</strong> Bridge textbook concepts with hands-on application, problem-solving, and digital tools.</span>
+              </div>
+
+              <div class="mission-pillar-item">
+                <span class="mission-pillar-icon">▪</span>
+                <span><strong>Socioeconomic Support:</strong> Ensure barrier-free education for female students and economically challenged families through initiatives like the Saheli Book Bank.</span>
+              </div>
+
+              <div class="mission-pillar-item">
+                <span class="mission-pillar-icon">▪</span>
+                <span><strong>Community Service Ethos:</strong> Cultivate social responsibility through regular medical camps, environmental awareness, and rural health drives.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. OUR EDUCATIONAL JOURNEY — TIMELINE GRAPHIC & INFOGRAPHIC
+         Master Timeline Infographic Component (Navy + Yellow + White Language)
+         ========================================================================== -->
+    <section class="timeline-infographic-section" id="journey" aria-label="Our Educational Journey Timeline">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">OUR</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">EDUCATIONAL JOURNEY</span>
+        </div>
+
+        <h2 style="font-size: clamp(30px, 3.6vw, 46px); color: var(--color-primary-navy); margin-bottom: 12px; line-height: 1.1;">
+          GROWING WITH EVERY GENERATION.
+        </h2>
+
+        <p class="lead-text" style="max-width: 820px;">
+          “From a rural vision in 2005 to an expanding educational ecosystem, the journey continues with a commitment to meaningful education, skill development and community upliftment.”
+        </p>
+
+        <!-- Unified Responsive Editorial Journey Timeline -->
+        <div class="journey-timeline-container stagger-grid animate-reveal" role="region" aria-label="Educational Journey Milestones">
+          
+          <!-- Milestone 1: 2005 -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">01</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">2005</span>
+                <span class="journey-status-badge">FOUNDATIONAL MILESTONE</span>
+              </div>
+              <h3 class="journey-title">SHOBHA EDUCATION TRUST</h3>
+              <span class="journey-code">JAUNPUR, UTTAR PRADESH • REGISTERED CHARITABLE TRUST</span>
+              <p class="journey-desc">
+                Establishment of the educational initiative under Shobha Education Trust in Jaunpur, UP. Founded to expand educational access, eliminate rural inequality, and ignite transformative learning across Eastern Uttar Pradesh.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2: 2010 -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">02</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">2010</span>
+                <span class="journey-status-badge">HIGHER EDUCATION</span>
+              </div>
+              <h3 class="journey-title">SARVESHWAREE MAHAVIDYALAYA</h3>
+              <span class="journey-code">COLLEGE CODE: 0694 • VBS PURVANCHAL UNIVERSITY</span>
+              <p class="journey-desc">
+                Formal affiliation granted by Veer Bahadur Singh Purvanchal University, Jaunpur. Inauguration of university degree education in Bachelor of Arts (B.A.) with multi-disciplinary subject choices for rural youth.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3: 2016 -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">03</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">2016</span>
+                <span class="journey-status-badge">TEACHER PEDAGOGY</span>
+              </div>
+              <h3 class="journey-title">D.El.Ed / BTC TEACHER EDUCATION</h3>
+              <span class="journey-code">NCTE NEW DELHI • PNP PRAYAGRAJ RECOGNIZED</span>
+              <p class="journey-desc">
+                Teacher education programme formally recognized by the National Council for Teacher Education (NCTE), New Delhi and Examination Regulatory Authority (PNP), Prayagraj, preparing certified educators for national primary and elementary schools.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 4: 2018 -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">04</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">2018</span>
+                <span class="journey-status-badge">TECHNICAL TRADES</span>
+              </div>
+              <h3 class="journey-title">SARVESHWAREE PRIVATE ITI</h3>
+              <span class="journey-code">NCVT: PR09900997 • SCVT: 3938 • DGT GOVT. OF INDIA</span>
+              <p class="journey-desc">
+                Commissioning of industrial skill training infrastructure approved by DGT, Ministry of Skill Development & Entrepreneurship. State-of-the-art heavy workshops launched in Electrician and Fitter trades.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 5: 2025 -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">05</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">2025</span>
+                <span class="journey-status-badge">UNDER PROCESS</span>
+              </div>
+              <h3 class="journey-title">PARAVETERINARY INITIATIVE</h3>
+              <span class="journey-code">DIPLOMA PARIKSHA SANSTHAN • RURAL HEALTHCARE</span>
+              <p class="journey-desc">
+                Statutory preparation for proposed pathways in Veterinary Pharmacy and Livestock Management to support rural agricultural communities and regional animal husbandry healthcare.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 6: FUTURE -->
+          <div class="journey-item">
+            <div class="journey-marker" aria-hidden="true">
+              <span class="journey-marker-num">06</span>
+            </div>
+            <div class="journey-card">
+              <div class="journey-card-header">
+                <span class="journey-year-pill">FUTURE</span>
+                <span class="journey-status-badge blue">STRATEGIC VISION</span>
+              </div>
+              <h3 class="journey-title">SARVESHWAREE KRISHI MAHAVIDYALAYA</h3>
+              <span class="journey-code">BALRAMPUR, CHHATTISGARH • PROPOSED INSTITUTION</span>
+              <p class="journey-desc">
+                Planned educational expansion into specialized agricultural education, agronomy research, and advanced farming techniques for eastern and central rural belts.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         11. WHAT WE BELIEVE
+         4 Major Principles with Large Oswald Numerals
+         ========================================================================== -->
+    <section class="section section-white" id="beliefs" aria-label="What We Believe">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">WHAT</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">WE BELIEVE</span>
+        </div>
+
+        <p class="lead-text" style="max-width: 780px;">
+          Our four fundamental institutional pillars guide every academic decision, infrastructural expansion, and student initiative across Shobha Education Trust.
+        </p>
+
+        <div class="beliefs-grid stagger-grid">
+          
+          <div class="belief-card animate-reveal">
+            <span class="belief-num">01</span>
+            <h3 class="belief-title">ACCESS</h3>
+            <p class="belief-desc">
+              Education should reach communities that need it. High quality academic and vocational infrastructure must be situated where rural students can access it without economic or geographic exclusion.
+            </p>
+          </div>
+
+          <div class="belief-card animate-reveal">
+            <span class="belief-num">02</span>
+            <h3 class="belief-title">OPPORTUNITY</h3>
+            <p class="belief-desc">
+              Learning should create reliable pathways toward employment, self-reliance, and personal confidence. We empower every learner to realize their potential in a rapidly evolving economy.
+            </p>
+          </div>
+
+          <div class="belief-card animate-reveal">
+            <span class="belief-num">03</span>
+            <h3 class="belief-title">PRACTICAL LEARNING</h3>
+            <p class="belief-desc">
+              Education must connect classroom knowledge with real-world skills. Through laboratory experiments, ITI workshops, and practical problem solving, students gain tangible capabilities.
+            </p>
+          </div>
+
+          <div class="belief-card animate-reveal">
+            <span class="belief-num">04</span>
+            <h3 class="belief-title">SERVICE</h3>
+            <p class="belief-desc">
+              An educational institution should be an active contributor to the community around it. We instill the value of service through community health camps, social initiatives, and civic responsibility.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+         13. WHERE WE ARE TODAY
+         Restrained Institutional Snapshot (5 Verified Facts Only)
+         ========================================================================== -->
+    <section class="snapshot-strip" id="today" aria-label="Where We Are Today">
+      <div class="container">
+        <div class="snapshot-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          
+          <div class="snapshot-item">
+            <span class="snapshot-val">EST. <span class="counter-val" data-count-to="2005">2005</span></span>
+            <span class="snapshot-lbl">Foundation Year</span>
+          </div>
+
+          <div class="snapshot-item">
+            <span class="snapshot-val"><span class="counter-val" data-count-to="15">15</span> ACRES</span>
+            <span class="snapshot-lbl">Educational Campus</span>
+          </div>
+
+          <div class="snapshot-item">
+            <span class="snapshot-val">JAUNPUR</span>
+            <span class="snapshot-lbl">Uttar Pradesh, India</span>
+          </div>
+
+          <div class="snapshot-item">
+            <span class="snapshot-val">SHOBHA TRUST</span>
+            <span class="snapshot-lbl">Governing Body</span>
+          </div>
+
+          <div class="snapshot-item">
+            <span class="snapshot-val">MULTIPLE PATHS</span>
+            <span class="snapshot-lbl">Degree, Teacher & ITI</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         14. FUTURE DIRECTION
+         Forward-Looking Section (Verified Future Initiatives)
+         ========================================================================== -->
+    <section class="section section-white" id="future" aria-label="Future Direction">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">FUTURE</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">THE JOURNEY CONTINUES</span>
+        </div>
+
+        <div class="future-direction-card animate-reveal">
+          <h3 class="future-direction-heading">EXPANDING HORIZONS, ROOTED IN PURPOSE.</h3>
+          
+          <p class="lead-text" style="color: var(--color-text-primary); margin-bottom: 16px;">
+            From higher education and teacher education to vocational training and emerging initiatives in animal care and agriculture, the journey continues toward creating broader pathways for learners while remaining steadfastly connected to our original purpose of rural empowerment.
+          </p>
+
+          <p class="body-text">
+            As technology, agriculture, and rural vocations transform, Shobha Education Trust is actively preparing next-generation programs designed to keep regional talent competitive, certified, and empowered.
+          </p>
+
+          <div class="future-initiatives-list">
+            
+            <div class="future-initiative-item">
+              <span class="timeline-status-badge" style="margin-bottom: 8px;">UNDER PROCESS</span>
+              <h5>Sarveshwaree Paraveterinary Initiative</h5>
+              <p>Specialized diploma program in Veterinary Pharmacy and livestock management to support animal husbandry and agricultural economies.</p>
+            </div>
+
+            <div class="future-initiative-item">
+              <span class="timeline-status-badge" style="margin-bottom: 8px; background-color: var(--color-blue-tint); color: var(--color-supporting-blue);">PLANNED PATHWAY</span>
+              <h5>Sarveshwaree Krishi Mahavidyalaya</h5>
+              <p>Proposed agricultural education institution located at Balrampur, Chhattisgarh, advancing scientific farming methods and rural youth training.</p>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="institutions.html" class="btn btn-outline-navy">EXPLORE OUR INSTITUTIONS &nbsp;→</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         15. FINAL CTA
+         Full-Width Deep Navy Call to Action
+         ========================================================================== -->
+    <section class="about-final-cta" aria-label="Final Call to Action">
+      <div class="container about-final-cta-wrapper animate-reveal">
+        <span class="hero-motto-badge" style="margin-bottom: 16px;">ACADEMIC ADMISSIONS 2026–27</span>
+        
+        <h2 class="about-final-cta-title">
+          FIND YOUR PATH.<br>
+          BUILD YOUR FUTURE.
+        </h2>
+
+        <p class="about-final-cta-desc">
+          Explore the institutions, accredited degree programmes, technical trade certifications, and scholarship opportunities offered through Shobha Education Trust.
+        </p>
+
+        <div class="about-final-cta-buttons">
+          <a href="institutions.html" class="btn btn-accent">EXPLORE INSTITUTIONS &nbsp;→</a>
+          <button type="button" class="btn btn-outline-white" data-open-enquiry>ADMISSION ENQUIRY</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       16. INSTITUTIONAL FOOTER (Exact match to homepage with verified details)
+       ========================================================================== -->
+  <footer class="site-footer" id="contact" aria-label="Institutional Footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Column 1: Trust Profile -->
+        <div class="footer-col">
+          <div class="footer-trust-motto">अँधेरे से उजाले की ओर</div>
+          <h4 class="footer-col-title">SHOBHA EDUCATION TRUST</h4>
+          <p class="footer-brand-summary">
+            A pioneering institutional body established in 2005 in Jaunpur, Uttar Pradesh. Committed to expanding access to higher, vocational, and technical education while upholding rural service.
+          </p>
+          <div style="font-size: 13px; color: #8FA2C2;">
+            Campus: 15 Acres • Est. 2005 • Jaunpur, UP
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Trust</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus & Facilities</a></li>
+            <li><a href="community.html">Community Initiatives</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="contact.html">Contact Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Student Resources (100% Public) -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">STUDENT RESOURCES</h4>
+          <ul class="footer-links-list">
+            <li><a href="student-corner.html">Public Notices</a></li>
+            <li><a href="student-corner.html">Academic Calendar</a></li>
+            <li><a href="student-corner.html">Class Timetable</a></li>
+            <li><a href="student-corner.html">Course Syllabus</a></li>
+            <li><a href="student-corner.html">University Examinations</a></li>
+            <li><a href="student-corner.html">Results Information</a></li>
+            <li><a href="student-corner.html">Forms & Downloads</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Institutions -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">INSTITUTIONS</h4>
+          <ul class="footer-links-list">
+            <li><a href="institutions.html#maha">Sarveshwaree Mahavidyalaya</a></li>
+            <li><a href="institutions.html#deled">D.El.Ed / BTC Pathway</a></li>
+            <li><a href="institutions.html#iti">Sarveshwaree Private ITI</a></li>
+            <li><a href="institutions.html#paraveterinary">Paraveterinary Initiative (Under Process)</a></li>
+            <li><a href="community.html">Saheli Book Bank</a></li>
+            <li><a href="community.html">Community Eye Care Camp</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Campus Address & Contact (Verified Institutional Details) -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">CAMPUS CONTACT</h4>
+          
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🏛️</span>
+            <span>Affiliated with VBS Purvanchal University, Jaunpur</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>sanjayjourno2009@gmail.com</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>8318784268 • 8765926859<br>9214856705 • 9415623614</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">⏰</span>
+            <span>Office Hours: 10:00 AM – 3:00 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Legal Bar -->
+      <div class="sub-footer">
+        <div>© 2026 Shobha Education Trust. All Rights Reserved.</div>
+        <div class="sub-footer-links">
+          <a href="student-corner.html">Mandatory Disclosure</a>
+          <a href="student-corner.html">Public Documents</a>
+          <a href="admin/login.html" class="admin-portal-discreet" title="Authorized Administrative Access Only">Admin Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button type="button" class="back-to-top-btn" aria-label="Back to Top">
+    ↑
+  </button>
+
+  <!-- ==========================================================================
+       ADMISSION ENQUIRY MODAL POPUP
+       ========================================================================== -->
+  <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle">ADMISSION ENQUIRY 2026–27</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="enquiryForm">
+          <div class="form-group">
+            <label for="studentName" class="form-label">Student Full Name *</label>
+            <input type="text" id="studentName" class="form-control" required placeholder="e.g. Rahul Singh">
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber" class="form-label">Mobile Number *</label>
+            <input type="tel" id="contactNumber" class="form-control" required placeholder="10-digit mobile number">
+          </div>
+
+          <div class="form-group">
+            <label for="programmeInterest" class="form-label">Programme of Interest *</label>
+            <select id="programmeInterest" class="form-control" required>
+              <option value="">Select Programme</option>
+              <option value="mahavidyalaya-ug">Sarveshwaree Mahavidyalaya (B.A. / B.Sc. / B.Com)</option>
+              <option value="iti-trades">Sarveshwaree Private ITI (Technical Trades)</option>
+              <option value="paravet">Paraveterinary Initiative (Upcoming)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="studentLocation" class="form-label">Current City / District</label>
+            <input type="text" id="studentLocation" class="form-control" placeholder="e.g. Jaunpur, Varanasi, Prayagraj">
+          </div>
+
+          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+            SUBMIT ENQUIRY
+          </button>
+        </form>
+
+        <div id="enquirySuccess" style="display: none; text-align: center; padding: 20px 0;">
+          <h4 style="color: var(--color-primary-navy); margin-bottom: 8px;">THANK YOU!</h4>
+          <p style="color: var(--color-text-secondary); font-size: 14.5px;">
+            Your admission enquiry has been submitted. Our campus admissions office will contact you shortly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Author Footer -->
+  <aside class="sticky-author-bar" aria-label="Creator Credit">
+    <div class="sticky-author-container">
+      <span>Built with <span class="heart-icon">❤️</span> by <strong>Harsh Singh</strong></span>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

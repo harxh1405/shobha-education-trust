@@ -1,0 +1,74 @@
+/* ==========================================================================
+   SHOBHA EDUCATION TRUST — DESIGN TOKENS
+   Master Frontend Design System
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-primary-navy: #12296B;
+  --color-navy-dark: #0A1742;
+  --color-navy-deep: #07102D;
+  --color-navy-soft: #1B398C;
+  --color-accent-yellow: #F2C500;
+  --color-yellow-hover: #D9AF00;
+  --color-yellow-light: #FFF9E0;
+  --color-supporting-blue: #2B8FE5;
+  --color-blue-tint: #EBF4FC;
+
+  /* Neutrals & Surfaces */
+  --color-bg-white: #FFFFFF;
+  --color-bg-offwhite: #F4F5F5;
+  --color-bg-subtle: #EEEEEE;
+  --color-text-primary: #222222;
+  --color-text-secondary: #555555;
+  --color-text-muted: #777777;
+  --color-border: #E0E3E7;
+  --color-border-dark: #CBD2D9;
+  --color-border-navy: rgba(18, 41, 107, 0.12);
+
+  /* Typography */
+  --font-heading: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-slogan: 'Rozha One', 'Noto Serif Devanagari', serif;
+
+  /* Layout Containers */
+  --container-max-width: 1440px;
+  --container-width: 91%;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 100px;
+
+  /* Section Padding */
+  --section-padding-sm: 55px 0;
+  --section-padding: 80px 0;
+  --section-padding-lg: 100px 0;
+
+  /* Border Radius (Strict institutional discipline: 0px–4px) */
+  --radius-sharp: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+
+  /* Subtle institutional shadows */
+  --shadow-subtle: 0 2px 8px rgba(18, 41, 107, 0.05);
+  --shadow-card: 0 4px 16px rgba(18, 41, 107, 0.08);
+  --shadow-hover: 0 8px 24px rgba(18, 41, 107, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-Index Hierarchy */
+  --z-sticky-bar: 900;
+  --z-floating-tab: 950;
+  --z-navbar: 1000;
+  --z-modal: 1100;
+}

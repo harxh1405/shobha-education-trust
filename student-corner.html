@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Corner & Public Resources | Shobha Education Trust | Jaunpur, UP</title>
+  <meta name="description" content="Public academic resources for students under Shobha Education Trust: timetables, syllabi, academic calendars, examination notices, and forms. No login required.">
+  <meta name="keywords" content="Student Corner Shobha Education Trust, Sarveshwaree Mahavidyalaya Syllabus, Purvanchal University Exam Schedule, ITI Timetable Jaunpur">
+
+  <!-- Favicon / Institutional Crest -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts: Inter, Oswald, and Rozha One for Slogan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FIXED INSTITUTIONAL HEADER
+       Top Strip: Brand (Logo + Name), Centre Rozha One Slogan, Right Enquiry Button
+       Bottom Strip: Deep Navy Blue Strip with Responsive Spaced Navlinks
+       ========================================================================== -->
+  <header class="site-header-fixed" id="siteHeader">
+    
+    <!-- 1. Top Strip: White Brand Strip -->
+    <div class="header-brand-strip">
+      <div class="container header-brand-container">
+        
+        <!-- Left: Logo & Institutional Name -->
+        <a href="index.html" class="brand-identity" aria-label="Sarveshwaree Mahavidyalaya & Affiliated Institutions">
+          <img src="assets/logo.png" alt="Sarveshwaree Mahavidyalaya Emblem" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS</span>
+          </div>
+        </a>
+
+        <!-- Centre: Institutional Slogan in Rozha One Google Font -->
+        <div class="header-slogan-wrapper">
+          <span class="header-slogan-text">अंधेरे से उजाले की ओर</span>
+        </div>
+
+        <!-- Right End: Admission Enquiry Button + Mobile Toggle -->
+        <div class="header-action-group">
+          <button type="button" class="btn btn-header-enquire" data-open-enquiry>Admission Enquiry</button>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Bottom Strip: Deep Navy Blue Navigation Bar -->
+    <nav class="header-nav-strip" id="primaryNav" aria-label="Main Navigation">
+      <div class="container header-nav-container">
+        <div class="nav-links-wrap">
+          <a href="index.html" class="nav-strip-link">Home</a>
+          <a href="about.html" class="nav-strip-link">About</a>
+          <a href="institutions.html" class="nav-strip-link">Institutions</a>
+          <a href="programmes.html" class="nav-strip-link">Programmes</a>
+          <a href="admissions.html" class="nav-strip-link">Admissions</a>
+          <a href="campus.html" class="nav-strip-link">Campus</a>
+          <a href="news.html" class="nav-strip-link">News & Events</a>
+          <a href="student-corner.html" class="nav-strip-link active">Student Corner</a>
+          <a href="contact.html" class="nav-strip-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Sliding Drawer -->
+    <div class="nav-mobile-drawer">
+      <div class="nav-drawer-header">
+        <div class="nav-drawer-brand">
+          <img src="assets/logo.png" alt="Emblem" class="nav-drawer-brand-img">
+          <div class="nav-drawer-brand-text">SARVESHWAREE<br>MAHAVIDYALAYA</div>
+        </div>
+        <button type="button" class="nav-drawer-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="nav-drawer-slogan">अंधेरे से उजाले की ओर</div>
+
+      <div class="nav-drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="institutions.html" class="nav-link">Institutions</a>
+        <a href="programmes.html" class="nav-link">Programmes</a>
+        <a href="admissions.html" class="nav-link">Admissions</a>
+        <a href="campus.html" class="nav-link">Campus</a>
+        <a href="news.html" class="nav-link">News & Events</a>
+        <a href="student-corner.html" class="nav-link active">Student Corner</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-drawer-footer">
+        <button type="button" class="btn btn-accent" data-open-enquiry style="width: 100%;">ADMISSION ENQUIRY</button>
+        <div class="nav-drawer-helpline">
+          <strong>Campus Helplines</strong>
+          <span>8318784268 • 8765926859</span>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Floating Right Admission Tab -->
+  <button type="button" class="floating-enquiry-tab" data-open-enquiry aria-label="Quick Admission Enquiry">
+    Admission Enquiry
+  </button>
+
+  <main id="mainContent">
+
+    <!-- Direct Header (No hero banner!) -->
+    <section class="inner-page-header" aria-label="Student Corner Header">
+      <div class="container">
+        <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+          <a href="index.html">HOME</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" style="color: var(--color-primary-navy);">STUDENT CORNER</span>
+        </nav>
+
+        <span class="inner-header-label">PUBLIC ACADEMIC RESOURCES</span>
+
+        <h1 class="inner-header-title">
+          STUDENT CORNER &<br>
+          ACADEMIC REPOSITORY.
+        </h1>
+
+        <p class="inner-header-lead">
+          All student resources, circulars, calendars, and academic forms are 100% public and accessible without any login, password, or student registration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Public Access Notice Strip -->
+    <section class="section section-offwhite" style="padding-top: 30px; padding-bottom: 30px;" aria-label="Open Access Policy">
+      <div class="container">
+        <div style="background-color: var(--color-primary-navy); color: #fff; padding: 22px 28px; border-left: 6px solid var(--color-accent-yellow); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <strong style="color: var(--color-accent-yellow); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px;">
+              OPEN ACCESS INSTITUTIONAL PRINCIPLE
+            </strong>
+            <span style="font-size: 15px; color: #E2EAF8;">
+              No student login, password, or registration is required. All academic resources below are free and open to students, parents, and researchers.
+            </span>
+          </div>
+          <span class="status-pill operational" style="background: var(--color-accent-yellow); color: var(--color-primary-navy); font-weight: 800;">
+            100% PUBLIC ACCESS
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Grid Section -->
+    <section class="section section-white" aria-label="Public Resources">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">SERVICES</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">ACADEMIC RESOURCES</span>
+        </div>
+
+        <div class="beyond-features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 36px;">
+          
+          <!-- Resource 1: Academic Calendar -->
+          <div class="beyond-feature-chip">
+            <h5>Academic Calendar 2026–27</h5>
+            <p>Annual session timeline, semester start dates, teaching periods, university holidays, internal assessment weeks, and final examination schedules.</p>
+            <div style="margin-top: 14px;">
+              <a href="news.html" class="btn-link" style="font-size: 13.5px;">VIEW SESSION CALENDAR →</a>
+            </div>
+          </div>
+
+          <!-- Resource 2: Class Timetable -->
+          <div class="beyond-feature-chip">
+            <h5>Class & Lecture Timetables</h5>
+            <p>Departmental lecture rosters for B.A. (Hindi, English, Sociology, Geography, Economics, Ancient History, Home Science) and D.El.Ed / BTC teacher training batches.</p>
+            <div style="margin-top: 14px;">
+              <span style="font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">Updated on Campus Notice Board</span>
+            </div>
+          </div>
+
+          <!-- Resource 3: Technical ITI Workshop Roster -->
+          <div class="beyond-feature-chip">
+            <h5>ITI Workshop Schedules</h5>
+            <p>Practical machinery training rosters, workshop safety guidelines, and tool room hours for Electrician and Fitter trade apprentices.</p>
+            <div style="margin-top: 14px;">
+              <a href="institutions.html#iti" class="btn-link" style="font-size: 13.5px;">VIEW ITI TRADES →</a>
+            </div>
+          </div>
+
+          <!-- Resource 4: Course Syllabus -->
+          <div class="beyond-feature-chip">
+            <h5>Curriculum & Syllabus</h5>
+            <p>Prescribed undergraduate subject modules and evaluation guidelines authorized by Veer Bahadur Singh Purvanchal University, Jaunpur, and NCVT curricula.</p>
+            <div style="margin-top: 14px;">
+              <a href="programmes.html" class="btn-link" style="font-size: 13.5px;">VIEW PROGRAMMES & SUBJECTS →</a>
+            </div>
+          </div>
+
+          <!-- Resource 5: Examination Information -->
+          <div class="beyond-feature-chip">
+            <h5>University Examinations</h5>
+            <p>Official examination forms submission guidelines, university center notifications, admit card release announcements, and practical evaluation dates.</p>
+            <div style="margin-top: 14px;">
+              <a href="news.html" class="btn-link" style="font-size: 13.5px;">VIEW EXAM NOTICES →</a>
+            </div>
+          </div>
+
+          <!-- Resource 6: Results Information -->
+          <div class="beyond-feature-chip">
+            <h5>Results Information</h5>
+            <p>Official guidance on accessing undergraduate examination results directly from the official VBS Purvanchal University portal and SCVT/NCVT portals.</p>
+            <div style="margin-top: 14px;">
+              <span style="font-size: 13px; color: var(--color-text-secondary);">Direct university portal verification</span>
+            </div>
+          </div>
+
+          <!-- Resource 7: Public Downloads & Forms -->
+          <div class="beyond-feature-chip">
+            <h5>Institutional Forms & Downloads</h5>
+            <p>Printable blank proformas for leave applications, Transfer Certificate (TC) requests, Saheli Book Bank issue requisitions, and library cards.</p>
+            <div style="margin-top: 14px;">
+              <span style="font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">Available at Administrative Desk</span>
+            </div>
+          </div>
+
+          <!-- Resource 8: Mandatory Disclosure -->
+          <div class="beyond-feature-chip">
+            <h5>Mandatory Disclosure & Approvals</h5>
+            <p>Official university affiliation orders (College Code 0694), NCTE recognition orders for D.El.Ed, and NCVT/SCVT accreditation orders for public review.</p>
+            <div style="margin-top: 14px;">
+              <a href="institutions.html" class="btn-link" style="font-size: 13.5px;">REVIEW ACCREDITATION CODES →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Campus Assistance Strip -->
+    <section class="section section-offwhite" aria-label="Student Assistance">
+      <div class="container">
+        <div class="about-story-grid" style="align-items: center;">
+          <div>
+            <div class="dual-heading">
+              <span class="part-blue">STUDENT DESK</span>
+              <span class="divider-yellow"></span>
+              <span class="part-navy">NEED ASSISTANCE?</span>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 26px; color: var(--color-primary-navy); margin-bottom: 14px;">
+              STUDENT SUPPORT & ACADEMIC CELL
+            </h3>
+            <p style="font-size: 15px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              For inquiries regarding enrollment verification, certificate attestation, mark sheet distribution, or Saheli Book Bank access, contact the student affairs coordinator at the campus administrative office.
+            </p>
+            <div style="font-size: 15px; font-weight: 700; color: var(--color-primary-navy); margin-bottom: 8px;">
+              Office Hours: 10:00 AM – 3:00 PM (Monday to Saturday)
+            </div>
+            <div style="font-size: 14.5px; color: var(--color-supporting-blue); font-weight: 600;">
+              Telephone: 8318784268 • 8765926859
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="contact.html" class="btn btn-primary" style="margin-bottom: 12px; display: inline-block;">CONTACT STUDENT CELL →</a>
+            <br>
+            <a href="admissions.html" class="btn btn-outline-navy" style="display: inline-block;">ADMISSIONS GUIDELINES →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Institutional Footer -->
+  <footer class="site-footer" id="contact" aria-label="Institutional Footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <div class="footer-trust-motto">अँधेरे से उजाले की ओर</div>
+          <h4 class="footer-col-title">SHOBHA EDUCATION TRUST</h4>
+          <p class="footer-brand-summary">
+            A pioneering institutional body established in 2005 in Jaunpur, Uttar Pradesh. Committed to expanding access to higher, vocational, and technical education while upholding rural service.
+          </p>
+          <div style="font-size: 13px; color: #8FA2C2;">
+            Campus: 15 Acres • Est. 2005 • Jaunpur, UP
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Trust</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus & Facilities</a></li>
+            <li><a href="community.html">Community Initiatives</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="contact.html">Contact Directory</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">STUDENT RESOURCES</h4>
+          <ul class="footer-links-list">
+            <li><a href="student-corner.html">Public Notices</a></li>
+            <li><a href="student-corner.html">Academic Calendar</a></li>
+            <li><a href="student-corner.html">Class Timetable</a></li>
+            <li><a href="student-corner.html">Course Syllabus</a></li>
+            <li><a href="student-corner.html">University Examinations</a></li>
+            <li><a href="student-corner.html">Results Information</a></li>
+            <li><a href="student-corner.html">Forms & Downloads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">INSTITUTIONS</h4>
+          <ul class="footer-links-list">
+            <li><a href="institutions.html#maha">Sarveshwaree Mahavidyalaya</a></li>
+            <li><a href="institutions.html#deled">D.El.Ed / BTC Pathway</a></li>
+            <li><a href="institutions.html#iti">Sarveshwaree Private ITI</a></li>
+            <li><a href="institutions.html#paraveterinary">Paraveterinary Initiative (Under Process)</a></li>
+            <li><a href="community.html">Saheli Book Bank</a></li>
+            <li><a href="community.html">Community Eye Care Camp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">CAMPUS CONTACT</h4>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🏛️</span>
+            <span>Affiliated with VBS Purvanchal University, Jaunpur</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span><a href="mailto:sanjayjourno2009@gmail.com" style="color: #D1DBEB; text-decoration: none;">sanjayjourno2009@gmail.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span><a href="tel:8318784268" style="color: #D1DBEB; text-decoration: none;">8318784268</a>, <a href="tel:8765926859" style="color: #D1DBEB; text-decoration: none;">8765926859</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">⏰</span>
+            <span>Office: 10:00 AM – 3:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Footer / Legal Bar -->
+      <div class="sub-footer">
+        <div>© 2026 Shobha Education Trust. All Rights Reserved.</div>
+        <div class="sub-footer-links">
+          <a href="student-corner.html">Mandatory Disclosure</a>
+          <a href="student-corner.html">Public Documents</a>
+          <a href="admin/login.html" class="admin-portal-discreet" title="Authorized Administrative Access Only">Admin Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Author Footer -->
+  <aside class="sticky-author-bar" aria-label="Creator Credit">
+    <div class="sticky-author-container">
+      <span>Built with <span class="heart-icon">❤️</span> by <strong>Harsh Singh</strong></span>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

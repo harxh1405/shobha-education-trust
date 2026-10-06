@@ -1,0 +1,163 @@
+/* ==========================================================================
+   SHOBHA EDUCATION TRUST — TYPOGRAPHY SYSTEM
+   Oswald (Condensed Editorial Headings) + Inter (Crisp Institutional Body)
+   + Rozha One (Slogan: अंधेरे से उजाले की ओर)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap');
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--color-primary-navy);
+}
+
+/* Responsive Heading Scale */
+h1, .heading-xl {
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.08;
+}
+
+h2, .heading-lg {
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 1.12;
+}
+
+h3, .heading-md {
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+h4, .heading-sm {
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+}
+
+/* Category Label / Eyebrow */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-supporting-blue);
+  margin-bottom: 12px;
+}
+
+.section-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-accent-yellow);
+}
+
+/* Dual-Tone Signature Editorial Heading: [BLUE] | [NAVY] */
+.dual-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.15;
+  letter-spacing: 0.8px;
+  margin-bottom: 24px;
+}
+
+.dual-heading .part-blue {
+  color: var(--color-supporting-blue);
+}
+
+.dual-heading .part-navy {
+  color: var(--color-primary-navy);
+}
+
+.dual-heading .part-white {
+  color: var(--color-bg-white);
+}
+
+.dual-heading .divider-yellow {
+  display: inline-block;
+  width: 4px;
+  height: 0.85em;
+  background-color: var(--color-accent-yellow);
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+/* Tagline / Sanskrit Motto */
+.sanskrit-motto {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--color-accent-yellow);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Body Text Variants */
+.lead-text {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.body-text {
+  font-size: 16px;
+  line-height: 1.68;
+  color: var(--color-text-secondary);
+}
+
+.small-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Large Numeral Sculpture (e.g. "2005" watermark / "01", "02") */
+.numeral-sculpture {
+  font-family: var(--font-heading);
+  font-size: clamp(80px, 11vw, 150px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: rgba(18, 41, 107, 0.08);
+  user-select: none;
+}
+
+.numeral-marker {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-accent-yellow);
+  line-height: 1;
+}

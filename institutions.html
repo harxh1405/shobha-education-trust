@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Institutions | Shobha Education Trust | Jaunpur, Uttar Pradesh</title>
+  <meta name="description" content="Explore the institutions operating under Shobha Education Trust: Sarveshwaree Mahavidyalaya (Higher Education), Sarveshwaree Private ITI (Technical Trades), and emerging paraveterinary initiatives in Jaunpur, UP.">
+  <meta name="keywords" content="Sarveshwaree Mahavidyalaya, Sarveshwaree ITI, Shobha Education Trust, Jaunpur College, VBS Purvanchal University, NCVT ITI, Teacher Education D.El.Ed">
+
+  <!-- Favicon / Institutional Crest -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts: Inter, Oswald, and Rozha One for Slogan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FIXED INSTITUTIONAL HEADER
+       Top Strip: Brand (Logo + Name), Centre Rozha One Slogan, Right Enquiry Button
+       Bottom Strip: Deep Navy Blue Strip with Responsive Spaced Navlinks
+       ========================================================================== -->
+  <header class="site-header-fixed" id="siteHeader">
+    
+    <!-- 1. Top Strip: White Brand Strip -->
+    <div class="header-brand-strip">
+      <div class="container header-brand-container">
+        
+        <!-- Left: Logo & Institutional Name -->
+        <a href="index.html" class="brand-identity" aria-label="Sarveshwaree Mahavidyalaya & Affiliated Institutions">
+          <img src="assets/logo.png" alt="Sarveshwaree Mahavidyalaya Emblem" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS</span>
+          </div>
+        </a>
+
+        <!-- Centre: Institutional Slogan in Rozha One Google Font -->
+        <div class="header-slogan-wrapper">
+          <span class="header-slogan-text">अंधेरे से उजाले की ओर</span>
+        </div>
+
+        <!-- Right End: Admission Enquiry Button + Mobile Toggle -->
+        <div class="header-action-group">
+          <button type="button" class="btn btn-header-enquire" data-open-enquiry>Admission Enquiry</button>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Bottom Strip: Deep Navy Blue Navigation Bar -->
+    <nav class="header-nav-strip" id="primaryNav" aria-label="Main Navigation">
+      <div class="container header-nav-container">
+        <div class="nav-links-wrap">
+          <a href="index.html" class="nav-strip-link">Home</a>
+          <a href="about.html" class="nav-strip-link">About</a>
+          <a href="institutions.html" class="nav-strip-link active">Institutions</a>
+          <a href="programmes.html" class="nav-strip-link">Programmes</a>
+          <a href="admissions.html" class="nav-strip-link">Admissions</a>
+          <a href="campus.html" class="nav-strip-link">Campus</a>
+          <a href="news.html" class="nav-strip-link">News & Events</a>
+          <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="contact.html" class="nav-strip-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Sliding Drawer -->
+    <div class="nav-mobile-drawer">
+      <div class="nav-drawer-header">
+        <div class="nav-drawer-brand">
+          <img src="assets/logo.png" alt="Emblem" class="nav-drawer-brand-img">
+          <div class="nav-drawer-brand-text">SARVESHWAREE<br>MAHAVIDYALAYA</div>
+        </div>
+        <button type="button" class="nav-drawer-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="nav-drawer-slogan">अंधेरे से उजाले की ओर</div>
+
+      <div class="nav-drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="institutions.html" class="nav-link active">Institutions</a>
+        <a href="programmes.html" class="nav-link">Programmes</a>
+        <a href="admissions.html" class="nav-link">Admissions</a>
+        <a href="campus.html" class="nav-link">Campus</a>
+        <a href="news.html" class="nav-link">News & Events</a>
+        <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-drawer-footer">
+        <button type="button" class="btn btn-accent" data-open-enquiry style="width: 100%;">ADMISSION ENQUIRY</button>
+        <div class="nav-drawer-helpline">
+          <strong>Campus Helplines</strong>
+          <span>8318784268 • 8765926859</span>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Floating Right Admission Tab -->
+  <button type="button" class="floating-enquiry-tab" data-open-enquiry aria-label="Quick Admission Enquiry">
+    Admission Enquiry
+  </button>
+
+  <main id="mainContent">
+
+    <!-- ==========================================================================
+         SECTION 1 — PAGE INTRODUCTION (No separate hero image banner!)
+         ========================================================================== -->
+    <section class="inner-page-header" aria-label="Institutions Header">
+      <div class="container">
+        
+        <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+          <a href="index.html">HOME</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" style="color: var(--color-primary-navy);">INSTITUTIONS</span>
+        </nav>
+
+        <span class="inner-header-label">OUR INSTITUTIONS</span>
+
+        <h1 class="inner-header-title">
+          PATHWAYS FOR<br>
+          LEARNING.
+        </h1>
+
+        <p class="inner-header-lead">
+          From higher education and teacher education to technical training and emerging professional pathways, Shobha Education Trust continues to expand opportunities for learners across eastern Uttar Pradesh.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — EDUCATIONAL ECOSYSTEM
+         One Purpose. Multiple Pathways. (Diagram / Typography Hierarchy)
+         ========================================================================== -->
+    <section class="ecosystem-section" aria-label="Educational Ecosystem">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">ONE PURPOSE</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">MULTIPLE PATHWAYS</span>
+        </div>
+
+        <p class="lead-text" style="max-width: 820px;">
+          All academic, vocational, and community programs operate under the singular legal and governance umbrella of <strong>Shobha Education Trust</strong>, ensuring consistent institutional values, quality control, and social accountability.
+        </p>
+
+        <!-- Visual Hierarchy Structure -->
+        <div class="ecosystem-tree animate-reveal">
+          
+          <div class="ecosystem-root-box">
+            <h3>SHOBHA EDUCATION TRUST</h3>
+            <p>Governing Institutional Parent Body • Est. 2005</p>
+          </div>
+
+          <div class="ecosystem-trunk-line"></div>
+          <div class="ecosystem-branch-bar"></div>
+
+          <div class="ecosystem-nodes-grid stagger-grid">
+            
+            <!-- Branch 1 -->
+            <div class="ecosystem-node-card">
+              <div>
+                <span class="node-domain">Higher Education</span>
+                <h4>SARVESHWAREE MAHAVIDYALAYA</h4>
+                <p>Degree learning in Humanities, Social Sciences, and Teacher Preparation affiliated with VBS Purvanchal University.</p>
+              </div>
+              <span class="status-pill operational">OPERATIONAL</span>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="ecosystem-node-card">
+              <div>
+                <span class="node-domain">Technical & Vocational</span>
+                <h4>SARVESHWAREE PRIVATE ITI</h4>
+                <p>National Council certified craftsman trade training in Electrician and Fitter preparing industry technicians.</p>
+              </div>
+              <span class="status-pill operational">OPERATIONAL</span>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="ecosystem-node-card">
+              <div>
+                <span class="node-domain">Emerging Professional</span>
+                <h4>PARAVETERINARY INITIATIVE</h4>
+                <p>Upcoming diploma offerings in Veterinary Pharmacy and livestock management serving the rural economy.</p>
+              </div>
+              <span class="status-pill under-process">UNDER PROCESS</span>
+            </div>
+
+            <!-- Branch 4 -->
+            <div class="ecosystem-node-card">
+              <div>
+                <span class="node-domain">Agricultural Education</span>
+                <h4>FUTURE INITIATIVES</h4>
+                <p>Proposed Sarveshwaree Krishi Mahavidyalaya planned at Balrampur, Chhattisgarh to advance agricultural sciences.</p>
+              </div>
+              <span class="status-pill future">FUTURE / PROPOSED</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — SARVESHWAREE MAHAVIDYALAYA (Detailed Higher Education Section)
+         ========================================================================== -->
+    <section class="section section-white" id="maha" aria-label="Sarveshwaree Mahavidyalaya">
+      <div class="container">
+        
+        <div class="our-story-split">
+          
+          <!-- Image Column -->
+          <div class="story-image-wrap animate-reveal">
+            <img src="images/homepage/hero.png" alt="Sarveshwaree Mahavidyalaya 3-storey building and campus, Jaunpur" loading="lazy">
+            <div class="story-image-plaque">
+              <span>SARVESHWAREE MAHAVIDYALAYA</span>
+              <span>COLLEGE CODE: 0694</span>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="story-text-column animate-reveal">
+            <div class="section-eyebrow">01 / HIGHER EDUCATION</div>
+
+            <h2 class="story-heading">
+              SARVESHWAREE<br>
+              MAHAVIDYALAYA
+            </h2>
+
+            <p>
+              Established in 2010, Sarveshwaree Mahavidyalaya serves as the flagship undergraduate higher educational institution under Shobha Education Trust. Situated on a serene 15-acre green campus in Kamruddinpur, Rampur, Jaunpur, the college provides accessible, university-affiliated degree education to thousands of rural learners.
+            </p>
+
+            <div class="story-highlight-box" style="margin-top: 14px; margin-bottom: 20px;">
+              <ul style="display: flex; flex-direction: column; gap: 8px;">
+                <li><strong>Establishment Year:</strong> 2010</li>
+                <li><strong>University Affiliation:</strong> Veer Bahadur Singh Purvanchal University, Jaunpur</li>
+                <li><strong>College Code:</strong> 0694</li>
+                <li><strong>Location:</strong> Kamruddinpur, Post Rampur, District Jaunpur, Uttar Pradesh – 222203</li>
+                <li><strong>Initial Academic Offering:</strong> Bachelor of Arts (B.A.)</li>
+              </ul>
+            </div>
+
+            <p>
+              The institution is dedicated to academic rigor, moral character, and intellectual freedom. It offers undergraduate studies across key disciplines in humanities, languages, and social sciences, supported by dedicated departmental faculty, a rich institutional library, and expansive sports grounds.
+            </p>
+
+            <div style="margin-top: 24px;">
+              <a href="programmes.html#higher-education" class="btn btn-primary">
+                VIEW PROGRAMMES &nbsp;→
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 — D.El.Ed / BTC (Teacher Education Programme Pathway)
+         Important: NOT presented as a separate institution!
+         ========================================================================== -->
+    <section class="section section-offwhite" id="deled" aria-label="Teacher Education Programme">
+      <div class="container">
+        
+        <div class="who-we-are-grid">
+          
+          <div class="animate-reveal">
+            <div class="section-eyebrow">TEACHER EDUCATION PROGRAMME</div>
+            
+            <h2 style="font-size: clamp(32px, 4vw, 50px); color: var(--color-primary-navy); line-height: 1.1; margin-bottom: 18px;">
+              D.El.Ed / BTC
+            </h2>
+
+            <p class="lead-text">
+              Recognizing that quality schooling begins with dedicated, pedagogical educators, Shobha Education Trust introduced the Diploma in Elementary Education (D.El.Ed / BTC) teacher education programme in 2016.
+            </p>
+
+            <div style="margin-top: 24px;">
+              <a href="programmes.html#teacher-education" class="btn btn-outline-navy">
+                VIEW PROGRAMME DETAILS &nbsp;→
+              </a>
+            </div>
+          </div>
+
+          <div class="who-we-are-narrative animate-reveal">
+            <h4 style="font-size: 19px; color: var(--color-primary-navy); margin-bottom: 16px;">
+              PROGRAMME SPECIFICATIONS & RECOGNITION
+            </h4>
+
+            <div class="about-pillars-list">
+              
+              <div class="pillar-item">
+                <div class="pillar-num">01</div>
+                <div class="pillar-text">
+                  <h4>Statutory Recognition & Affiliation</h4>
+                  <p>Recognized by the National Council for Teacher Education (NCTE), New Delhi, and examined by Pariksha Niyamak Pradhikari (PNP), Prayagraj.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-num">02</div>
+                <div class="pillar-text">
+                  <h4>Sanctioned Capacity & Eligibility</h4>
+                  <p><strong>Approved Intake:</strong> 50 Seats per academic session.<br><strong>Minimum Eligibility:</strong> Graduation from a recognized university.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-num">03</div>
+                <div class="pillar-text">
+                  <h4>Counseling & Admission Route</h4>
+                  <p>Admission is conducted through the centralized, state rank-based online counseling process as conducted by the Uttar Pradesh state government authority.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 — SARVESHWAREE PRIVATE ITI (Technical & Vocational Education)
+         ========================================================================== -->
+    <section class="section section-white" id="iti" aria-label="Sarveshwaree Private ITI">
+      <div class="container">
+        
+        <div class="who-we-are-grid">
+          
+          <!-- Narrative Column -->
+          <div class="animate-reveal">
+            <div class="section-eyebrow">02 / TECHNICAL & VOCATIONAL EDUCATION</div>
+
+            <h2 style="font-size: clamp(34px, 4vw, 54px); color: var(--color-primary-navy); line-height: 1.1; margin-bottom: 18px;">
+              SARVESHWAREE<br>
+              PRIVATE ITI
+            </h2>
+
+            <p class="body-text" style="margin-bottom: 16px;">
+              Established in 2018, Sarveshwaree Private ITI addresses the critical need for hands-on, job-ready technical trade skills among rural youth. The institute features dedicated practical machine shops, wiring labs, precision measurement instruments, and certified trainers.
+            </p>
+
+            <div class="story-highlight-box" style="margin-bottom: 24px;">
+              <ul style="display: flex; flex-direction: column; gap: 8px;">
+                <li><strong>Established:</strong> 2018</li>
+                <li><strong>NCVT Code:</strong> PR09900997</li>
+                <li><strong>SCVT Code:</strong> 3938</li>
+                <li><strong>Eligibility:</strong> High School (10th) or Intermediate (10+2)</li>
+              </ul>
+            </div>
+
+            <a href="programmes.html#technical" class="btn btn-primary">
+              VIEW ITI PROGRAMMES &nbsp;→
+            </a>
+          </div>
+
+          <!-- Trade Cards Column -->
+          <div class="animate-reveal" style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Trade 1: Electrician -->
+            <div class="belief-card" style="border-top-color: var(--color-primary-navy); padding: 28px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="belief-title" style="margin-bottom: 0;">TRADE: ELECTRICIAN</span>
+                <span class="status-pill operational">120 SEATS</span>
+              </div>
+              <p class="belief-desc">
+                Comprehensive practical training in electrical installations, industrial motor winding, domestic wiring, transformers, safety protocols, and commercial power maintenance.
+              </p>
+            </div>
+
+            <!-- Trade 2: Fitter -->
+            <div class="belief-card" style="border-top-color: var(--color-primary-navy); padding: 28px 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span class="belief-title" style="margin-bottom: 0;">TRADE: FITTER</span>
+                <span class="status-pill operational">120 SEATS</span>
+              </div>
+              <p class="belief-desc">
+                Precision lathe work, metal assembly, fabrication, bench fitting, blueprint reading, and mechanical maintenance preparing students for manufacturing industries.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6 — PARAVETERINARY (Clearly marked Under Process / Coming Soon)
+         ========================================================================== -->
+    <section class="section section-offwhite" id="paraveterinary" aria-label="Paraveterinary Initiative">
+      <div class="container">
+        
+        <div class="who-we-are-grid">
+          
+          <div class="animate-reveal">
+            <div class="section-eyebrow">03 / EMERGING PROFESSIONAL PATHWAYS</div>
+
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <span class="status-pill under-process">UNDER PROCESS / COMING SOON</span>
+            </div>
+
+            <h2 style="font-size: clamp(32px, 3.8vw, 48px); color: var(--color-primary-navy); line-height: 1.12; margin-bottom: 18px;">
+              SARVESHWAREE<br>
+              PARAVETERINARY INITIATIVE
+            </h2>
+
+            <p class="body-text" style="margin-bottom: 16px;">
+              <strong>Sarveshwaree Paraveterinary Diploma Pariksha Sansthan</strong> represents Shobha Education Trust's visionary initiative to serve agricultural livelihoods through animal healthcare education.
+            </p>
+
+            <p class="small-text" style="color: var(--color-text-secondary); margin-bottom: 22px;">
+              In agrarian communities across Uttar Pradesh, livestock forms the financial lifeline of families. This initiative aims to prepare certified veterinary assistants, livestock supervisors, and pharmacy personnel equipped with scientific knowledge.
+            </p>
+
+            <div class="verification-notice-strip" style="margin: 20px 0; padding: 20px 24px;">
+              <div class="verification-notice-header">
+                <span class="verification-notice-badge">STATUS NOTICE</span>
+                <span class="verification-notice-title" style="font-size: 16px;">UNDER PROCESS</span>
+              </div>
+              <p class="verification-notice-text" style="font-size: 13.5px;">
+                This programme is currently under statutory preparation and procedural approval. No admissions are open at this time.
+              </p>
+            </div>
+
+            <a href="programmes.html#coming-soon" class="btn btn-outline-navy">
+              LEARN MORE ABOUT PROPOSED AREAS &nbsp;→
+            </a>
+          </div>
+
+          <!-- Proposed Areas Box -->
+          <div class="who-we-are-narrative animate-reveal">
+            <h4 style="font-size: 19px; color: var(--color-primary-navy); margin-bottom: 16px;">
+              PROPOSED ACADEMIC AREAS
+            </h4>
+
+            <div class="about-pillars-list">
+              
+              <div class="pillar-item">
+                <div class="pillar-num">A</div>
+                <div class="pillar-text">
+                  <h4>Veterinary Pharmacy</h4>
+                  <p><strong>Proposed Intake:</strong> 60 Proposed Seats<br><strong>Eligibility:</strong> Intermediate (10+2) with Biology<br>Specialized training in veterinary pharmaceuticals, dosage formulation, and animal medicine distribution.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-num">B</div>
+                <div class="pillar-text">
+                  <h4>Livestock Care & Management</h4>
+                  <p><strong>Proposed Intake:</strong> 60 Proposed Seats<br><strong>Eligibility:</strong> Intermediate (10+2) with Biology<br>Practical protocols for animal immunization, dairy hygiene, disease screening, and livestock rehabilitation.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7 — FUTURE INITIATIVE (Sarveshwaree Krishi Mahavidyalaya)
+         ========================================================================== -->
+    <section class="section section-white" aria-label="Future Initiatives">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">FUTURE</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">THE JOURNEY CONTINUES</span>
+        </div>
+
+        <div class="future-direction-card animate-reveal">
+          <span class="status-pill future" style="margin-bottom: 10px;">FUTURE / PROPOSED INITIATIVE</span>
+          <h3 class="future-direction-heading">SARVESHWAREE KRISHI MAHAVIDYALAYA</h3>
+          
+          <p class="lead-text" style="color: var(--color-text-primary); margin-bottom: 14px;">
+            Proposed Location: <strong>Balrampur, Chhattisgarh</strong>
+          </p>
+
+          <p class="body-text" style="max-width: 860px;">
+            Expanding the educational mission beyond Uttar Pradesh, Shobha Education Trust envisions an agricultural higher education institution in Balrampur, Chhattisgarh. The initiative will focus on modern agronomy, soil health, crop science, and sustainable farming methods to empower tribal and rural youth.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 8 — QUICK INSTITUTIONAL OVERVIEW TABLE
+         Clean Comparison: Institution | Domain | Status
+         ========================================================================== -->
+    <section class="section section-offwhite" aria-label="Institutional Comparison">
+      <div class="container">
+        
+        <div class="dual-heading">
+          <span class="part-blue">QUICK</span>
+          <span class="divider-yellow"></span>
+          <span class="part-navy">OVERVIEW</span>
+        </div>
+
+        <div class="editorial-table-wrapper animate-reveal">
+          <table class="editorial-table">
+            <thead>
+              <tr>
+                <th>Institution / Initiative</th>
+                <th>Educational Domain</th>
+                <th>Location</th>
+                <th>Institutional Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sarveshwaree Mahavidyalaya</strong></td>
+                <td>Higher Education & Undergraduate Degrees (B.A.)</td>
+                <td>Jaunpur, Uttar Pradesh</td>
+                <td><span class="status-pill operational">Operational (Est. 2010)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Teacher Education Programme (D.El.Ed)</strong></td>
+                <td>Elementary Educator Preparation</td>
+                <td>Jaunpur, Uttar Pradesh</td>
+                <td><span class="status-pill operational">Operational (Est. 2016)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Sarveshwaree Private ITI</strong></td>
+                <td>Technical & Industrial Trades (Electrician, Fitter)</td>
+                <td>Jaunpur, Uttar Pradesh</td>
+                <td><span class="status-pill operational">Operational (Est. 2018)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Sarveshwaree Paraveterinary Initiative</strong></td>
+                <td>Veterinary Pharmacy & Livestock Health</td>
+                <td>Jaunpur, Uttar Pradesh</td>
+                <td><span class="status-pill under-process">Under Process</span></td>
+              </tr>
+              <tr>
+                <td><strong>Sarveshwaree Krishi Mahavidyalaya</strong></td>
+                <td>Agricultural Education & Research</td>
+                <td>Balrampur, Chhattisgarh</td>
+                <td><span class="status-pill future">Future / Proposed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 9 — CALL TO ACTION
+         ========================================================================== -->
+    <section class="about-final-cta" aria-label="Institutions Call to Action">
+      <div class="container about-final-cta-wrapper animate-reveal">
+        <span class="hero-motto-badge" style="margin-bottom: 16px;">EDUCATIONAL PATHWAYS</span>
+        
+        <h2 class="about-final-cta-title">
+          FIND YOUR PATH.
+        </h2>
+
+        <p class="about-final-cta-desc">
+          Explore the programmes available across our educational institutions, review admission guidelines, or connect directly with our admissions helpdesk.
+        </p>
+
+        <div class="about-final-cta-buttons">
+          <a href="programmes.html" class="btn btn-accent">VIEW PROGRAMMES &nbsp;→</a>
+          <a href="admissions.html" class="btn btn-outline-white">ADMISSIONS GUIDELINES</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       FOOTER (Consistent with Shared Legal & Contact Standards)
+       ========================================================================== -->
+  <footer class="site-footer" id="contact" aria-label="Institutional Footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div class="footer-col">
+          <div class="footer-trust-motto">अँधेरे से उजाले की ओर</div>
+          <h4 class="footer-col-title">SHOBHA EDUCATION TRUST</h4>
+          <p class="footer-brand-summary">
+            A pioneering institutional body established in 2005 in Jaunpur, Uttar Pradesh. Committed to expanding access to higher, vocational, and technical education while upholding rural service.
+          </p>
+          <div style="font-size: 13px; color: #8FA2C2;">
+            Campus: 15 Acres • Est. 2005 • Jaunpur, UP
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Trust</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus & Facilities</a></li>
+            <li><a href="community.html">Community Initiatives</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="contact.html">Contact Directory</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">STUDENT RESOURCES</h4>
+          <ul class="footer-links-list">
+            <li><a href="student-corner.html">Public Notices</a></li>
+            <li><a href="student-corner.html">Academic Calendar</a></li>
+            <li><a href="student-corner.html">Class Timetable</a></li>
+            <li><a href="student-corner.html">Course Syllabus</a></li>
+            <li><a href="student-corner.html">University Examinations</a></li>
+            <li><a href="student-corner.html">Results Information</a></li>
+            <li><a href="student-corner.html">Forms & Downloads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">INSTITUTIONS</h4>
+          <ul class="footer-links-list">
+            <li><a href="institutions.html#maha">Sarveshwaree Mahavidyalaya</a></li>
+            <li><a href="institutions.html#deled">D.El.Ed / BTC Pathway</a></li>
+            <li><a href="institutions.html#iti">Sarveshwaree Private ITI</a></li>
+            <li><a href="institutions.html#paraveterinary">Paraveterinary Initiative (Under Process)</a></li>
+            <li><a href="community.html">Saheli Book Bank</a></li>
+            <li><a href="community.html">Community Eye Care Camp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">CAMPUS CONTACT</h4>
+          
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🏛️</span>
+            <span>Affiliated with VBS Purvanchal University, Jaunpur</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>sanjayjourno2009@gmail.com</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>8318784268 • 8765926859<br>9214856705 • 9415623614</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">⏰</span>
+            <span>Office Hours: 10:00 AM – 3:00 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Legal Bar -->
+      <div class="sub-footer">
+        <div>© 2026 Shobha Education Trust. All Rights Reserved.</div>
+        <div class="sub-footer-links">
+          <a href="student-corner.html">Mandatory Disclosure</a>
+          <a href="student-corner.html">Public Documents</a>
+          <a href="admin/login.html" class="admin-portal-discreet" title="Authorized Administrative Access Only">Admin Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top-btn" aria-label="Back to Top">↑</button>
+
+  <!-- Admission Enquiry Modal -->
+  <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle">ADMISSION ENQUIRY 2026–27</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="enquiryForm">
+          <div class="form-group">
+            <label for="studentName" class="form-label">Student Full Name *</label>
+            <input type="text" id="studentName" class="form-control" required placeholder="e.g. Rahul Singh">
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber" class="form-label">Mobile Number *</label>
+            <input type="tel" id="contactNumber" class="form-control" required placeholder="10-digit mobile number">
+          </div>
+
+          <div class="form-group">
+            <label for="programmeInterest" class="form-label">Programme of Interest *</label>
+            <select id="programmeInterest" class="form-control" required>
+              <option value="">Select Programme</option>
+              <option value="mahavidyalaya-ug">Sarveshwaree Mahavidyalaya (B.A.)</option>
+              <option value="deled">Teacher Education (D.El.Ed / BTC)</option>
+              <option value="iti-trades">Sarveshwaree Private ITI (Electrician / Fitter)</option>
+              <option value="paravet">Paraveterinary Initiative (Under Process)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="studentLocation" class="form-label">Current City / District</label>
+            <input type="text" id="studentLocation" class="form-control" placeholder="e.g. Jaunpur, Varanasi, Prayagraj">
+          </div>
+
+          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+            SUBMIT ENQUIRY
+          </button>
+        </form>
+
+        <div id="enquirySuccess" style="display: none; text-align: center; padding: 20px 0;">
+          <h4 style="color: var(--color-primary-navy); margin-bottom: 8px;">THANK YOU!</h4>
+          <p style="color: var(--color-text-secondary); font-size: 14.5px;">
+            Your admission enquiry has been submitted. Our campus admissions office will contact you shortly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Author Footer -->
+  <aside class="sticky-author-bar" aria-label="Creator Credit">
+    <div class="sticky-author-container">
+      <span>Built with <span class="heart-icon">❤️</span> by <strong>Harsh Singh</strong></span>
+    </div>
+  </aside>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
