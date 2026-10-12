@@ -74,6 +74,7 @@
           <a href="campus.html" class="nav-strip-link active">Campus</a>
           <a href="news.html" class="nav-strip-link">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link">Contact</a>
         </div>
       </div>
@@ -100,6 +101,7 @@
         <a href="campus.html" class="nav-link active">Campus</a>
         <a href="news.html" class="nav-link">News & Events</a>
         <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
@@ -217,7 +219,7 @@
 
           <div class="animate-reveal">
             <div style="border: 1px solid var(--color-border); border-top: 4px solid var(--color-primary-navy); box-shadow: var(--shadow-card); overflow: hidden; background: #fff;">
-              <img src="images/gallery/image1.png" alt="Sarveshwaree Campus Academic Complex, Jaunpur" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              <img src="images/gallery/image1.png" alt="Sarveshwaree Campus Academic Complex, Jaunpur" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block; object-fit: cover;">
               <div style="padding: 16px 20px; background-color: var(--color-bg-offwhite); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
                 <span style="font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--color-primary-navy); letter-spacing: 0.8px;">
                   SARVESHWAREE ACADEMIC COMPLEX
@@ -956,42 +958,94 @@
 
   <!-- Admission Enquiry Modal Popup -->
   <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-container">
+    <div class="modal-container" style="max-width: 620px; max-height: 90vh; overflow-y: auto;">
       <div class="modal-header">
-        <h3 id="modalTitle">ADMISSION ENQUIRY</h3>
+        <div>
+          <span style="font-size: 11px; color: var(--color-accent-yellow); font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">SHOBHA EDUCATION TRUST</span>
+          <h3 id="modalTitle" style="margin: 2px 0 0; font-size: 18px;">INSTITUTIONAL ENQUIRY DESK</h3>
+        </div>
         <button type="button" class="modal-close-btn" aria-label="Close enquiry modal">&times;</button>
       </div>
-      <div class="modal-body">
-        <form id="enquiryForm">
-          <div class="form-group">
-            <label for="enqName" class="form-label">Full Name *</label>
-            <input type="text" id="enqName" class="form-control" placeholder="Candidate's full name" required>
+      <div class="modal-body" style="padding: 24px;">
+        <div class="form-alert" id="modalEnquiryAlert" style="display:none;" role="alert"></div>
+
+        <form id="enquiryForm" novalidate>
+          <input type="text" name="_hp_address" id="modalHpAddress" style="display:none !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalFullName" class="form-label">Full Name *</label>
+              <input type="text" id="modalFullName" name="name" class="form-control" required placeholder="e.g. Rahul Singh" autocomplete="name">
+              <div class="field-error" id="err-modalFullName" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalEmail" class="form-label">Email Address *</label>
+              <input type="email" id="modalEmail" name="email" class="form-control" required placeholder="e.g. rahul@example.com" autocomplete="email">
+              <div class="field-error" id="err-modalEmail" aria-live="polite"></div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="enqPhone" class="form-label">Mobile Number *</label>
-            <input type="tel" id="enqPhone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalPhone" class="form-label">Mobile Number *</label>
+              <input type="tel" id="modalPhone" name="phone" class="form-control" required placeholder="10-digit mobile number" autocomplete="tel">
+              <div class="field-error" id="err-modalPhone" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalCategory" class="form-label">Enquiry Category *</label>
+              <select id="modalCategory" name="category" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Admissions">Admissions</option>
+                <option value="Courses and Eligibility">Courses and Eligibility</option>
+                <option value="Fee Enquiry">Fee Enquiry</option>
+                <option value="Campus and Facilities" selected>Campus and Facilities</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="field-error" id="err-modalCategory" aria-live="polite"></div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="enqCourse" class="form-label">Programme of Interest *</label>
-            <select id="enqCourse" class="form-control" required>
-              <option value="" disabled selected>Select a programme...</option>
-              <option value="ba">Bachelor of Arts (B.A.) — 3 Years</option>
-              <option value="deled">D.El.Ed / BTC — 2 Years</option>
-              <option value="iti-electrician">ITI Electrician — 2 Years</option>
-              <option value="iti-fitter">ITI Fitter — 2 Years</option>
-            </select>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalInstitution" class="form-label">Institution / Programme (Optional)</label>
+            <input type="text" id="modalInstitution" name="institutionOrProgramme" class="form-control" placeholder="e.g. Sarveshwaree Mahavidyalaya (B.A.) / ITI / D.El.Ed">
+            <div class="field-error" id="err-modalInstitution" aria-live="polite"></div>
           </div>
-          <div class="form-group">
-            <label for="enqCity" class="form-label">Location / Tehsil</label>
-            <input type="text" id="enqCity" class="form-control" placeholder="e.g. Rampur, Jaunpur, Machhlishahr">
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalSubject" class="form-label">Subject *</label>
+            <input type="text" id="modalSubject" name="subject" class="form-control" required placeholder="Brief summary of your enquiry">
+            <div class="field-error" id="err-modalSubject" aria-live="polite"></div>
           </div>
-          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">SUBMIT ADMISSION ENQUIRY</button>
+
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label for="modalMessage" class="form-label">Message *</label>
+            <textarea id="modalMessage" name="message" class="form-control" rows="3" required placeholder="Detail your enquiry or requirements..."></textarea>
+            <div class="field-error" id="err-modalMessage" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" id="btnSubmitEnquiry" class="btn btn-accent" style="width: 100%; padding: 12px; font-weight: 700;">
+            SUBMIT ENQUIRY
+          </button>
         </form>
-        <div id="enquirySuccess" style="display: none; text-align: center; padding: 20px 0;">
-          <h4 style="color: #2E7D32; margin-bottom: 8px;">ENQUIRY RECEIVED</h4>
-          <p style="color: var(--color-text-secondary); font-size: 14px;">
-            Thank you for your interest. Our admissions office will contact you within 24 working hours.
+
+        <div id="enquirySuccess" style="display: none; padding: 24px 12px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">✓</div>
+          <h4 style="color: #065F46; font-size: 18px; margin-bottom: 6px;">ENQUIRY TRANSMITTED</h4>
+          <p style="color: #047857; font-size: 14px; line-height: 1.6; margin-bottom: 16px;" id="modalSuccessText">
+            Your enquiry has been delivered directly to the institution's official administration email address (<span>sanjayjourno2009@gmail.com</span>).
           </p>
+          <div style="background-color: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: var(--radius-xs); padding: 10px 16px; margin-bottom: 18px; display: inline-block;">
+            <span style="font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; font-weight: 700;">Reference ID:</span>
+            <strong id="modalRefIdDisplay" style="font-family: monospace; font-size: 14px; color: var(--color-primary-navy); margin-left: 6px;">-</strong>
+          </div>
+          <div>
+            <button type="button" id="btnModalSubmitAnother" class="btn btn-outline-navy" style="font-size: 12.5px; padding: 8px 16px;">
+              Submit Another Enquiry
+            </button>
+          </div>
         </div>
       </div>
     </div>

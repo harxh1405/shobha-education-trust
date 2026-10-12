@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 
+  <!-- Leaflet Map Stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/typography.css">
@@ -74,6 +77,7 @@
           <a href="campus.html" class="nav-strip-link">Campus</a>
           <a href="news.html" class="nav-strip-link">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link active">Contact</a>
         </div>
       </div>
@@ -100,6 +104,7 @@
         <a href="campus.html" class="nav-link">Campus</a>
         <a href="news.html" class="nav-link">News & Events</a>
         <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </div>
 
@@ -143,136 +148,222 @@
       </div>
     </section>
 
-    <!-- Main Contact Grid -->
-    <section class="section section-offwhite" aria-label="Contact Information Details">
+    <!-- ==========================================================================
+         01. INTERACTIVE GEOLOCATION MAP & FIND US SECTION
+         Two-column desktop layout (Left: Info & Directions / Right: Leaflet Map)
+         ========================================================================== -->
+    <section class="section section-offwhite" id="campus-map" aria-label="Campus Location and Interactive Map">
       <div class="container">
         
-        <div class="about-story-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
+        <div class="find-us-layout">
           
-          <!-- Column 1: Verified Directory -->
-          <div style="background-color: var(--color-bg-white); border: 1px solid var(--color-border); border-top: 4px solid var(--color-primary-navy); padding: 36px; border-radius: var(--radius-xs); box-shadow: var(--shadow-subtle);">
+          <!-- Left Column: FIND US Institutional Details & Navigation -->
+          <div class="find-us-info-card">
             
-            <div class="dual-heading" style="margin-bottom: 24px;">
-              <span class="part-blue">DIRECTORY</span>
-              <span class="divider-yellow"></span>
-              <span class="part-navy">OFFICE DETAILS</span>
+            <div class="find-us-header">
+              <span class="find-us-kicker">CAMPUS DIRECTORY</span>
+              <h2 class="find-us-heading">FIND US</h2>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="find-us-body">
               
-              <!-- Helplines -->
-              <div>
-                <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-supporting-blue); letter-spacing: 1px; margin-bottom: 8px;">
-                  TELEPHONE HELPLINES
-                </span>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
-                  <a href="tel:8318784268" style="font-size: 16px; font-weight: 700; color: var(--color-primary-navy); text-decoration: none; padding: 8px 12px; background: var(--color-bg-offwhite); border: 1px solid var(--color-border); border-radius: 2px;">
-                    📞 8318784268
-                  </a>
-                  <a href="tel:8765926859" style="font-size: 16px; font-weight: 700; color: var(--color-primary-navy); text-decoration: none; padding: 8px 12px; background: var(--color-bg-offwhite); border: 1px solid var(--color-border); border-radius: 2px;">
-                    📞 8765926859
-                  </a>
-                  <a href="tel:9214856705" style="font-size: 16px; font-weight: 700; color: var(--color-primary-navy); text-decoration: none; padding: 8px 12px; background: var(--color-bg-offwhite); border: 1px solid var(--color-border); border-radius: 2px;">
-                    📞 9214856705
-                  </a>
-                  <a href="tel:9415623614" style="font-size: 16px; font-weight: 700; color: var(--color-primary-navy); text-decoration: none; padding: 8px 12px; background: var(--color-bg-offwhite); border: 1px solid var(--color-border); border-radius: 2px;">
-                    📞 9415623614
-                  </a>
+              <!-- Full Campus Address -->
+              <div class="find-us-block">
+                <span class="find-us-label">FULL CAMPUS ADDRESS</span>
+                <div class="find-us-text address-text">
+                  <strong>Sarveshwaree Mahavidyalaya</strong><br>
+                  Kamruddinpur, Noorpur, Rampur,<br>
+                  Jaunpur, Uttar Pradesh – 222203, India
                 </div>
-              </div>
-
-              <!-- Email -->
-              <div>
-                <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-supporting-blue); letter-spacing: 1px; margin-bottom: 6px;">
-                  OFFICIAL INSTITUTIONAL EMAIL
-                </span>
-                <a href="mailto:sanjayjourno2009@gmail.com" style="font-size: 16px; font-weight: 600; color: var(--color-primary-navy); text-decoration: none; display: inline-block; padding: 6px 0;">
-                  ✉️ sanjayjourno2009@gmail.com
-                </a>
               </div>
 
               <!-- Office Hours -->
-              <div>
-                <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-supporting-blue); letter-spacing: 1px; margin-bottom: 6px;">
-                  ADMINISTRATIVE OFFICE HOURS
-                </span>
-                <div style="font-size: 15px; font-weight: 600; color: var(--color-text-primary);">
-                  10:00 AM – 3:00 PM
-                </div>
-                <div style="font-size: 13.5px; color: var(--color-text-secondary); margin-top: 2px;">
-                  Operational Monday through Saturday (Closed on University Gazette Holidays)
+              <div class="find-us-block">
+                <span class="find-us-label">OFFICE HOURS</span>
+                <div class="find-us-text">
+                  <strong>10:00 AM – 3:00 PM</strong>
+                  <div class="find-us-subtext">Monday through Saturday (Closed on University Gazette Holidays)</div>
                 </div>
               </div>
 
-              <!-- Physical Location -->
-              <div>
-                <span style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--color-supporting-blue); letter-spacing: 1px; margin-bottom: 6px;">
-                  PHYSICAL CAMPUS ADDRESS
-                </span>
-                <div style="font-size: 15px; color: var(--color-primary-navy); font-weight: 600; line-height: 1.5;">
-                  Kamruddinpur, Noorpur, Rampur,<br>
-                  Jaunpur, Uttar Pradesh – 222203
+              <!-- All Official Phone Numbers -->
+              <div class="find-us-block">
+                <span class="find-us-label">OFFICIAL PHONE NUMBERS</span>
+                <div class="phone-numbers-grid">
+                  <a href="tel:8318784268" class="phone-link-chip">📞 8318784268</a>
+                  <a href="tel:8765926859" class="phone-link-chip">📞 8765926859</a>
+                  <a href="tel:9214856705" class="phone-link-chip">📞 9214856705</a>
+                  <a href="tel:9415623614" class="phone-link-chip">📞 9415623614</a>
+                </div>
+              </div>
+
+              <!-- Contact Email -->
+              <div class="find-us-block">
+                <span class="find-us-label">CONTACT EMAIL</span>
+                <div class="find-us-text">
+                  <a href="mailto:sanjayjourno2009@gmail.com" class="email-link-text">
+                    ✉️ sanjayjourno2009@gmail.com
+                  </a>
                 </div>
               </div>
 
             </div>
 
-            <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="tel:8318784268" class="btn btn-accent" style="flex: 1; text-align: center;">CALL OFFICE NOW</a>
-              <a href="mailto:sanjayjourno2009@gmail.com" class="btn btn-outline-navy" style="flex: 1; text-align: center;">EMAIL INQUIRY</a>
+            <!-- Action Buttons: GET DIRECTIONS & USE MY LOCATION -->
+            <div class="find-us-cta-group">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Sarveshwaree+Mahavidyalaya%2C+Kamruddinpur%2C+Noorpur%2C+Rampur%2C+Jaunpur%2C+Uttar+Pradesh+222203" 
+                 id="btnGetDirections" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-accent btn-directions" 
+                 aria-label="Get Directions to Campus in Google Maps">
+                GET DIRECTIONS ↗
+              </a>
+              <button type="button" 
+                      id="btnUseMyLocation" 
+                      class="btn btn-outline-navy btn-geo" 
+                      aria-label="Use my device location to view distance and route to campus">
+                <span class="geo-icon" aria-hidden="true">📍</span> USE MY LOCATION
+              </button>
+            </div>
+
+            <!-- Geolocation Status & Distance Notification Feedback Panel -->
+            <div id="geoStatusPanel" class="geo-status-banner" style="display: none;" role="status" aria-live="polite">
+              <span id="geoStatusIcon" class="geo-status-icon" aria-hidden="true">ℹ️</span>
+              <div class="geo-status-body">
+                <span id="geoStatusText" class="geo-status-message"></span>
+              </div>
+              <button type="button" id="btnClearLocation" class="geo-status-reset" style="display: none;" title="Reset map view to campus">
+                Reset Pin
+              </button>
             </div>
 
           </div>
 
-          <!-- Column 2: Send Message / Enquiry Form -->
-          <div style="background-color: var(--color-bg-white); border: 1px solid var(--color-border); border-top: 4px solid var(--color-accent-yellow); padding: 36px; border-radius: var(--radius-xs); box-shadow: var(--shadow-subtle);">
+          <!-- Right Column: Interactive Leaflet Map -->
+          <div class="find-us-map-card">
+            <div class="map-container-frame">
+              <div id="campusMap" class="leaflet-campus-map" role="region" aria-label="Interactive Map of Sarveshwaree Mahavidyalaya Campus"></div>
+              
+              <!-- Subtle Institutional Crest Overlay Badge -->
+              <div class="map-institutional-badge">
+                <span class="status-pulse-dot" aria-hidden="true"></span>
+                <span>Sarveshwaree Mahavidyalaya</span>
+              </div>
+            </div>
             
-            <div class="dual-heading" style="margin-bottom: 24px;">
-              <span class="part-blue">ASSISTANCE</span>
-              <span class="divider-yellow"></span>
-              <span class="part-navy">SEND AN INQUIRY</span>
+            <div class="map-caption-bar">
+              <span>📍 Campus Coordinates: 25.4464° N, 82.7039° E • Plus Code: CPW3+HHW</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Sarveshwaree+Mahavidyalaya+Kamruddinpur+Rampur+Jaunpur+222203" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="map-external-link">Verify on Google Maps ↗</a>
             </div>
+          </div>
 
-            <form id="contactPageForm">
-              <div class="form-group">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02. DIRECT INQUIRY & ADMINISTRATIVE COMMUNICATIONS FORM
+         ========================================================================== -->
+    <section class="section section-white" aria-label="Administrative Inquiry Form">
+      <div class="container">
+        
+        <div style="max-width: 820px; margin: 0 auto; background-color: var(--color-bg-white); border: 1px solid var(--color-border); border-top: 4px solid var(--color-primary-navy); padding: 40px 36px; border-radius: var(--radius-xs); box-shadow: var(--shadow-subtle);">
+          
+          <div class="dual-heading" style="margin-bottom: 24px;">
+            <span class="part-blue">ASSISTANCE</span>
+            <span class="divider-yellow"></span>
+            <span class="part-navy">SEND AN INQUIRY</span>
+          </div>
+
+          <p style="font-size: 14.5px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 24px;">
+            Have a question regarding university undergraduate courses, teacher training, technical craftsman trades, or document verification? Submit your details below.
+          </p>
+
+          <div class="form-alert" id="contactFormAlert" style="display:none;" role="alert"></div>
+
+          <form id="contactPageForm" novalidate>
+            <!-- Anti-Spam Honeypot Field -->
+            <input type="text" name="_hp_address" id="contactHpAddress" style="display:none !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 18px;">
+              <div class="form-group" style="margin-bottom: 0;">
                 <label for="contactFullName" class="form-label">Full Name *</label>
-                <input type="text" id="contactFullName" class="form-control" required placeholder="e.g. Anand Kumar">
+                <input type="text" id="contactFullName" name="name" class="form-control" required placeholder="e.g. Anand Kumar" autocomplete="name">
+                <div class="field-error" id="err-contactFullName" aria-live="polite"></div>
               </div>
 
-              <div class="form-group">
-                <label for="contactPhone" class="form-label">Phone Number *</label>
-                <input type="tel" id="contactPhone" class="form-control" required placeholder="10-digit mobile number">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" id="contactEmail" name="email" class="form-control" required placeholder="e.g. anand@example.com" autocomplete="email">
+                <div class="field-error" id="err-contactEmail" aria-live="polite"></div>
               </div>
-
-              <div class="form-group">
-                <label for="contactDept" class="form-label">Inquiry Area *</label>
-                <select id="contactDept" class="form-control" required>
-                  <option value="">Select Area</option>
-                  <option value="admissions-ug">B.A. Degree Admissions (Mahavidyalaya)</option>
-                  <option value="admissions-deled">D.El.Ed / BTC Teacher Education</option>
-                  <option value="admissions-iti">ITI Technical Trades (Electrician / Fitter)</option>
-                  <option value="student-records">Student Records & Verification</option>
-                  <option value="general">General Administrative Inquiry</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contactMessage" class="form-label">Message / Details</label>
-                <textarea id="contactMessage" class="form-control" rows="4" placeholder="Briefly specify your query..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
-                SUBMIT INQUIRY
-              </button>
-            </form>
-
-            <div id="contactPageSuccess" style="display: none; text-align: center; padding: 24px 0;">
-              <h4 style="color: var(--color-primary-navy); margin-bottom: 8px;">MESSAGE RECEIVED</h4>
-              <p style="color: var(--color-text-secondary); font-size: 14.5px;">
-                Thank you for contacting Shobha Education Trust. Our campus administrative office will review your inquiry and connect with you.
-              </p>
             </div>
 
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 18px;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="contactPhone" class="form-label">Mobile Number *</label>
+                <input type="tel" id="contactPhone" name="phone" class="form-control" required placeholder="10-digit mobile number" autocomplete="tel">
+                <div class="field-error" id="err-contactPhone" aria-live="polite"></div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="contactCategory" class="form-label">Enquiry Category *</label>
+                <select id="contactCategory" name="category" class="form-control" required>
+                  <option value="">Select Category</option>
+                  <option value="General Enquiry">General Enquiry</option>
+                  <option value="Admissions">Admissions</option>
+                  <option value="Courses and Eligibility">Courses and Eligibility</option>
+                  <option value="Fee Enquiry">Fee Enquiry</option>
+                  <option value="Campus and Facilities">Campus and Facilities</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="field-error" id="err-contactCategory" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label for="contactInstitution" class="form-label">Institution / Programme (Optional)</label>
+              <input type="text" id="contactInstitution" name="institutionOrProgramme" class="form-control" placeholder="e.g. Sarveshwaree Mahavidyalaya (B.A.) / ITI / D.El.Ed">
+              <div class="field-error" id="err-contactInstitution" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 18px;">
+              <label for="contactSubject" class="form-label">Subject *</label>
+              <input type="text" id="contactSubject" name="subject" class="form-control" required placeholder="Brief summary of your enquiry">
+              <div class="field-error" id="err-contactSubject" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 22px;">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <textarea id="contactMessage" name="message" class="form-control" rows="4" required placeholder="Detail your enquiry or requirements..."></textarea>
+              <div class="field-error" id="err-contactMessage" aria-live="polite"></div>
+            </div>
+
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width: 100%; padding: 13px; font-weight: 700; font-size: 14.5px;">
+              SUBMIT ENQUIRY
+            </button>
+          </form>
+
+          <div id="contactPageSuccess" style="display: none; text-align: center; padding: 28px 16px; background-color: #ECFDF5; border: 1px solid #A7F3D0; border-radius: var(--radius-xs);">
+            <div style="font-size: 32px; margin-bottom: 8px;">✓</div>
+            <h4 style="color: #065F46; font-size: 18px; margin-bottom: 8px;">ENQUIRY TRANSMITTED SUCCESSFULLY</h4>
+            <p style="color: #047857; font-size: 14.5px; line-height: 1.6; max-width: 620px; margin: 0 auto 16px;" id="contactSuccessMsgText">
+              Thank you for contacting Shobha Education Trust. Your enquiry has been forwarded directly to our institutional administration desk.
+            </p>
+            <div style="background-color: #FFFFFF; border: 1px dashed #10B981; border-radius: var(--radius-xs); padding: 10px 16px; display: inline-block; margin-bottom: 20px;">
+              <span style="font-size: 12px; color: #047857; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Enquiry Reference ID:</span>
+              <strong id="contactRefIdDisplay" style="font-family: monospace; font-size: 14px; color: #065F46; margin-left: 6px;">-</strong>
+            </div>
+            <div>
+              <button type="button" id="btnContactSubmitAnother" class="btn btn-outline-navy" style="font-size: 13px; padding: 8px 18px;">
+                Submit Another Enquiry
+              </button>
+            </div>
           </div>
 
         </div>

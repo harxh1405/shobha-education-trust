@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
 
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/typography.css">
@@ -74,6 +77,7 @@
           <a href="campus.html" class="nav-strip-link">Campus</a>
           <a href="news.html" class="nav-strip-link">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link">Contact</a>
         </div>
       </div>
@@ -100,6 +104,7 @@
         <a href="campus.html" class="nav-link">Campus</a>
         <a href="news.html" class="nav-link">News & Events</a>
         <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
@@ -126,7 +131,7 @@
          ========================================================================== -->
     <section class="hero-section" id="hero" aria-label="Campus Hero">
       <div class="hero-background-wrapper">
-        <img src="images/homepage/hero.png" alt="Sarveshwaree Mahavidyalaya 15-Acre Institutional Campus, Jaunpur" class="hero-background-img">
+        <img src="images/homepage/hero.png" alt="Sarveshwaree Mahavidyalaya 15-Acre Institutional Campus, Jaunpur" class="hero-background-img" decoding="async" fetchpriority="high">
       </div>
       <div class="hero-gradient-overlay"></div>
 
@@ -181,6 +186,42 @@
             <span class="snapshot-lbl">Governing Umbrella Body</span>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02.5. CAMPUS GEOLOCATION STRIP ("Reach Us with Ease")
+         ========================================================================== -->
+    <section class="section campus-map-strip-section" id="reach-us-strip" aria-label="Campus Location Map">
+      <div class="container">
+        <div class="reach-us-strip-card">
+          <!-- Background Interactive Map Wrapper -->
+          <div class="reach-us-map-wrapper">
+            <div id="homeCampusMap" class="home-leaflet-map" role="region" aria-label="Campus Geolocation Map Overview"></div>
+          </div>
+
+          <!-- Decorative Top Right Status Badge -->
+          <div class="reach-us-overlay-badge">
+            <span class="pulse-dot" style="background: var(--color-accent-yellow);"></span>
+            <span>REACH US WITH EASE</span>
+          </div>
+
+          <!-- Prominent Blue Institutional Info Overlay Card -->
+          <div class="reach-us-info-overlay">
+            <div class="reach-us-kicker">15-ACRE INTEGRATED CAMPUS</div>
+            <h3 class="reach-us-heading">Sarveshwaree Mahavidyalaya</h3>
+            <p class="reach-us-address">Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</p>
+            <div class="reach-us-actions">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=25.4464,82.7039+(Sarveshwaree+Mahavidyalaya%2C+Kamruddinpur%2C+Jaunpur)" 
+                 target="_blank" rel="noopener noreferrer" class="reach-btn-directions" aria-label="Get Directions to Campus in Google Maps">
+                📍 GET DIRECTIONS ↗
+              </a>
+              <a href="contact.html#campus-map" class="reach-btn-campus" aria-label="View Campus Geolocation Directory">
+                VIEW CAMPUS MAP →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -276,7 +317,7 @@
           <!-- Leader 1: Parampujya Baba Gurupad Sambhav Ram Ji -->
           <article class="leadership-card animate-reveal">
             <div class="leadership-photo-box">
-              <img src="images/homepage/sambhav baba.png" alt="Parampujya Baba Gurupad Sambhav Ram Ji - Guiding Inspiration" class="leadership-photo-img" loading="lazy">
+              <img src="images/homepage/sambhav baba.png" alt="Parampujya Baba Gurupad Sambhav Ram Ji - Guiding Inspiration" class="leadership-photo-img" loading="lazy" decoding="async">
             </div>
             <div class="leadership-plaque">
               <span class="leadership-name">PARAMPUJYA BABA GURUPAD SAMBHAV RAM JI</span>
@@ -290,7 +331,7 @@
           <!-- Leader 2: Dr. Parmendra Kumar Singh -->
           <article class="leadership-card animate-reveal">
             <div class="leadership-photo-box">
-              <img src="images/homepage/parmendra.png" alt="Dr. Parmendra Kumar Singh - Founder / Manager" class="leadership-photo-img" loading="lazy">
+              <img src="images/homepage/parmendra.png" alt="Dr. Parmendra Kumar Singh - Founder / Manager" class="leadership-photo-img" loading="lazy" decoding="async">
             </div>
             <div class="leadership-plaque">
               <span class="leadership-name">DR. PARMENDRA KUMAR SINGH</span>
@@ -304,7 +345,7 @@
           <!-- Leader 3: Dr. Sanjay Kumar Singh -->
           <article class="leadership-card animate-reveal">
             <div class="leadership-photo-box">
-              <img src="images/homepage/sanjay.png" alt="Dr. Sanjay Kumar Singh - Director" class="leadership-photo-img" loading="lazy">
+              <img src="images/homepage/sanjay.png" alt="Dr. Sanjay Kumar Singh - Director" class="leadership-photo-img" loading="lazy" decoding="async">
             </div>
             <div class="leadership-plaque">
               <span class="leadership-name">DR. SANJAY KUMAR SINGH</span>
@@ -347,7 +388,7 @@
           <article class="institution-showcase-card master-card animate-reveal">
             <!-- Media Visual Viewport -->
             <div class="inst-card-media-wrap">
-              <img src="images/gallery/image1.png" alt="Sarveshwaree Mahavidyalaya Campus Building, Jaunpur" class="inst-card-img" loading="lazy">
+              <img src="images/gallery/image1.png" alt="Sarveshwaree Mahavidyalaya Campus Building, Jaunpur" class="inst-card-img" loading="lazy" decoding="async">
               <div class="inst-card-media-overlay"></div>
               <div class="inst-card-media-top">
                 <span class="inst-domain-badge">01 • HIGHER EDUCATION</span>
@@ -408,7 +449,7 @@
           <!-- Card 02: Sarveshwaree Private ITI -->
           <article class="institution-showcase-card master-card animate-reveal">
             <div class="inst-card-media-wrap">
-              <img src="images/gallery/image7.png" alt="Sarveshwaree Private ITI Workshop and Machinery, Jaunpur" class="inst-card-img" loading="lazy">
+              <img src="images/gallery/image7.png" alt="Sarveshwaree Private ITI Workshop and Machinery, Jaunpur" class="inst-card-img" loading="lazy" decoding="async">
               <div class="inst-card-media-overlay"></div>
               <div class="inst-card-media-top">
                 <span class="inst-domain-badge">02 • TECHNICAL TRADES</span>
@@ -466,7 +507,7 @@
           <!-- Card 03: Sarveshwaree Paraveterinary & Allied -->
           <article class="institution-showcase-card master-card animate-reveal">
             <div class="inst-card-media-wrap">
-              <img src="images/homepage/community.png" alt="Sarveshwaree Paraveterinary and Rural Health Initiative, Jaunpur" class="inst-card-img" loading="lazy">
+              <img src="images/homepage/community.png" alt="Sarveshwaree Paraveterinary and Rural Health Initiative, Jaunpur" class="inst-card-img" loading="lazy" decoding="async">
               <div class="inst-card-media-overlay"></div>
               <div class="inst-card-media-top">
                 <span class="inst-domain-badge">03 • EMERGING PATHWAYS</span>
@@ -755,7 +796,7 @@
           <!-- Image Column with Community Eye-Care Camp -->
           <div class="beyond-image-column animate-reveal">
             <div class="beyond-image-frame">
-              <img src="images/homepage/community.png" alt="Free Community Eye Care Camp at Sarveshwaree Mahavidyalaya Campus" class="beyond-photo" loading="lazy">
+              <img src="images/homepage/community.png" alt="Free Community Eye Care Camp at Sarveshwaree Mahavidyalaya Campus" class="beyond-photo" loading="lazy" decoding="async">
               <div class="beyond-photo-plaque">
                 <span class="beyond-photo-plaque-title">COMMUNITY EYE-CARE & HEALTH CONSULTATION</span>
                 <span class="beyond-photo-plaque-tag">CAMPUS OUTREACH</span>
@@ -815,15 +856,16 @@
     <section class="section section-white" id="news-preview" aria-label="News & Events Preview">
       <div class="container">
         
-        <div class="dual-heading">
-          <span class="part-blue">NEWS</span>
-          <span class="divider-yellow"></span>
-          <span class="part-navy">EVENTS</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+          <div class="dual-heading" style="margin-bottom: 0;">
+            <span class="part-blue">NEWS</span>
+            <span class="divider-yellow"></span>
+            <span class="part-navy">EVENTS & UPLOADS</span>
+          </div>
         </div>
 
-        <div class="news-editorial-list stagger-grid">
-          
-          <a href="news.html" class="news-editorial-item animate-reveal">
+        <div class="news-editorial-list stagger-grid" id="homepageNewsList">
+          <a href="news.html" class="news-editorial-item animate-reveal" style="text-decoration: none;">
             <div class="news-date-badge">
               <span class="news-date-day">15</span>
               <span class="news-date-my">OCT 2026</span>
@@ -832,10 +874,9 @@
               <h4>Academic Session 2026–27 Admission Verification Open</h4>
               <p>Institutional verification and reporting active for Sarveshwaree Mahavidyalaya undergraduate programmes and ITI trades.</p>
             </div>
-            <div class="news-arrow-col">→</div>
           </a>
 
-          <a href="news.html" class="news-editorial-item animate-reveal">
+          <a href="news.html" class="news-editorial-item animate-reveal" style="text-decoration: none;">
             <div class="news-date-badge">
               <span class="news-date-day">02</span>
               <span class="news-date-my">NOV 2026</span>
@@ -844,10 +885,9 @@
               <h4>Annual Inter-Institutional Sports Meet & Yoga Workshop Schedule</h4>
               <p>Athletic competitions, volleyball tournaments, and morning yoga wellness sessions across the 15-acre campus grounds.</p>
             </div>
-            <div class="news-arrow-col">→</div>
           </a>
 
-          <a href="news.html" class="news-editorial-item animate-reveal">
+          <a href="news.html" class="news-editorial-item animate-reveal" style="text-decoration: none;">
             <div class="news-date-badge">
               <span class="news-date-day">20</span>
               <span class="news-date-my">NOV 2026</span>
@@ -856,9 +896,7 @@
               <h4>Free Community Health & Eye-Care Consultation Camp Announced</h4>
               <p>Specialist medical checkups, vision diagnostics, and consultation camp organized at Sarveshwaree campus.</p>
             </div>
-            <div class="news-arrow-col">→</div>
           </a>
-
         </div>
 
         <div class="news-footer-action">
@@ -999,23 +1037,33 @@
             </div>
           </div>
 
-          <!-- Quick Location / Campus Map Overview -->
-          <div style="background-color: var(--color-bg-offwhite); border: 1px solid var(--color-border); border-top: 4px solid var(--color-accent-yellow); padding: 36px; border-radius: var(--radius-xs);">
-            <h3 style="font-family: var(--font-heading); font-size: 22px; color: var(--color-primary-navy); margin-bottom: 20px; letter-spacing: 0.8px;">
-              VISIT OUR 15-ACRE CAMPUS
-            </h3>
-            <p style="font-size: 14.5px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 20px;">
-              Located in Rampur, Jaunpur, the campus is easily accessible via state roadways and connects key regional centers including Varanasi, Bhadohi, and Jaunpur city.
-            </p>
-            <div style="background-color: var(--color-bg-white); border-left: 4px solid var(--color-accent-yellow); padding: 14px 18px; margin-bottom: 24px;">
-              <strong style="color: var(--color-primary-navy); font-size: 14px;">Public Transportation:</strong>
-              <p style="font-size: 13.5px; color: var(--color-text-secondary); margin-top: 4px;">
-                Regular institutional buses and local passenger transit operate along the Noorpur–Rampur corridor.
+          <!-- Compact Campus Location Preview -->
+          <div class="homepage-location-preview-card">
+            <div>
+              <span class="location-preview-badge">GEOGRAPHIC LOCATION</span>
+              <h3 class="location-preview-title">
+                CAMPUS OVERVIEW & LOCATION
+              </h3>
+              
+              <div class="location-preview-address-block">
+                <span class="location-pin-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Sarveshwaree Mahavidyalaya</strong>
+                  <p>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203, India</p>
+                </div>
+              </div>
+
+              <p class="location-preview-transit-note">
+                Our 15-acre campus is situated along the Noorpur–Rampur highway corridor, easily accessible with local passenger transit connecting Jaunpur, Bhadohi, and Varanasi.
               </p>
             </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="tel:8318784268" class="btn btn-accent">CALL HELPDESK</a>
-              <a href="mailto:sanjayjourno2009@gmail.com" class="btn btn-outline-navy">SEND EMAIL</a>
+
+            <div class="location-preview-actions">
+              <a href="contact.html#campus-map" class="btn btn-accent">VIEW CAMPUS LOCATION &nbsp;→</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Sarveshwaree+Mahavidyalaya%2C+Kamruddinpur%2C+Noorpur%2C+Rampur%2C+Jaunpur%2C+Uttar+Pradesh+222203" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-outline-navy">GET DIRECTIONS ↗</a>
             </div>
           </div>
 
@@ -1144,51 +1192,95 @@
        ADMISSION ENQUIRY MODAL POPUP
        ========================================================================== -->
   <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-container">
+    <div class="modal-container" style="max-width: 620px; max-height: 90vh; overflow-y: auto;">
       <div class="modal-header">
-        <h3 id="modalTitle">ADMISSION ENQUIRY 2026–27</h3>
+        <div>
+          <span style="font-size: 11px; color: var(--color-accent-yellow); font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">SHOBHA EDUCATION TRUST</span>
+          <h3 id="modalTitle" style="margin: 2px 0 0; font-size: 18px;">INSTITUTIONAL ENQUIRY DESK</h3>
+        </div>
         <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
       </div>
 
-      <div class="modal-body">
-        <form id="enquiryForm">
-          <div class="form-group">
-            <label for="studentName" class="form-label">Student Full Name *</label>
-            <input type="text" id="studentName" class="form-control" required placeholder="e.g. Rahul Singh">
+      <div class="modal-body" style="padding: 24px;">
+        <div class="form-alert" id="modalEnquiryAlert" style="display:none;" role="alert"></div>
+
+        <form id="enquiryForm" novalidate>
+          <input type="text" name="_hp_address" id="modalHpAddress" style="display:none !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalFullName" class="form-label">Full Name *</label>
+              <input type="text" id="modalFullName" name="name" class="form-control" required placeholder="e.g. Rahul Singh" autocomplete="name">
+              <div class="field-error" id="err-modalFullName" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalEmail" class="form-label">Email Address *</label>
+              <input type="email" id="modalEmail" name="email" class="form-control" required placeholder="e.g. rahul@example.com" autocomplete="email">
+              <div class="field-error" id="err-modalEmail" aria-live="polite"></div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="contactNumber" class="form-label">Mobile Number *</label>
-            <input type="tel" id="contactNumber" class="form-control" required placeholder="10-digit mobile number">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalPhone" class="form-label">Mobile Number *</label>
+              <input type="tel" id="modalPhone" name="phone" class="form-control" required placeholder="10-digit mobile number" autocomplete="tel">
+              <div class="field-error" id="err-modalPhone" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalCategory" class="form-label">Enquiry Category *</label>
+              <select id="modalCategory" name="category" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Admissions">Admissions</option>
+                <option value="Courses and Eligibility">Courses and Eligibility</option>
+                <option value="Fee Enquiry">Fee Enquiry</option>
+                <option value="Campus and Facilities">Campus and Facilities</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="field-error" id="err-modalCategory" aria-live="polite"></div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="programmeInterest" class="form-label">Programme of Interest *</label>
-            <select id="programmeInterest" class="form-control" required>
-              <option value="">Select Programme</option>
-              <option value="mahavidyalaya-ba">Sarveshwaree Mahavidyalaya (B.A. Degree)</option>
-              <option value="deled">D.El.Ed / BTC (Teacher Education)</option>
-              <option value="iti-electrician">Sarveshwaree Private ITI (Electrician)</option>
-              <option value="iti-fitter">Sarveshwaree Private ITI (Fitter)</option>
-              <option value="paravet">Paraveterinary Initiative (Under Process)</option>
-            </select>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalInstitution" class="form-label">Institution / Programme (Optional)</label>
+            <input type="text" id="modalInstitution" name="institutionOrProgramme" class="form-control" placeholder="e.g. Sarveshwaree Mahavidyalaya (B.A.) / ITI / D.El.Ed">
+            <div class="field-error" id="err-modalInstitution" aria-live="polite"></div>
           </div>
 
-          <div class="form-group">
-            <label for="studentLocation" class="form-label">Current City / District</label>
-            <input type="text" id="studentLocation" class="form-control" placeholder="e.g. Jaunpur, Varanasi, Prayagraj">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalSubject" class="form-label">Subject *</label>
+            <input type="text" id="modalSubject" name="subject" class="form-control" required placeholder="Brief summary of your enquiry">
+            <div class="field-error" id="err-modalSubject" aria-live="polite"></div>
           </div>
 
-          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label for="modalMessage" class="form-label">Message *</label>
+            <textarea id="modalMessage" name="message" class="form-control" rows="3" required placeholder="Detail your enquiry or requirements..."></textarea>
+            <div class="field-error" id="err-modalMessage" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" id="btnSubmitEnquiry" class="btn btn-accent" style="width: 100%; padding: 12px; font-weight: 700;">
             SUBMIT ENQUIRY
           </button>
         </form>
 
-        <div id="enquirySuccess" style="display: none; text-align: center; padding: 20px 0;">
-          <h4 style="color: var(--color-primary-navy); margin-bottom: 8px;">THANK YOU!</h4>
-          <p style="color: var(--color-text-secondary); font-size: 14.5px;">
-            Your admission enquiry has been submitted. Our campus admissions office will contact you shortly.
+        <div id="enquirySuccess" style="display: none; padding: 24px 12px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">✓</div>
+          <h4 style="color: #065F46; font-size: 18px; margin-bottom: 6px;">ENQUIRY TRANSMITTED</h4>
+          <p style="color: #047857; font-size: 14px; line-height: 1.6; margin-bottom: 16px;" id="modalSuccessText">
+            Your enquiry has been delivered directly to the institution's official administration email address (<span>sanjayjourno2009@gmail.com</span>).
           </p>
+          <div style="background-color: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: var(--radius-xs); padding: 10px 16px; margin-bottom: 18px; display: inline-block;">
+            <span style="font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; font-weight: 700;">Reference ID:</span>
+            <strong id="modalRefIdDisplay" style="font-family: monospace; font-size: 14px; color: var(--color-primary-navy); margin-left: 6px;">-</strong>
+          </div>
+          <div>
+            <button type="button" id="btnModalSubmitAnother" class="btn btn-outline-navy" style="font-size: 12.5px; padding: 8px 16px;">
+              Submit Another Enquiry
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1203,5 +1295,6 @@
 
   <!-- Scripts -->
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/home-sync.js"></script>
 </body>
 </html>

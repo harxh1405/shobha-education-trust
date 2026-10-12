@@ -21,6 +21,33 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .news-editorial-list {
+      min-height: 320px;
+      transition: opacity var(--transition-fast, 0.2s ease);
+    }
+    .news-editorial-list.feed-loading {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .filter-pill-btn {
+      transition: all var(--transition-fast, 0.2s ease);
+      background: #FFFFFF;
+      color: var(--color-primary-navy);
+      border: 1px solid var(--color-primary-navy);
+      cursor: pointer;
+    }
+    .filter-pill-btn:hover {
+      background: var(--color-blue-tint, #EBF3FF);
+      color: var(--color-primary-navy);
+    }
+    .filter-pill-btn.active {
+      background: var(--color-primary-navy) !important;
+      color: #FFFFFF !important;
+      border-color: var(--color-primary-navy) !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -74,6 +101,7 @@
           <a href="campus.html" class="nav-strip-link">Campus</a>
           <a href="news.html" class="nav-strip-link active">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link">Contact</a>
         </div>
       </div>
@@ -100,6 +128,7 @@
         <a href="campus.html" class="nav-link">Campus</a>
         <a href="news.html" class="nav-link active">News & Events</a>
         <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
@@ -147,70 +176,28 @@
     <section class="section section-offwhite" aria-label="Notices & Events List">
       <div class="container">
         
-        <div class="dual-heading">
-          <span class="part-blue">LATEST</span>
-          <span class="divider-yellow"></span>
-          <span class="part-navy">CIRCULARS & NOTICES</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div class="dual-heading">
+            <span class="part-blue">LATEST</span>
+            <span class="divider-yellow"></span>
+            <span class="part-navy">CIRCULARS, NOTICES & EVENTS</span>
+          </div>
+
+          <!-- Category Filter Bar (Upcoming Events & Notices/Announcements) -->
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div class="filter-tabs-wrapper" id="newsFilterBar" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-outline-navy active filter-pill-btn" data-category="all" style="padding: 7px 16px; font-size: 13px;">All Dispatches</button>
+              <button type="button" class="btn btn-outline-navy filter-pill-btn" data-category="events" style="padding: 7px 16px; font-size: 13px;">🗓️ Upcoming Events</button>
+              <button type="button" class="btn btn-outline-navy filter-pill-btn" data-category="notices" style="padding: 7px 16px; font-size: 13px;">📢 Notices & Announcements</button>
+            </div>
+          </div>
         </div>
 
-        <div class="news-editorial-list" style="margin-top: 30px;">
-          
-          <article class="news-editorial-item animate-reveal">
-            <div class="news-date-badge">
-              <span class="news-date-day">15</span>
-              <span class="news-date-my">OCT 2026</span>
-            </div>
-            <div class="news-content-col">
-              <h4>Academic Session 2026–27 Admission Verification Open</h4>
-              <p>Admissions desk is active for verification of original credentials for Sarveshwaree Mahavidyalaya undergraduate programmes and ITI trades. Students must report to the campus office between 10:00 AM and 3:00 PM.</p>
-              <div style="margin-top: 8px; font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">
-                Category: Admissions & Registration • Office of Registrar
-              </div>
-            </div>
-          </article>
-
-          <article class="news-editorial-item animate-reveal">
-            <div class="news-date-badge">
-              <span class="news-date-day">02</span>
-              <span class="news-date-my">NOV 2026</span>
-            </div>
-            <div class="news-content-col">
-              <h4>Annual Inter-Institutional Sports Meet & Yoga Workshop Schedule</h4>
-              <p>Annual athletic competitions, inter-batch volleyball tournaments, and morning yoga wellness workshops will be conducted on the 15-acre campus grounds. Students are advised to register with the physical training coordinator.</p>
-              <div style="margin-top: 8px; font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">
-                Category: Campus Life & Wellness • Sports Committee
-              </div>
-            </div>
-          </article>
-
-          <article class="news-editorial-item animate-reveal">
-            <div class="news-date-badge">
-              <span class="news-date-day">20</span>
-              <span class="news-date-my">NOV 2026</span>
-            </div>
-            <div class="news-content-col">
-              <h4>Free Community Health & Eye-Care Consultation Camp Announced</h4>
-              <p>Comprehensive vision diagnostic checkups, free eye examinations, and doctor consultations will be conducted at the Sarveshwaree campus in collaboration with medical specialists for community members from Rampur and surrounding villages.</p>
-              <div style="margin-top: 8px; font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">
-                Category: Community Outreach • Shobha Education Trust Welfare Cell
-              </div>
-            </div>
-          </article>
-
-          <article class="news-editorial-item animate-reveal">
-            <div class="news-date-badge">
-              <span class="news-date-day">05</span>
-              <span class="news-date-my">DEC 2026</span>
-            </div>
-            <div class="news-content-col">
-              <h4>Vocational Training Workshop Session & Internal Assessment for ITI Batches</h4>
-              <p>Mandatory practical assessment and workshop safety review sessions scheduled for Electrician and Fitter first and second year trainees at Sarveshwaree Private ITI workshop facilities.</p>
-              <div style="margin-top: 8px; font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">
-                Category: Technical Training • ITI Department
-              </div>
-            </div>
-          </article>
-
+        <div class="news-editorial-list" id="newsEditorialList" style="margin-top: 20px;">
+          <!-- Fetched dynamically from /api/public/news-and-events -->
+          <div style="text-align: center; padding: 48px; color: var(--color-text-muted);">
+            Connecting to institutional circulars database...
+          </div>
         </div>
 
       </div>
@@ -338,5 +325,6 @@
 
   <!-- Scripts -->
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/news.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <!-- Favicon / Institutional Crest -->
   <link rel="icon" type="image/png" href="assets/logo.png">
 
-  <!-- Google Fonts: Inter, Oswald, and Rozha One for Slogan -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
@@ -21,35 +21,163 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Tab bar */
+    .student-tabs-wrapper {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 28px;
+    }
+    .student-tab-btn {
+      padding: 10px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+    .student-tab-btn:hover {
+      background: #F1F5F9;
+      color: var(--color-primary-navy);
+      border-color: var(--color-primary-navy);
+    }
+    .student-tab-btn.active {
+      background: var(--color-primary-navy);
+      color: #FFFFFF;
+      border-color: var(--color-primary-navy);
+    }
+
+    /* Filter Strip */
+    .resource-filter-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      background: #F8FAFC;
+      padding: 16px 20px;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--color-border);
+    }
+    .search-box-input {
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      font-size: 13.5px;
+      width: 280px;
+      max-width: 100%;
+    }
+    .filter-select {
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      font-size: 13.5px;
+      background: #fff;
+    }
+
+    /* Resource Cards */
+    .resources-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 380px;
+      transition: opacity var(--transition-fast);
+    }
+    .resources-feed.feed-loading {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .resource-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-primary-navy);
+      border-radius: var(--radius-xs);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-subtle);
+      transition: box-shadow var(--transition-fast);
+    }
+    .resource-card:hover {
+      box-shadow: var(--shadow-card);
+    }
+    .resource-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .resource-tag {
+      background: var(--color-blue-tint);
+      color: var(--color-supporting-blue);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-xs);
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .resource-card-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--color-primary-navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .resource-card-desc {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .resource-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .empty-resources-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--color-text-muted);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       FIXED INSTITUTIONAL HEADER
-       Top Strip: Brand (Logo + Name), Centre Rozha One Slogan, Right Enquiry Button
-       Bottom Strip: Deep Navy Blue Strip with Responsive Spaced Navlinks
-       ========================================================================== -->
+  <!-- FIXED INSTITUTIONAL HEADER -->
   <header class="site-header-fixed" id="siteHeader">
-    
-    <!-- 1. Top Strip: White Brand Strip -->
     <div class="header-brand-strip">
       <div class="container header-brand-container">
-        
-        <!-- Left: Logo & Institutional Name -->
         <a href="index.html" class="brand-identity" aria-label="Sarveshwaree Mahavidyalaya & Affiliated Institutions">
           <img src="assets/logo.png" alt="Sarveshwaree Mahavidyalaya Emblem" class="brand-logo-img">
           <div class="brand-text-block">
             <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
-            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS • SHOBHA EDUCATION TRUST</span>
           </div>
         </a>
 
-        <!-- Centre: Institutional Slogan in Rozha One Google Font -->
         <div class="header-slogan-wrapper">
           <span class="header-slogan-text">अंधेरे से उजाले की ओर</span>
         </div>
 
-        <!-- Right End: Admission Enquiry Button + Mobile Toggle -->
         <div class="header-action-group">
           <button type="button" class="btn btn-header-enquire" data-open-enquiry>Admission Enquiry</button>
           <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
@@ -58,11 +186,9 @@
             <span class="hamburger-line"></span>
           </button>
         </div>
-
       </div>
     </div>
 
-    <!-- 2. Bottom Strip: Deep Navy Blue Navigation Bar -->
     <nav class="header-nav-strip" id="primaryNav" aria-label="Main Navigation">
       <div class="container header-nav-container">
         <div class="nav-links-wrap">
@@ -74,6 +200,7 @@
           <a href="campus.html" class="nav-strip-link">Campus</a>
           <a href="news.html" class="nav-strip-link">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link active">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link">Contact</a>
         </div>
       </div>
@@ -100,6 +227,7 @@
         <a href="campus.html" class="nav-link">Campus</a>
         <a href="news.html" class="nav-link">News & Events</a>
         <a href="student-corner.html" class="nav-link active">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
@@ -111,17 +239,11 @@
         </div>
       </div>
     </div>
-
   </header>
-
-  <!-- Floating Right Admission Tab -->
-  <button type="button" class="floating-enquiry-tab" data-open-enquiry aria-label="Quick Admission Enquiry">
-    Admission Enquiry
-  </button>
 
   <main id="mainContent">
 
-    <!-- Direct Header (No hero banner!) -->
+    <!-- Direct Header -->
     <section class="inner-page-header" aria-label="Student Corner Header">
       <div class="container">
         <nav class="breadcrumb-trail" aria-label="Breadcrumb">
@@ -138,114 +260,71 @@
         </h1>
 
         <p class="inner-header-lead">
-          All student resources, circulars, calendars, and academic forms are 100% public and accessible without any login, password, or student registration.
+          All student resources, circulars, calendars, examination notifications, and administrative forms are 100% public and accessible without any login, password, or student registration.
         </p>
       </div>
     </section>
 
     <!-- Public Access Notice Strip -->
-    <section class="section section-offwhite" style="padding-top: 30px; padding-bottom: 30px;" aria-label="Open Access Policy">
+    <section class="section section-offwhite" style="padding-top: 24px; padding-bottom: 24px;" aria-label="Open Access Policy">
       <div class="container">
-        <div style="background-color: var(--color-primary-navy); color: #fff; padding: 22px 28px; border-left: 6px solid var(--color-accent-yellow); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+        <div style="background-color: var(--color-primary-navy); color: #fff; padding: 20px 24px; border-left: 6px solid var(--color-accent-yellow); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
           <div>
             <strong style="color: var(--color-accent-yellow); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px;">
               OPEN ACCESS INSTITUTIONAL PRINCIPLE
             </strong>
-            <span style="font-size: 15px; color: #E2EAF8;">
+            <span style="font-size: 14.5px; color: #E2EAF8;">
               No student login, password, or registration is required. All academic resources below are free and open to students, parents, and researchers.
             </span>
           </div>
-          <span class="status-pill operational" style="background: var(--color-accent-yellow); color: var(--color-primary-navy); font-weight: 800;">
-            100% PUBLIC ACCESS
-          </span>
+          <a href="fee-payment.html" class="status-pill operational" style="background: var(--color-accent-yellow); color: var(--color-primary-navy); font-weight: 800; text-decoration: none;">
+            💳 PAY FEES ONLINE
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Resource Grid Section -->
-    <section class="section section-white" aria-label="Public Resources">
+    <!-- Live Interactive Academic Repository Section -->
+    <section class="section section-white" style="padding-top: 40px; padding-bottom: 80px;" aria-label="Live Academic Resources">
       <div class="container">
         
-        <div class="dual-heading">
-          <span class="part-blue">SERVICES</span>
-          <span class="divider-yellow"></span>
-          <span class="part-navy">ACADEMIC RESOURCES</span>
+        <!-- Category Tab Navigation (All, Timetable, Syllabus, Result, Forms, Notices) -->
+        <div class="student-tabs-wrapper" id="studentTabStrip">
+          <button type="button" class="student-tab-btn active" data-tab="all">🌟 All Documents & Uploads</button>
+          <button type="button" class="student-tab-btn" data-tab="timetables">⏰ Class Timetables</button>
+          <button type="button" class="student-tab-btn" data-tab="syllabus">📚 Course Syllabus</button>
+          <button type="button" class="student-tab-btn" data-tab="results">🎓 Examination Results</button>
+          <button type="button" class="student-tab-btn" data-tab="downloads">📥 Academic Forms</button>
+          <button type="button" class="student-tab-btn" data-tab="notices">📢 Circulars & Notices</button>
         </div>
 
-        <div class="beyond-features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 36px;">
-          
-          <!-- Resource 1: Academic Calendar -->
-          <div class="beyond-feature-chip">
-            <h5>Academic Calendar 2026–27</h5>
-            <p>Annual session timeline, semester start dates, teaching periods, university holidays, internal assessment weeks, and final examination schedules.</p>
-            <div style="margin-top: 14px;">
-              <a href="news.html" class="btn-link" style="font-size: 13.5px;">VIEW SESSION CALENDAR →</a>
+        <!-- Filter Strip & Live Auto-Sync Status -->
+        <div class="resource-filter-strip">
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="resourceSearchInput" class="search-box-input" placeholder="Search notices, keywords, titles...">
+            <select id="institutionFilterSelect" class="filter-select">
+              <option value="all">All Institutions</option>
+              <option value="Sarveshwaree Mahavidyalaya">Sarveshwaree Mahavidyalaya</option>
+              <option value="Sarveshwaree Private ITI">Sarveshwaree Private ITI</option>
+            </select>
+            <select id="sessionFilterSelect" class="filter-select">
+              <option value="all">All Academic Sessions</option>
+              <option value="2026-2027">Session 2026–2027</option>
+              <option value="2025-2026">Session 2025–2026</option>
+            </select>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+            <div id="resourceCountText" style="font-size: 13px; color: var(--color-text-muted); font-weight: 600;">
+              Loading resources...
             </div>
           </div>
+        </div>
 
-          <!-- Resource 2: Class Timetable -->
-          <div class="beyond-feature-chip">
-            <h5>Class & Lecture Timetables</h5>
-            <p>Departmental lecture rosters for B.A. (Hindi, English, Sociology, Geography, Economics, Ancient History, Home Science) and D.El.Ed / BTC teacher training batches.</p>
-            <div style="margin-top: 14px;">
-              <span style="font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">Updated on Campus Notice Board</span>
-            </div>
+        <!-- Dynamic Feed Container -->
+        <div id="resourcesFeedContainer" class="resources-feed">
+          <div class="empty-resources-box">
+            Loading published resources from backend database...
           </div>
-
-          <!-- Resource 3: Technical ITI Workshop Roster -->
-          <div class="beyond-feature-chip">
-            <h5>ITI Workshop Schedules</h5>
-            <p>Practical machinery training rosters, workshop safety guidelines, and tool room hours for Electrician and Fitter trade apprentices.</p>
-            <div style="margin-top: 14px;">
-              <a href="institutions.html#iti" class="btn-link" style="font-size: 13.5px;">VIEW ITI TRADES →</a>
-            </div>
-          </div>
-
-          <!-- Resource 4: Course Syllabus -->
-          <div class="beyond-feature-chip">
-            <h5>Curriculum & Syllabus</h5>
-            <p>Prescribed undergraduate subject modules and evaluation guidelines authorized by Veer Bahadur Singh Purvanchal University, Jaunpur, and NCVT curricula.</p>
-            <div style="margin-top: 14px;">
-              <a href="programmes.html" class="btn-link" style="font-size: 13.5px;">VIEW PROGRAMMES & SUBJECTS →</a>
-            </div>
-          </div>
-
-          <!-- Resource 5: Examination Information -->
-          <div class="beyond-feature-chip">
-            <h5>University Examinations</h5>
-            <p>Official examination forms submission guidelines, university center notifications, admit card release announcements, and practical evaluation dates.</p>
-            <div style="margin-top: 14px;">
-              <a href="news.html" class="btn-link" style="font-size: 13.5px;">VIEW EXAM NOTICES →</a>
-            </div>
-          </div>
-
-          <!-- Resource 6: Results Information -->
-          <div class="beyond-feature-chip">
-            <h5>Results Information</h5>
-            <p>Official guidance on accessing undergraduate examination results directly from the official VBS Purvanchal University portal and SCVT/NCVT portals.</p>
-            <div style="margin-top: 14px;">
-              <span style="font-size: 13px; color: var(--color-text-secondary);">Direct university portal verification</span>
-            </div>
-          </div>
-
-          <!-- Resource 7: Public Downloads & Forms -->
-          <div class="beyond-feature-chip">
-            <h5>Institutional Forms & Downloads</h5>
-            <p>Printable blank proformas for leave applications, Transfer Certificate (TC) requests, Saheli Book Bank issue requisitions, and library cards.</p>
-            <div style="margin-top: 14px;">
-              <span style="font-size: 13px; color: var(--color-supporting-blue); font-weight: 600;">Available at Administrative Desk</span>
-            </div>
-          </div>
-
-          <!-- Resource 8: Mandatory Disclosure -->
-          <div class="beyond-feature-chip">
-            <h5>Mandatory Disclosure & Approvals</h5>
-            <p>Official university affiliation orders (College Code 0694), NCTE recognition orders for D.El.Ed, and NCVT/SCVT accreditation orders for public review.</p>
-            <div style="margin-top: 14px;">
-              <a href="institutions.html" class="btn-link" style="font-size: 13.5px;">REVIEW ACCREDITATION CODES →</a>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -278,7 +357,7 @@
           <div style="text-align: center;">
             <a href="contact.html" class="btn btn-primary" style="margin-bottom: 12px; display: inline-block;">CONTACT STUDENT CELL →</a>
             <br>
-            <a href="admissions.html" class="btn btn-outline-navy" style="display: inline-block;">ADMISSIONS GUIDELINES →</a>
+            <a href="fee-payment.html" class="btn btn-outline-navy" style="display: inline-block;">ONLINE FEE PAYMENT →</a>
           </div>
         </div>
       </div>
@@ -286,11 +365,12 @@
 
   </main>
 
-
   <!-- Institutional Footer -->
   <footer class="site-footer" id="contact" aria-label="Institutional Footer">
     <div class="container">
       <div class="footer-top-grid">
+        
+        <!-- Column 1: Trust Identity & Motto -->
         <div class="footer-col">
           <div class="footer-trust-motto">अँधेरे से उजाले की ओर</div>
           <h4 class="footer-col-title">SHOBHA EDUCATION TRUST</h4>
@@ -302,6 +382,7 @@
           </div>
         </div>
 
+        <!-- Column 2: Navigation -->
         <div class="footer-col">
           <h4 class="footer-col-title">NAVIGATION</h4>
           <ul class="footer-links-list">
@@ -317,6 +398,7 @@
           </ul>
         </div>
 
+        <!-- Column 3: Student Resources (100% Public - Strictly NO Login) -->
         <div class="footer-col">
           <h4 class="footer-col-title">STUDENT RESOURCES</h4>
           <ul class="footer-links-list">
@@ -326,10 +408,12 @@
             <li><a href="student-corner.html">Course Syllabus</a></li>
             <li><a href="student-corner.html">University Examinations</a></li>
             <li><a href="student-corner.html">Results Information</a></li>
+            <li><a href="fee-payment.html">Online Fee Payment</a></li>
             <li><a href="student-corner.html">Forms & Downloads</a></li>
           </ul>
         </div>
 
+        <!-- Column 4: Institutions -->
         <div class="footer-col">
           <h4 class="footer-col-title">INSTITUTIONS</h4>
           <ul class="footer-links-list">
@@ -342,29 +426,36 @@
           </ul>
         </div>
 
+        <!-- Column 5: Campus Address & Contact -->
         <div class="footer-col">
           <h4 class="footer-col-title">CAMPUS CONTACT</h4>
+          
           <div class="footer-contact-item">
             <span class="footer-contact-icon">📍</span>
             <span>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</span>
           </div>
+
           <div class="footer-contact-item">
             <span class="footer-contact-icon">🏛️</span>
             <span>Affiliated with VBS Purvanchal University, Jaunpur</span>
           </div>
+
           <div class="footer-contact-item">
             <span class="footer-contact-icon">✉️</span>
             <span><a href="mailto:sanjayjourno2009@gmail.com" style="color: #D1DBEB; text-decoration: none;">sanjayjourno2009@gmail.com</a></span>
           </div>
+
           <div class="footer-contact-item">
             <span class="footer-contact-icon">📞</span>
             <span><a href="tel:8318784268" style="color: #D1DBEB; text-decoration: none;">8318784268</a>, <a href="tel:8765926859" style="color: #D1DBEB; text-decoration: none;">8765926859</a></span>
           </div>
+
           <div class="footer-contact-item">
             <span class="footer-contact-icon">⏰</span>
             <span>Office: 10:00 AM – 3:00 PM</span>
           </div>
         </div>
+
       </div>
 
       <!-- Sub-Footer / Legal Bar -->
@@ -376,6 +467,7 @@
           <a href="admin/login.html" class="admin-portal-discreet" title="Authorized Administrative Access Only">Admin Portal</a>
         </div>
       </div>
+
     </div>
   </footer>
 
@@ -388,5 +480,6 @@
 
   <!-- Scripts -->
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/student-corner.js"></script>
 </body>
 </html>

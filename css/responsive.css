@@ -365,6 +365,252 @@
   }
 }
 
+/* ==========================================================================
+   DEDICATED iPAD PRO 13 (M4) TABLET BREAKPOINT (<= 1032px Viewport Width)
+   Engineered for iPad Pro 13-inch (M4) in portrait (1032px CSS width)
+   Covers both Main Institutional Website and Staff Admin Portal
+   ========================================================================== */
+@media (max-width: 1032px) {
+  :root {
+    --fixed-header-height: 116px;
+  }
+
+  /* Safe container for 1032px tablet */
+  .container {
+    width: calc(100% - 48px);
+    max-width: 984px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- MAIN WEBSITE TABLET ADAPTATIONS (1032px) --- */
+
+  /* Header Brand Strip */
+  .header-brand-strip {
+    height: 72px;
+  }
+
+  .header-brand-container {
+    width: calc(100% - 48px);
+    max-width: 984px;
+  }
+
+  .brand-logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-inst-title {
+    font-size: 15px;
+  }
+
+  .brand-inst-tagline {
+    font-size: 9.5px;
+  }
+
+  .header-slogan-text {
+    font-size: 18px;
+  }
+
+  .btn-header-enquire {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Main Navigation Strip on Tablet */
+  .header-nav-strip {
+    height: 44px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .header-nav-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-nav-container {
+    width: 100%;
+    padding: 0 20px;
+    justify-content: flex-start;
+  }
+
+  .nav-links-wrap {
+    gap: 12px;
+    width: auto;
+  }
+
+  .nav-strip-link {
+    font-size: 12px;
+    padding: 6px 12px;
+    flex-shrink: 0;
+  }
+
+  /* Card Grids fold gracefully to 2 Columns on iPad Pro 13 */
+  .institutions-showcase-grid,
+  .admission-steps-grid,
+  .programmes-grid,
+  .beyond-grid,
+  .campus-gallery-grid,
+  .ecosystem-nodes-grid,
+  .leadership-grid,
+  .news-grid,
+  .news-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1.5fr 1fr 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Geolocation & Interactive Map (iPad Pro 13) */
+  .find-us-layout {
+    grid-template-columns: 360px 1fr !important;
+    gap: 24px !important;
+  }
+
+  .map-container-frame,
+  .leaflet-campus-map {
+    min-height: 400px !important;
+    height: 400px !important;
+  }
+
+  .find-us-info-card {
+    padding: 26px 22px !important;
+  }
+
+  /* Admissions QR card on iPad Pro 13 */
+  .admissions-qr-grid {
+    grid-template-columns: 200px 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Online Fee Payment Wizard (iPad Pro 13) */
+  .fee-options-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .qr-container-card {
+    grid-template-columns: 290px 1fr !important;
+    gap: 24px !important;
+    padding: 24px !important;
+  }
+
+  .qr-image-display {
+    width: 210px !important;
+    height: 210px !important;
+  }
+
+  /* --- ADMIN PORTAL TABLET ADAPTATIONS (1032px) --- */
+
+  /* Admin Header */
+  .admin-substrip {
+    padding: 8px 0 !important;
+  }
+
+  .admin-substrip-inner {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* Hide center Hindi slogan on admin header to prevent overlap with action buttons */
+  .site-header-fixed .header-slogan-wrapper {
+    display: none !important;
+  }
+
+  /* Admin horizontal menu tabs */
+  .admin-menu-tabs {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .admin-menu-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .admin-tab-link {
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Filter pill row */
+  .filter-pills-row {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .filter-pills-row::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .subfilter-pill {
+    flex-shrink: 0 !important;
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* Admin Form Card */
+  .publish-form-card {
+    padding: 22px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Admin Table Card & Touch Scroll */
+  .admin-table-card {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .admin-table {
+    min-width: 760px !important;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .btn-action {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  /* Admin KPI Stat Chips */
+  .stat-chip-card {
+    padding: 16px 18px !important;
+  }
+
+  .stat-chip-num {
+    font-size: 24px !important;
+  }
+}
+
 /* Tablet Screens (<= 900px) */
 @media (max-width: 900px) {
   .header-slogan-text {
@@ -379,6 +625,18 @@
   .ecosystem-nodes-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
+  }
+
+  /* Interactive Map & Find Us Stack on Tablet/Mobile */
+  .find-us-layout {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .map-container-frame,
+  .leaflet-campus-map {
+    min-height: 400px !important;
+    height: 400px !important;
   }
 }
 
@@ -534,6 +792,72 @@
     width: 100% !important;
     padding: 20px 18px !important;
     box-sizing: border-box !important;
+  }
+
+  /* Admin Settings & Approved Payments (<= 768px Tablet & Mobile) */
+  .settings-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 20px 16px !important;
+  }
+
+  .settings-qr-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    padding-right: 0 !important;
+    padding-bottom: 24px !important;
+    text-align: center !important;
+  }
+
+  .settings-qr-col img {
+    max-width: 220px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .settings-actions-row {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .settings-actions-row .btn,
+  .settings-actions-row button[type="submit"] {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .admin-approved-actions-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Admin Header Buttons (<= 768px) */
+  .admin-header-action-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .admin-btn-site .btn-text-full,
+  .admin-login-back-btn .btn-text-full {
+    display: none !important;
+  }
+
+  .admin-btn-site .btn-text-mobile,
+  .admin-login-back-btn .btn-text-mobile {
+    display: inline !important;
+  }
+
+  .admin-header-action-group .btn {
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+    min-height: 34px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -989,6 +1313,39 @@
   .lightbox-close-btn {
     top: -40px;
     font-size: 30px;
+  }
+
+  /* Interactive Map & Find Us Section (<= 768px) */
+  .find-us-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .find-us-info-card {
+    padding: 28px 22px !important;
+  }
+
+  .map-container-frame,
+  .leaflet-campus-map {
+    min-height: 380px !important;
+    height: 380px !important;
+  }
+
+  .find-us-cta-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .btn-directions,
+  .btn-geo {
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 46px !important;
+    justify-content: center !important;
+  }
+
+  .homepage-location-preview-card {
+    padding: 28px 22px !important;
   }
 }
 
@@ -1898,6 +2255,560 @@
     max-width: 400px !important;
     padding: 22px 18px max(22px, env(safe-area-inset-bottom)) !important;
     margin: 12px auto !important;
+  }
+
+  /* Interactive Map & Find Us Section (iPhone 16 Pro Max 440px) */
+  .find-us-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .find-us-info-card {
+    padding: 22px 16px !important;
+  }
+
+  .find-us-heading {
+    font-size: 26px !important;
+  }
+
+  .find-us-map-card {
+    padding: 6px !important;
+  }
+
+  .map-container-frame,
+  .leaflet-campus-map {
+    min-height: 330px !important;
+    height: 330px !important;
+  }
+
+  .phone-numbers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .phone-link-chip {
+    padding: 10px 12px !important;
+    font-size: 13.5px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .btn-directions,
+  .btn-geo {
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 46px !important;
+    font-size: 13.5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .homepage-location-preview-card {
+    padding: 22px 16px !important;
+  }
+
+  .location-preview-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .location-preview-actions .btn {
+    width: 100% !important;
+    height: 44px !important;
+    justify-content: center !important;
+  }
+
+  .map-institutional-badge {
+    top: 8px !important;
+    right: 8px !important;
+    font-size: 11px !important;
+    padding: 5px 9px !important;
+  }
+
+  /* ==========================================================================
+     ONLINE FEE PAYMENT WIZARD & STATUS TRACKER (iPhone 16 Pro Max 440px)
+     ========================================================================== */
+  .fee-portal-tabs-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    border-bottom: none !important;
+    margin-bottom: 20px !important;
+  }
+
+  .fee-portal-tab {
+    width: 100% !important;
+    border-radius: var(--radius-xs) !important;
+    border: 1px solid var(--color-border) !important;
+    padding: 11px 14px !important;
+    font-size: 13px !important;
+    justify-content: center !important;
+  }
+
+  .fee-portal-tab.active {
+    background: var(--color-primary-navy) !important;
+    color: #FFFFFF !important;
+    border-color: var(--color-primary-navy) !important;
+    border-top: 1px solid var(--color-primary-navy) !important;
+    border-bottom: 1px solid var(--color-primary-navy) !important;
+  }
+
+  .payment-stepper {
+    margin-bottom: 22px !important;
+  }
+
+  .payment-stepper::before {
+    top: 17px !important;
+    left: 10% !important;
+    right: 10% !important;
+  }
+
+  .step-bubble {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 13px !important;
+  }
+
+  .step-label {
+    font-size: 10px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  .fee-options-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .fee-card {
+    padding: 18px 16px !important;
+  }
+
+  .qr-container-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 18px 14px !important;
+  }
+
+  .qr-visual-box {
+    padding: 16px 12px !important;
+  }
+
+  .qr-image-display {
+    width: 190px !important;
+    height: 190px !important;
+    max-width: 100% !important;
+  }
+
+  .upi-pill-badge {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: space-between !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Fee payment form inputs */
+  #studentDetailsForm .form-row,
+  #submitUtrForm .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  #studentDetailsForm .btn,
+  #submitUtrForm .btn {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Receipt display card */
+  .receipt-header-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px 16px !important;
+    gap: 12px !important;
+  }
+
+  .receipt-body {
+    padding: 20px 16px !important;
+  }
+
+  .receipt-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .receipt-amount-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 16px !important;
+  }
+
+  .receipt-amount-banner .amt-val {
+    font-size: 26px !important;
+  }
+
+  .receipt-footer-security {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  /* ==========================================================================
+     ADMIN PORTAL & CMS DESK (iPhone 16 Pro Max 440px)
+     ========================================================================== */
+  .admin-substrip {
+    padding: 8px 0 !important;
+  }
+
+  .admin-substrip-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    font-size: 11.5px !important;
+  }
+
+  .site-header-fixed .brand-inst-title {
+    font-size: 12.5px !important;
+    max-width: 180px !important;
+  }
+
+  .header-action-group .btn-outline-navy,
+  .header-action-group #adminLogoutBtn {
+    padding: 5px 9px !important;
+    font-size: 11px !important;
+    min-height: 32px !important;
+  }
+
+  .admin-menu-tabs {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    padding: 8px 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    margin-bottom: 16px !important;
+  }
+
+  .admin-menu-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .admin-tab-link {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    flex-shrink: 0 !important;
+    min-height: 42px !important;
+    white-space: nowrap !important;
+  }
+
+  .filter-pills-row {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    padding-bottom: 6px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .filter-pills-row::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .subfilter-pill {
+    padding: 6px 10px !important;
+    font-size: 11.5px !important;
+    flex-shrink: 0 !important;
+    min-height: 38px !important;
+  }
+
+  .publish-form-card {
+    padding: 16px 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .publish-form-title {
+    font-size: 17px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .publish-form-card .btn,
+  .publish-form-card button[type="submit"] {
+    width: 100% !important;
+    height: 44px !important;
+    justify-content: center !important;
+  }
+
+  .file-upload-dropzone {
+    padding: 16px 12px !important;
+  }
+
+  .file-attached-pill {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 8px 10px !important;
+  }
+
+  .admin-table-card {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: var(--radius-xs) !important;
+  }
+
+  .admin-table {
+    min-width: 680px !important;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 10px 12px !important;
+    font-size: 12.5px !important;
+  }
+
+  .btn-action {
+    padding: 6px 10px !important;
+    font-size: 11.5px !important;
+    min-height: 38px !important;
+  }
+
+  .admin-modal-card {
+    width: calc(100% - 20px) !important;
+    max-width: 420px !important;
+    padding: 18px 14px !important;
+    margin: auto !important;
+  }
+
+  /* Staff Login Page on iPhone 16 Pro Max */
+  .admin-login-wrapper {
+    padding: 20px 12px !important;
+  }
+
+  .admin-card {
+    padding: 24px 18px !important;
+    max-width: 100% !important;
+  }
+
+  .admin-header h1 {
+    font-size: 19px !important;
+  }
+
+  .main-header .navbar-container {
+    padding: 0 12px !important;
+  }
+
+  .brand-trust-name {
+    font-size: 14px !important;
+  }
+
+  /* Admissions Page QR Card (iPhone 16 Pro Max 440px) */
+  .admissions-qr-section-card {
+    padding: 20px 16px !important;
+    margin-top: 24px !important;
+  }
+
+  .admissions-qr-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .admissions-qr-visual {
+    margin: 0 auto !important;
+    max-width: 200px !important;
+  }
+
+  .admissions-qr-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .admissions-qr-title {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+
+  .admissions-qr-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .admissions-qr-actions .btn,
+  .admissions-qr-btn {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Attached Document Download Pills (iPhone 16 Pro Max 440px) */
+  .doc-download-pill {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 10px 12px !important;
+    font-size: 12.5px !important;
+  }
+
+  .doc-download-pill span:first-child {
+    width: 100% !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+
+  .doc-download-pill .doc-size-badge {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: block !important;
+    font-size: 11px !important;
+  }
+
+  .resource-card-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .resource-card-footer > div {
+    width: 100% !important;
+  }
+
+  /* Fee Payment Wizard Action Buttons (iPhone 16 Pro Max 440px) */
+  .fee-wizard-actions {
+    flex-direction: column-reverse !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .fee-wizard-actions .btn {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Admin Portal Header & Back to Website (iPhone 16 Pro Max 440px) */
+  .admin-header-action-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .admin-btn-site .btn-text-full {
+    display: none !important;
+  }
+
+  .admin-btn-site .btn-text-mobile {
+    display: inline !important;
+  }
+
+  .admin-login-back-btn .btn-text-full {
+    display: none !important;
+  }
+
+  .admin-login-back-btn .btn-text-mobile {
+    display: inline !important;
+  }
+
+  .admin-header-action-group .btn {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    min-height: 34px !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header-fixed .brand-identity {
+    max-width: calc(100% - 155px) !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Admin Form Action Buttons (iPhone 16 Pro Max 440px) */
+  .admin-form-actions-row {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 16px !important;
+  }
+  .admin-form-actions-row .btn,
+  .admin-form-actions-row button {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Admin Settings & Pricing (iPhone 16 Pro Max 440px) */
+  .settings-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 18px 14px !important;
+  }
+
+  .settings-qr-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    padding-right: 0 !important;
+    padding-bottom: 24px !important;
+    text-align: center !important;
+  }
+
+  .settings-qr-col img {
+    max-width: 220px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .settings-actions-row {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .settings-actions-row .btn,
+  .settings-actions-row button[type="submit"] {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 13.5px !important;
+  }
+
+  /* Admin Approved Payments Header Actions (iPhone 16 Pro Max 440px) */
+  .admin-approved-actions-row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .admin-approved-actions-row .btn,
+  .admin-approved-actions-row a.btn {
+    width: 100% !important;
+    height: 44px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
   }
 }
 

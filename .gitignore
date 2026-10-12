@@ -18,3 +18,7 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+
+# Persistent database and upload data
+data/
+

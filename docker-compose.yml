@@ -1,0 +1,88 @@
+services:
+  # ============================================================================
+  # 1. MongoDB Database Service
+  # ============================================================================
+  mongo:
+    image: mongo:7.0
+    container_name: set-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: shobha_education_trust
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - set-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ============================================================================
+  # 2. Node.js Express API Backend Service
+  # ============================================================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: set-backend
+    restart: unless-stopped
+    ports:
+      - "${BACKEND_PORT:-5001}:5001"
+    environment:
+      PORT: 5001
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongo:27017/shobha_education_trust
+      JWT_SECRET: ${JWT_SECRET:-super_secret_jwt_key_shobha_education_trust_2026_prod}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost}
+      UPLOAD_DIR: data/uploads
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-Admin@SET2026!}
+      ADMIN_NAME: ${ADMIN_NAME:-Trust Administration}
+      ENQUIRY_RECIPIENT_EMAIL: ${ENQUIRY_RECIPIENT_EMAIL:-harsh.singh.2003dydt@gmail.com}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      ENQUIRY_FROM_EMAIL: ${ENQUIRY_FROM_EMAIL:-}
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-}
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET:-}
+    volumes:
+      - uploads_data:/app/data/uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - set-network
+
+  # ============================================================================
+  # 3. Nginx Web Server & Reverse Proxy Frontend Service
+  # ============================================================================
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: set-frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+    depends_on:
+      - backend
+    networks:
+      - set-network
+
+# ==============================================================================
+# Persistent Named Volumes
+# ==============================================================================
+volumes:
+  mongo_data:
+    name: set_mongo_data
+  uploads_data:
+    name: set_uploads_data
+
+# ==============================================================================
+# Isolated Internal Network
+# ==============================================================================
+networks:
+  set-network:
+    name: set_bridge_network
+    driver: bridge

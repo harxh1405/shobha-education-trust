@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staff & Administration Portal | Shobha Education Trust</title>
   <link rel="icon" type="image/png" href="../assets/logo.png">
+  <!-- Google Fonts: Inter, Oswald, and Rozha One -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/typography.css">
   <link rel="stylesheet" href="../css/base.css">
@@ -16,6 +21,8 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      font-family: var(--font-body);
+      padding-top: 76px;
     }
     .admin-login-wrapper {
       flex: 1;
@@ -42,12 +49,14 @@
     }
     .admin-header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .admin-header h1 {
+      font-family: var(--font-heading);
       font-size: 22px;
       color: var(--color-primary-navy);
       margin-bottom: 4px;
+      letter-spacing: 0.5px;
     }
     .admin-header p {
       font-size: 13px;
@@ -64,17 +73,101 @@
       margin-bottom: 20px;
       line-height: 1.45;
     }
+    .alert-error {
+      display: none;
+      background: #FEF2F2;
+      border-left: 3px solid #DC2626;
+      color: #991B1B;
+      padding: 10px 14px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      border-radius: var(--radius-xs);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-primary-navy);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      box-sizing: border-box;
+      transition: border-color var(--transition-fast);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-primary-navy);
+      box-shadow: 0 0 0 2px rgba(18, 41, 107, 0.1);
+    }
+    .btn-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 12px;
+      background: var(--color-primary-navy);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-xs);
+      font-family: var(--font-heading);
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background var(--transition-fast);
+    }
+    .btn-submit:hover {
+      background: var(--color-navy-dark);
+      color: var(--color-accent-yellow);
+    }
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
 
-  <header class="main-header" style="height: 70px;">
-    <div class="container navbar-container" style="height: 70px;">
-      <a href="../index.html" class="brand-identity">
-        <img src="../assets/logo.png" alt="Shobha Education Trust" class="brand-logo-img" style="width: 48px; height: 48px;">
-        <span class="brand-trust-name" style="font-size: 19px;">SHOBHA EDUCATION TRUST</span>
-      </a>
-      <a href="../index.html" class="btn btn-outline-navy" style="padding: 8px 16px; font-size: 12px;">← Back to Main Website</a>
+  <!-- ==========================================================================
+       FIXED INSTITUTIONAL HEADER (Exact Frontend Style)
+       ========================================================================== -->
+  <header class="site-header-fixed" id="siteHeader">
+    <div class="header-brand-strip">
+      <div class="container header-brand-container">
+        
+        <!-- Brand Identity -->
+        <a href="../index.html" class="brand-identity" aria-label="Shobha Education Trust">
+          <img src="../assets/logo.png" alt="Shobha Education Trust Crest" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS • SHOBHA EDUCATION TRUST</span>
+          </div>
+        </a>
+
+        <!-- Rozha One Slogan in Center -->
+        <div class="header-slogan-wrapper">
+          <span class="header-slogan-text">अंधेरे से उजाले की ओर</span>
+        </div>
+
+        <!-- Right: Header Action Group -->
+        <div class="header-action-group admin-header-action-group">
+          <a href="../index.html" class="btn btn-outline-navy admin-btn-site admin-login-back-btn" title="Return to public college website">
+            <span class="btn-text-full">← Back to Website</span>
+            <span class="btn-text-mobile">← Website</span>
+          </a>
+        </div>
+
+      </div>
     </div>
   </header>
 
@@ -87,26 +180,102 @@
       </div>
 
       <div class="admin-note">
-        This private portal is reserved exclusively for institutional staff to manage notices, academic calendars, timetables, syllabus documents, and exam circulars.
+        This private portal is reserved exclusively for institutional staff to manage notices, academic calendars, timetables, syllabus documents, exam circulars, and verified fee reconciliations.
       </div>
 
-      <form onsubmit="event.preventDefault(); alert('Authentication demo: Admin backend will be configured with staff credentials.');">
+      <div style="background: #F8FAFC; border: 1px dashed var(--color-border); border-radius: var(--radius-xs); padding: 10px 14px; margin-bottom: 16px; font-size: 12.5px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <span style="color: var(--color-text-secondary);">Staff Demo: <strong>admin</strong> / <strong>Admin@Shobha2026</strong></span>
+        <button type="button" id="fillDemoBtn" style="background: none; border: 1px solid var(--color-supporting-blue); color: var(--color-supporting-blue); border-radius: 4px; padding: 4px 10px; font-size: 11.5px; font-weight: 600; cursor: pointer;">
+          ⚡ Auto-Fill
+        </button>
+      </div>
+
+      <div id="loginError" class="alert-error" role="alert"></div>
+
+      <form id="adminLoginForm">
         <div class="form-group">
           <label class="form-label" for="staffId">Staff Identification ID</label>
-          <input type="text" id="staffId" class="form-control" required placeholder="e.g. SET-STAFF-01">
+          <input type="text" id="staffId" class="form-control" required placeholder="e.g. admin" autocomplete="username">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="password">Password</label>
-          <input type="password" id="password" class="form-control" required placeholder="••••••••">
+          <input type="password" id="password" class="form-control" required placeholder="••••••••" autocomplete="current-password">
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+        <button type="submit" id="submitBtn" class="btn-submit">
           SECURE SIGN IN
         </button>
       </form>
     </div>
   </main>
+
+  <script>
+    // Auto-fill demo credentials
+    const fillBtn = document.getElementById('fillDemoBtn');
+    if (fillBtn) {
+      fillBtn.addEventListener('click', () => {
+        document.getElementById('staffId').value = 'admin';
+        document.getElementById('password').value = 'Admin@Shobha2026';
+      });
+    }
+
+    // Check if already authenticated
+    const savedToken = localStorage.getItem('set_admin_token');
+    const authHeaders = savedToken ? { 'Authorization': `Bearer ${savedToken}` } : {};
+    fetch('/api/admin/me', { headers: authHeaders, credentials: 'include' })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.admin) {
+          window.location.href = 'index.html';
+        }
+      })
+      .catch(() => {});
+
+    const form = document.getElementById('adminLoginForm');
+    const staffIdInput = document.getElementById('staffId');
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('submitBtn');
+    const errorBox = document.getElementById('loginError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'AUTHENTICATING...';
+
+      try {
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: staffIdInput.value.trim(),
+            password: passwordInput.value
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+          throw new Error(data.error || 'Authentication failed. Please verify credentials.');
+        }
+
+        // Store active session token and info
+        if (data.token) {
+          localStorage.setItem('set_admin_token', data.token);
+        }
+        localStorage.setItem('set_admin_user', JSON.stringify(data.admin));
+
+        submitBtn.textContent = 'ACCESS GRANTED...';
+        window.location.href = 'index.html';
+      } catch (err) {
+        errorBox.textContent = err.message;
+        errorBox.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'SECURE SIGN IN';
+      }
+    });
+  </script>
 
 </body>
 </html>

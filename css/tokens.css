@@ -69,6 +69,6 @@
   /* Z-Index Hierarchy */
   --z-sticky-bar: 900;
   --z-floating-tab: 950;
-  --z-navbar: 1000;
-  --z-modal: 1100;
+  --z-navbar: 1200;
+  --z-modal: 1300;
 }

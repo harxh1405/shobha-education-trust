@@ -1,0 +1,59 @@
+# ==============================================================================
+# Frontend Dockerfile: Multi-Stage Build + Nginx Web Server
+# ==============================================================================
+
+# Stage 1: Build the Vite production bundle
+FROM node:22-alpine AS builder
+
+WORKDIR /app
+
+# Copy dependency manifests
+COPY package.json package-lock.json* ./
+
+# Install build dependencies
+RUN npm install --no-audit --no-fund
+
+# Copy all source assets
+COPY index.html ./
+COPY about.html ./
+COPY campus.html ./
+COPY admissions.html ./
+COPY programmes.html ./
+COPY institutions.html ./
+COPY community.html ./
+COPY contact.html ./
+COPY news.html ./
+COPY student-corner.html ./
+COPY fee-payment.html ./
+COPY fee-payment-status.html ./
+COPY admin/ ./admin/
+COPY css/ ./css/
+COPY js/ ./js/
+COPY images/ ./images/
+COPY assets/ ./assets/
+COPY vite.config.js ./
+
+# Build the production distribution
+RUN npm run build
+
+# Stage 2: Production Nginx runtime
+FROM nginx:1.27-alpine AS runner
+
+# Remove default nginx configurations
+RUN rm -rf /etc/nginx/conf.d/* /usr/share/nginx/html/*
+
+# Copy custom Nginx configuration
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Copy compiled static assets from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Expose HTTP port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:80/ || exit 1
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

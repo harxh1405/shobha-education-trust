@@ -74,6 +74,7 @@
           <a href="campus.html" class="nav-strip-link">Campus</a>
           <a href="news.html" class="nav-strip-link">News & Events</a>
           <a href="student-corner.html" class="nav-strip-link">Student Corner</a>
+          <a href="fee-payment.html" class="nav-strip-link">Fee Payment</a>
           <a href="contact.html" class="nav-strip-link">Contact</a>
         </div>
       </div>
@@ -100,6 +101,7 @@
         <a href="campus.html" class="nav-link">Campus</a>
         <a href="news.html" class="nav-link">News & Events</a>
         <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link">Fee Payment</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
@@ -234,7 +236,7 @@
           
           <!-- Image Column -->
           <div class="story-image-wrap animate-reveal">
-            <img src="images/homepage/hero.png" alt="Sarveshwaree Mahavidyalaya 3-storey building and campus, Jaunpur" loading="lazy">
+            <img src="images/homepage/hero.png" alt="Sarveshwaree Mahavidyalaya 3-storey building and campus, Jaunpur" loading="lazy" decoding="async">
             <div class="story-image-plaque">
               <span>SARVESHWAREE MAHAVIDYALAYA</span>
               <span>COLLEGE CODE: 0694</span>
@@ -710,50 +712,95 @@
 
   <!-- Admission Enquiry Modal -->
   <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-container">
+    <div class="modal-container" style="max-width: 620px; max-height: 90vh; overflow-y: auto;">
       <div class="modal-header">
-        <h3 id="modalTitle">ADMISSION ENQUIRY 2026–27</h3>
+        <div>
+          <span style="font-size: 11px; color: var(--color-accent-yellow); font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">SHOBHA EDUCATION TRUST</span>
+          <h3 id="modalTitle" style="margin: 2px 0 0; font-size: 18px;">INSTITUTIONAL ENQUIRY DESK</h3>
+        </div>
         <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
       </div>
 
-      <div class="modal-body">
-        <form id="enquiryForm">
-          <div class="form-group">
-            <label for="studentName" class="form-label">Student Full Name *</label>
-            <input type="text" id="studentName" class="form-control" required placeholder="e.g. Rahul Singh">
+      <div class="modal-body" style="padding: 24px;">
+        <div class="form-alert" id="modalEnquiryAlert" style="display:none;" role="alert"></div>
+
+        <form id="enquiryForm" novalidate>
+          <input type="text" name="_hp_address" id="modalHpAddress" style="display:none !important; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalFullName" class="form-label">Full Name *</label>
+              <input type="text" id="modalFullName" name="name" class="form-control" required placeholder="e.g. Rahul Singh" autocomplete="name">
+              <div class="field-error" id="err-modalFullName" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalEmail" class="form-label">Email Address *</label>
+              <input type="email" id="modalEmail" name="email" class="form-control" required placeholder="e.g. rahul@example.com" autocomplete="email">
+              <div class="field-error" id="err-modalEmail" aria-live="polite"></div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="contactNumber" class="form-label">Mobile Number *</label>
-            <input type="tel" id="contactNumber" class="form-control" required placeholder="10-digit mobile number">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalPhone" class="form-label">Mobile Number *</label>
+              <input type="tel" id="modalPhone" name="phone" class="form-control" required placeholder="10-digit mobile number" autocomplete="tel">
+              <div class="field-error" id="err-modalPhone" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="modalCategory" class="form-label">Enquiry Category *</label>
+              <select id="modalCategory" name="category" class="form-control" required>
+                <option value="">Select Category</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="Admissions">Admissions</option>
+                <option value="Courses and Eligibility">Courses and Eligibility</option>
+                <option value="Fee Enquiry">Fee Enquiry</option>
+                <option value="Campus and Facilities">Campus and Facilities</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="field-error" id="err-modalCategory" aria-live="polite"></div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="programmeInterest" class="form-label">Programme of Interest *</label>
-            <select id="programmeInterest" class="form-control" required>
-              <option value="">Select Programme</option>
-              <option value="mahavidyalaya-ug">Sarveshwaree Mahavidyalaya (B.A.)</option>
-              <option value="deled">Teacher Education (D.El.Ed / BTC)</option>
-              <option value="iti-trades">Sarveshwaree Private ITI (Electrician / Fitter)</option>
-              <option value="paravet">Paraveterinary Initiative (Under Process)</option>
-            </select>
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalInstitution" class="form-label">Institution / Programme (Optional)</label>
+            <input type="text" id="modalInstitution" name="institutionOrProgramme" class="form-control" placeholder="e.g. Sarveshwaree Mahavidyalaya (B.A.) / ITI / D.El.Ed">
+            <div class="field-error" id="err-modalInstitution" aria-live="polite"></div>
           </div>
 
-          <div class="form-group">
-            <label for="studentLocation" class="form-label">Current City / District</label>
-            <input type="text" id="studentLocation" class="form-control" placeholder="e.g. Jaunpur, Varanasi, Prayagraj">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="modalSubject" class="form-label">Subject *</label>
+            <input type="text" id="modalSubject" name="subject" class="form-control" required placeholder="Brief summary of your enquiry">
+            <div class="field-error" id="err-modalSubject" aria-live="polite"></div>
           </div>
 
-          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label for="modalMessage" class="form-label">Message *</label>
+            <textarea id="modalMessage" name="message" class="form-control" rows="3" required placeholder="Detail your enquiry or requirements..."></textarea>
+            <div class="field-error" id="err-modalMessage" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" id="btnSubmitEnquiry" class="btn btn-accent" style="width: 100%; padding: 12px; font-weight: 700;">
             SUBMIT ENQUIRY
           </button>
         </form>
 
-        <div id="enquirySuccess" style="display: none; text-align: center; padding: 20px 0;">
-          <h4 style="color: var(--color-primary-navy); margin-bottom: 8px;">THANK YOU!</h4>
-          <p style="color: var(--color-text-secondary); font-size: 14.5px;">
-            Your admission enquiry has been submitted. Our campus admissions office will contact you shortly.
+        <div id="enquirySuccess" style="display: none; padding: 24px 12px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 8px;">✓</div>
+          <h4 style="color: #065F46; font-size: 18px; margin-bottom: 6px;">ENQUIRY TRANSMITTED</h4>
+          <p style="color: #047857; font-size: 14px; line-height: 1.6; margin-bottom: 16px;" id="modalSuccessText">
+            Your enquiry has been delivered directly to the institution's official administration email address (<span>sanjayjourno2009@gmail.com</span>).
           </p>
+          <div style="background-color: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: var(--radius-xs); padding: 10px 16px; margin-bottom: 18px; display: inline-block;">
+            <span style="font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; font-weight: 700;">Reference ID:</span>
+            <strong id="modalRefIdDisplay" style="font-family: monospace; font-size: 14px; color: var(--color-primary-navy); margin-left: 6px;">-</strong>
+          </div>
+          <div>
+            <button type="button" id="btnModalSubmitAnother" class="btn btn-outline-navy" style="font-size: 12.5px; padding: 8px 16px;">
+              Submit Another Enquiry
+            </button>
+          </div>
         </div>
       </div>
     </div>
