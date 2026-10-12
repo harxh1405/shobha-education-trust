@@ -21,8 +21,24 @@ export async function loadResources(isSilent = false) {
   isFetching = true;
 
   if (!isSilent) {
-    if (!feedContainer.children.length) {
-      feedContainer.innerHTML = '<div class="empty-resources-box">Connecting to server & synchronizing resources...</div>';
+    if (!feedContainer.children.length || feedContainer.querySelector('.skeleton-card')) {
+      feedContainer.innerHTML = `
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle"></div>
+          <div class="skeleton-shimmer skeleton-line title"></div>
+          <div class="skeleton-shimmer skeleton-line desc"></div>
+        </div>
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle" style="width: 25%;"></div>
+          <div class="skeleton-shimmer skeleton-line title" style="width: 50%;"></div>
+          <div class="skeleton-shimmer skeleton-line desc" style="width: 80%;"></div>
+        </div>
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle" style="width: 30%;"></div>
+          <div class="skeleton-shimmer skeleton-line title" style="width: 65%;"></div>
+          <div class="skeleton-shimmer skeleton-line desc" style="width: 90%;"></div>
+        </div>
+      `;
     } else {
       feedContainer.classList.add('feed-loading');
     }

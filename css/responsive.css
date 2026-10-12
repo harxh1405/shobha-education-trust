@@ -844,20 +844,31 @@
   }
 
   .admin-btn-site .btn-text-full,
+  .admin-btn-signout .btn-text-full,
   .admin-login-back-btn .btn-text-full {
     display: none !important;
   }
 
   .admin-btn-site .btn-text-mobile,
+  .admin-btn-signout .btn-text-mobile,
   .admin-login-back-btn .btn-text-mobile {
     display: inline !important;
   }
 
+  .admin-header-action-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+
   .admin-header-action-group .btn {
-    padding: 6px 12px !important;
-    font-size: 11.5px !important;
-    min-height: 34px !important;
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    min-height: 32px !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 }
 
@@ -2712,11 +2723,13 @@
     flex-shrink: 0 !important;
   }
 
-  .admin-btn-site .btn-text-full {
+  .admin-btn-site .btn-text-full,
+  .admin-btn-signout .btn-text-full {
     display: none !important;
   }
 
-  .admin-btn-site .btn-text-mobile {
+  .admin-btn-site .btn-text-mobile,
+  .admin-btn-signout .btn-text-mobile {
     display: inline !important;
   }
 
@@ -2728,15 +2741,24 @@
     display: inline !important;
   }
 
+  .admin-header-action-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    flex-shrink: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+
   .admin-header-action-group .btn {
-    padding: 6px 10px !important;
-    font-size: 11px !important;
-    min-height: 34px !important;
+    padding: 5px 8px !important;
+    font-size: 10.5px !important;
+    min-height: 30px !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .site-header-fixed .brand-identity {
-    max-width: calc(100% - 155px) !important;
+    max-width: calc(100% - 150px) !important;
     min-width: 0 !important;
     overflow: hidden !important;
   }

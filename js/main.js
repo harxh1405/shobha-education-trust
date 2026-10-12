@@ -233,18 +233,40 @@ function initCampusGallery() {
  * Back to Top Floating Button
  */
 function initBackToTop() {
-  const btn = document.querySelector('.back-to-top-btn');
+  let btn = document.querySelector('.back-to-top-btn');
+  if (!btn && document.body) {
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'back-to-top-btn';
+    btn.setAttribute('aria-label', 'Back to Top');
+    btn.setAttribute('title', 'Scroll to top');
+    document.body.appendChild(btn);
+  }
   if (!btn) return;
 
+  btn.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  `;
+
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 280) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }, { passive: true });
 
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -434,6 +456,7 @@ function setupEnquiryFormHandler(form, { successEl, alertEl, submitBtn, refIdEl,
         if (successEl) {
           form.style.display = 'none';
           successEl.style.display = 'block';
+          successEl.classList.add('api-fade-in');
           if (refIdEl && data.referenceId) {
             refIdEl.textContent = data.referenceId;
           }
@@ -443,7 +466,7 @@ function setupEnquiryFormHandler(form, { successEl, alertEl, submitBtn, refIdEl,
         const errMsg = data.error || 'Failed to submit enquiry. Please review your fields and try again.';
         if (alertEl) {
           alertEl.textContent = errMsg;
-          alertEl.className = 'form-alert error';
+          alertEl.className = 'form-alert error api-fade-in';
           alertEl.style.display = 'block';
           alertEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
@@ -455,7 +478,7 @@ function setupEnquiryFormHandler(form, { successEl, alertEl, submitBtn, refIdEl,
       const errMsg = 'Network communication failure. Please verify your connection or contact our campus helpline directly.';
       if (alertEl) {
         alertEl.textContent = errMsg;
-        alertEl.className = 'form-alert error';
+        alertEl.className = 'form-alert error api-fade-in';
         alertEl.style.display = 'block';
       } else {
         alert(errMsg);

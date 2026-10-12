@@ -1441,34 +1441,46 @@
 /* Back to Top Floating Button */
 .back-to-top-btn {
   position: fixed;
-  bottom: 60px;
+  bottom: 30px;
   right: 24px;
   width: 44px;
   height: 44px;
   background-color: var(--color-primary-navy);
   color: var(--color-bg-white);
   border: 1.5px solid var(--color-accent-yellow);
-  border-radius: var(--radius-xs);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   cursor: pointer;
-  z-index: var(--z-sticky-bar);
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-normal);
-  box-shadow: var(--shadow-card);
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  box-shadow: 0 4px 14px rgba(18, 41, 107, 0.25);
+}
+
+.back-to-top-btn svg {
+  display: block;
+  transition: transform 0.2s ease;
 }
 
 .back-to-top-btn.visible {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .back-to-top-btn:hover {
   background-color: var(--color-accent-yellow);
   color: var(--color-primary-navy);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(242, 197, 0, 0.4);
+}
+
+.back-to-top-btn:active {
+  transform: translateY(-1px) scale(0.96);
 }
 
 /* ==========================================================================
@@ -5215,12 +5227,89 @@ body {
 
 /* Desktop by default: show full text, hide mobile condensed text */
 .admin-btn-site .btn-text-full,
+.admin-btn-site .btn-text-full,
+.admin-btn-signout .btn-text-full,
 .admin-login-back-btn .btn-text-full {
   display: inline;
 }
 
 .admin-btn-site .btn-text-mobile,
+.admin-btn-signout .btn-text-mobile,
 .admin-login-back-btn .btn-text-mobile {
   display: none;
+}
+
+/* ==========================================================================
+   SMOOTH REST API LOADERS & SHIMMER SKELETONS
+   ========================================================================== */
+@keyframes skeletonShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #F8FAFC 25%, #E2E8F0 50%, #F8FAFC 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s infinite ease-in-out;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 22px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+}
+
+.skeleton-line.title {
+  height: 22px;
+  width: 60%;
+}
+
+.skeleton-line.subtitle {
+  width: 35%;
+  height: 13px;
+}
+
+.skeleton-line.desc {
+  width: 88%;
+}
+
+.skeleton-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.api-fade-in {
+  animation: apiFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes apiFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tactile micro-animation for buttons */
+button:active:not(:disabled),
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+  transition: transform 0.08s ease;
 }
 

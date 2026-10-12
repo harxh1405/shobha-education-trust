@@ -17,8 +17,24 @@ export async function loadDynamicNews(category = 'all', isSilent = false) {
   isFetching = true;
 
   if (!isSilent) {
-    if (!container.children.length) {
-      container.innerHTML = '<div style="text-align: center; padding: 48px; color: var(--color-text-muted);">Fetching published circulars and updates...</div>';
+    if (!container.children.length || container.querySelector('.skeleton-card')) {
+      container.innerHTML = `
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle"></div>
+          <div class="skeleton-shimmer skeleton-line title"></div>
+          <div class="skeleton-shimmer skeleton-line desc"></div>
+        </div>
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle" style="width: 25%;"></div>
+          <div class="skeleton-shimmer skeleton-line title" style="width: 50%;"></div>
+          <div class="skeleton-shimmer skeleton-line desc" style="width: 80%;"></div>
+        </div>
+        <div class="skeleton-card api-fade-in">
+          <div class="skeleton-shimmer skeleton-line subtitle" style="width: 30%;"></div>
+          <div class="skeleton-shimmer skeleton-line title" style="width: 65%;"></div>
+          <div class="skeleton-shimmer skeleton-line desc" style="width: 90%;"></div>
+        </div>
+      `;
     } else {
       container.classList.add('feed-loading');
     }

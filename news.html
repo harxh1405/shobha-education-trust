@@ -194,9 +194,20 @@
         </div>
 
         <div class="news-editorial-list" id="newsEditorialList" style="margin-top: 20px;">
-          <!-- Fetched dynamically from /api/public/news-and-events -->
-          <div style="text-align: center; padding: 48px; color: var(--color-text-muted);">
-            Connecting to institutional circulars database...
+          <div class="skeleton-card api-fade-in">
+            <div class="skeleton-shimmer skeleton-line subtitle"></div>
+            <div class="skeleton-shimmer skeleton-line title"></div>
+            <div class="skeleton-shimmer skeleton-line desc"></div>
+          </div>
+          <div class="skeleton-card api-fade-in">
+            <div class="skeleton-shimmer skeleton-line subtitle" style="width: 25%;"></div>
+            <div class="skeleton-shimmer skeleton-line title" style="width: 50%;"></div>
+            <div class="skeleton-shimmer skeleton-line desc" style="width: 80%;"></div>
+          </div>
+          <div class="skeleton-card api-fade-in">
+            <div class="skeleton-shimmer skeleton-line subtitle" style="width: 30%;"></div>
+            <div class="skeleton-shimmer skeleton-line title" style="width: 65%;"></div>
+            <div class="skeleton-shimmer skeleton-line desc" style="width: 90%;"></div>
           </div>
         </div>
 

@@ -540,8 +540,20 @@
             </p>
 
             <div id="feeCategoriesList" class="fee-options-grid">
-              <div style="text-align: center; padding: 40px; grid-column: 1 / -1; color: var(--color-text-muted);">
-                Fetching active published fee schedules from server...
+              <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+                <div class="skeleton-shimmer skeleton-line subtitle" style="width: 35%;"></div>
+                <div class="skeleton-shimmer skeleton-line title" style="width: 70%;"></div>
+                <div class="skeleton-shimmer skeleton-line desc" style="width: 90%;"></div>
+              </div>
+              <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+                <div class="skeleton-shimmer skeleton-line subtitle" style="width: 40%;"></div>
+                <div class="skeleton-shimmer skeleton-line title" style="width: 65%;"></div>
+                <div class="skeleton-shimmer skeleton-line desc" style="width: 85%;"></div>
+              </div>
+              <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+                <div class="skeleton-shimmer skeleton-line subtitle" style="width: 30%;"></div>
+                <div class="skeleton-shimmer skeleton-line title" style="width: 75%;"></div>
+                <div class="skeleton-shimmer skeleton-line desc" style="width: 80%;"></div>
               </div>
             </div>
 
@@ -731,12 +743,19 @@
           </div>
 
           <!-- Loading Box -->
-          <div id="statusLookupLoading" style="display: none; text-align: center; padding: 60px 20px; color: var(--color-text-secondary);">
-            <div style="font-size: 32px; margin-bottom: 10px;">⏳</div>
-            <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--color-primary-navy); margin-bottom: 4px;">
-              Checking Payment Record With Campus Ledger...
-            </h3>
-            <p style="font-size: 13.5px; color: var(--color-text-muted);">Please wait while we query your transaction status.</p>
+          <div id="statusLookupLoading" class="api-fade-in" style="display: none; padding: 20px 0;">
+            <div class="skeleton-card" style="box-shadow: 0 4px 16px rgba(18,41,107,0.06); border: 1px solid #E2E8F0; padding: 28px;">
+              <div style="display: flex; gap: 14px; align-items: center; margin-bottom: 20px;">
+                <div class="skeleton-shimmer" style="width: 44px; height: 44px; border-radius: 50%;"></div>
+                <div style="flex: 1;">
+                  <div class="skeleton-shimmer skeleton-line title" style="width: 55%; margin-bottom: 8px;"></div>
+                  <div class="skeleton-shimmer skeleton-line subtitle" style="width: 35%;"></div>
+                </div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line desc" style="width: 100%; margin-bottom: 10px;"></div>
+              <div class="skeleton-shimmer skeleton-line desc" style="width: 80%; margin-bottom: 10px;"></div>
+              <div class="skeleton-shimmer skeleton-line desc" style="width: 60%;"></div>
+            </div>
           </div>
 
           <!-- Initial Prompt Box (When no reference has been searched yet) -->

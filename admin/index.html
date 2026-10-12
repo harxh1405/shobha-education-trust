@@ -593,7 +593,8 @@
             <span class="btn-text-mobile">← Website</span>
           </a>
           <button type="button" id="adminLogoutBtn" class="btn btn-primary admin-btn-signout" title="Sign out of administration session">
-            Sign Out
+            <span class="btn-text-full">Sign Out</span>
+            <span class="btn-text-mobile">Logout</span>
           </button>
         </div>
 
@@ -744,7 +745,7 @@
 
     function renderAuthRequiredScreen() {
       workspace.innerHTML = `
-        <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 48px 32px; max-width: 620px; margin: 40px auto; text-align: center; box-shadow: var(--shadow-md);">
+        <div class="api-fade-in" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 48px 32px; max-width: 620px; margin: 40px auto; text-align: center; box-shadow: var(--shadow-md);">
           <div style="width: 64px; height: 64px; background: #FEF3C7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px;">
             🔒
           </div>
@@ -768,11 +769,14 @@
     }
 
     document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
+      const btn = document.getElementById('adminLogoutBtn');
+      if (btn) btn.disabled = true;
       try { await authFetch('/api/admin/logout', { method: 'POST' }); } catch (e) {}
       localStorage.removeItem('set_admin_token');
       localStorage.removeItem('set_admin_user');
       currentUser = null;
       renderAuthRequiredScreen();
+      if (btn) btn.disabled = false;
     });
 
     // Global Toast Notification Helper
@@ -850,8 +854,35 @@
       });
     });
 
-    // 3. Tab Dispatcher with smooth fade transition
+    function renderWorkspaceSkeleton() {
+      workspace.innerHTML = `
+        <div class="api-fade-in" style="width: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+            <div class="skeleton-shimmer" style="width: 240px; height: 26px; border-radius: 4px;"></div>
+            <div class="skeleton-shimmer" style="width: 160px; height: 36px; border-radius: 4px;"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-shimmer skeleton-line title"></div>
+            <div class="skeleton-shimmer skeleton-line subtitle"></div>
+            <div class="skeleton-shimmer skeleton-line desc"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-shimmer skeleton-line title" style="width: 52%;"></div>
+            <div class="skeleton-shimmer skeleton-line subtitle" style="width: 32%;"></div>
+            <div class="skeleton-shimmer skeleton-line desc" style="width: 78%;"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-shimmer skeleton-line title" style="width: 68%;"></div>
+            <div class="skeleton-shimmer skeleton-line subtitle" style="width: 42%;"></div>
+            <div class="skeleton-shimmer skeleton-line desc" style="width: 85%;"></div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 3. Tab Dispatcher with smooth skeleton & fade transition
     async function renderTab(tab) {
+      renderWorkspaceSkeleton();
       workspace.classList.add('workspace-loading');
       try {
         switch (tab) {
@@ -879,6 +910,11 @@
         }
       } finally {
         workspace.classList.remove('workspace-loading');
+        // Apply smooth entrance to new content
+        const firstChild = workspace.firstElementChild;
+        if (firstChild && !firstChild.classList.contains('api-fade-in')) {
+          firstChild.classList.add('api-fade-in');
+        }
       }
     }
 

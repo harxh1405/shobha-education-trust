@@ -107,6 +107,23 @@ async function loadQRSettings() {
 
 async function loadFeeCategories() {
   if (!categoriesContainer) return;
+  categoriesContainer.innerHTML = `
+    <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+      <div class="skeleton-shimmer skeleton-line subtitle" style="width: 35%;"></div>
+      <div class="skeleton-shimmer skeleton-line title" style="width: 70%;"></div>
+      <div class="skeleton-shimmer skeleton-line desc" style="width: 90%;"></div>
+    </div>
+    <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+      <div class="skeleton-shimmer skeleton-line subtitle" style="width: 40%;"></div>
+      <div class="skeleton-shimmer skeleton-line title" style="width: 65%;"></div>
+      <div class="skeleton-shimmer skeleton-line desc" style="width: 85%;"></div>
+    </div>
+    <div class="skeleton-card api-fade-in" style="min-height: 130px;">
+      <div class="skeleton-shimmer skeleton-line subtitle" style="width: 30%;"></div>
+      <div class="skeleton-shimmer skeleton-line title" style="width: 75%;"></div>
+      <div class="skeleton-shimmer skeleton-line desc" style="width: 80%;"></div>
+    </div>
+  `;
   try {
     const res = await fetch('/api/payments/options');
     const data = await res.json();
@@ -121,7 +138,7 @@ async function loadFeeCategories() {
     }
 
     categoriesContainer.innerHTML = data.categories.map(cat => `
-      <div class="fee-card" data-category-id="${cat.id}">
+      <div class="fee-card api-fade-in" data-category-id="${cat.id}">
         <div>
           <div class="fee-card-institution">${cat.institution}</div>
           <h4 class="fee-card-title">${cat.name}</h4>
@@ -205,7 +222,10 @@ function setupWizardHandlers() {
 
         verifiedQuote = data.quote;
         if (step1El) step1El.style.display = 'none';
-        if (step2El) step2El.style.display = 'block';
+        if (step2El) {
+          step2El.style.display = 'block';
+          step2El.classList.add('api-fade-in');
+        }
         if (ind1) {
           ind1.classList.remove('active');
           ind1.classList.add('completed');
@@ -225,7 +245,10 @@ function setupWizardHandlers() {
   if (btnBackToStep1) {
     btnBackToStep1.addEventListener('click', () => {
       if (step2El) step2El.style.display = 'none';
-      if (step1El) step1El.style.display = 'block';
+      if (step1El) {
+        step1El.style.display = 'block';
+        step1El.classList.add('api-fade-in');
+      }
       if (ind2) ind2.classList.remove('active');
       if (ind1) {
         ind1.classList.remove('completed');
@@ -263,7 +286,10 @@ function setupWizardHandlers() {
       }
 
       if (step2El) step2El.style.display = 'none';
-      if (step3El) step3El.style.display = 'block';
+      if (step3El) {
+        step3El.style.display = 'block';
+        step3El.classList.add('api-fade-in');
+      }
       if (ind2) {
         ind2.classList.remove('active');
         ind2.classList.add('completed');
@@ -278,7 +304,10 @@ function setupWizardHandlers() {
   if (btnBackToStep2) {
     btnBackToStep2.addEventListener('click', () => {
       if (step3El) step3El.style.display = 'none';
-      if (step2El) step2El.style.display = 'block';
+      if (step2El) {
+        step2El.style.display = 'block';
+        step2El.classList.add('api-fade-in');
+      }
       if (ind3) ind3.classList.remove('active');
       if (ind2) {
         ind2.classList.remove('completed');
@@ -429,7 +458,10 @@ export async function lookupTransactionStatus(reference) {
     if (statusLookupLoading) statusLookupLoading.style.display = 'none';
 
     if (!res.ok || !data.success || !data.order) {
-      if (errorStatusCard) errorStatusCard.style.display = 'block';
+      if (errorStatusCard) {
+        errorStatusCard.style.display = 'block';
+        errorStatusCard.classList.add('api-fade-in');
+      }
       if (errorStatusMessage) {
         errorStatusMessage.textContent = data.error || 'Transaction record not found. Please verify your official Reference ID (e.g. SET-PAY-...).';
       }
@@ -443,7 +475,10 @@ export async function lookupTransactionStatus(reference) {
       // -------------------------------------------------------------
       // PENDING STATE
       // -------------------------------------------------------------
-      if (pendingStatusCard) pendingStatusCard.style.display = 'block';
+      if (pendingStatusCard) {
+        pendingStatusCard.style.display = 'block';
+        pendingStatusCard.classList.add('api-fade-in');
+      }
       const elRef = document.getElementById('pendingRefCode');
       const elInst = document.getElementById('pendingInstName');
       const elName = document.getElementById('pendingStudentName');
@@ -471,7 +506,10 @@ export async function lookupTransactionStatus(reference) {
         if (rcptData.success && rcptData.receipt) receipt = rcptData.receipt;
       } catch (e) {}
 
-      if (verifiedReceiptCard) verifiedReceiptCard.style.display = 'block';
+      if (verifiedReceiptCard) {
+        verifiedReceiptCard.style.display = 'block';
+        verifiedReceiptCard.classList.add('api-fade-in');
+      }
 
       const rInst = document.getElementById('receiptInstName');
       const rRef = document.getElementById('valReceiptNo');
@@ -504,7 +542,10 @@ export async function lookupTransactionStatus(reference) {
       // -------------------------------------------------------------
       // DISAPPROVED STATE
       // -------------------------------------------------------------
-      if (disapprovedStatusCard) disapprovedStatusCard.style.display = 'block';
+      if (disapprovedStatusCard) {
+        disapprovedStatusCard.style.display = 'block';
+        disapprovedStatusCard.classList.add('api-fade-in');
+      }
       const dNotes = document.getElementById('disapprovedNotesText');
       const dRef = document.getElementById('disapprovedRefCode');
       const dUtr = document.getElementById('disapprovedUtrCode');
@@ -518,7 +559,10 @@ export async function lookupTransactionStatus(reference) {
 
   } catch (err) {
     if (statusLookupLoading) statusLookupLoading.style.display = 'none';
-    if (errorStatusCard) errorStatusCard.style.display = 'block';
+    if (errorStatusCard) {
+      errorStatusCard.style.display = 'block';
+      errorStatusCard.classList.add('api-fade-in');
+    }
     if (errorStatusMessage) errorStatusMessage.textContent = err.message || 'Unable to connect to verification desk.';
   }
 }
