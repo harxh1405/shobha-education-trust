@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
@@ -18,6 +19,17 @@ export default defineConfig({
     }
   },
   plugins: [
+    {
+      name: 'copy-static-assets',
+      closeBundle() {
+        if (fs.existsSync('assets')) {
+          fs.cpSync('assets', 'dist/assets', { recursive: true });
+        }
+        if (fs.existsSync('images')) {
+          fs.cpSync('images', 'dist/images', { recursive: true });
+        }
+      }
+    },
     {
       name: 'rewrite-routes',
       configureServer(server) {
