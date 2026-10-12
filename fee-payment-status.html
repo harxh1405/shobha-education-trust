@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Verification Status & Receipt | Shobha Education Trust</title>
+  <meta name="description" content="Check payment verification status and download official verified electronic fee receipts for Shobha Education Trust.">
+
+  <!-- Favicon / Institutional Crest -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .status-card-wrapper {
+      max-width: 820px;
+      margin: 40px auto 80px auto;
+    }
+    .receipt-container {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      border-top: 6px solid var(--color-primary-navy);
+    }
+    .receipt-header-banner {
+      background: #F8FAFC;
+      border-bottom: 2px dashed var(--color-border);
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .receipt-body {
+      padding: 36px 30px;
+    }
+    .receipt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .receipt-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .receipt-field-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .receipt-field-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-primary-navy);
+    }
+    .receipt-amount-banner {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: var(--radius-xs);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 24px;
+    }
+    .receipt-amount-banner .amt-val {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: #166534;
+      font-weight: 700;
+    }
+    .receipt-footer-security {
+      border-top: 1px solid var(--color-border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    /* Pending Notice Banner */
+    .pending-banner-box {
+      background: #FFFBEB;
+      border: 1px solid #FCD34D;
+      border-radius: var(--radius-xs);
+      padding: 24px;
+      margin-bottom: 24px;
+      border-left: 6px solid var(--color-accent-yellow);
+    }
+
+    /* Print Formatting */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .site-header-fixed, .site-footer, .no-print, .pending-banner-box {
+        display: none !important;
+      }
+      .receipt-container, .receipt-container * {
+        visibility: visible;
+      }
+      .receipt-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FIXED INSTITUTIONAL HEADER -->
+  <header class="site-header-fixed no-print" id="siteHeader">
+    <div class="header-brand-strip">
+      <div class="container header-brand-container">
+        <a href="index.html" class="brand-identity">
+          <img src="assets/logo.png" alt="Shobha Education Trust Emblem" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-inst-title">SARVESHWAREE MAHAVIDYALAYA</span>
+            <span class="brand-inst-tagline">& AFFILIATED INSTITUTIONS • SHOBHA EDUCATION TRUST</span>
+          </div>
+        </a>
+        <div class="header-action-group">
+          <a href="fee-payment.html" class="btn btn-outline-navy" style="padding: 7px 12px; font-size: 12px; text-decoration: none;">← Fee Portal</a>
+          <button type="button" class="btn btn-header-enquire" data-open-enquiry>Admission Enquiry</button>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Sliding Drawer -->
+    <div class="nav-mobile-drawer">
+      <div class="nav-drawer-header">
+        <div class="nav-drawer-brand">
+          <img src="assets/logo.png" alt="Emblem" class="nav-drawer-brand-img">
+          <div class="nav-drawer-brand-text">SARVESHWAREE<br>MAHAVIDYALAYA</div>
+        </div>
+        <button type="button" class="nav-drawer-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <div class="nav-drawer-slogan">अंधेरे से उजाले की ओर</div>
+
+      <div class="nav-drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="institutions.html" class="nav-link">Institutions</a>
+        <a href="programmes.html" class="nav-link">Programmes</a>
+        <a href="admissions.html" class="nav-link">Admissions</a>
+        <a href="campus.html" class="nav-link">Campus</a>
+        <a href="news.html" class="nav-link">News & Events</a>
+        <a href="student-corner.html" class="nav-link">Student Corner</a>
+        <a href="fee-payment.html" class="nav-link active">Fee Payment</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-drawer-footer">
+        <button type="button" class="btn btn-accent" data-open-enquiry style="width: 100%;">ADMISSION ENQUIRY</button>
+        <div class="nav-drawer-helpline">
+          <strong>Campus Helplines</strong>
+          <span>8318784268 • 8765926859</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="container status-card-wrapper">
+      
+      <!-- Lookup Search Bar -->
+      <div class="no-print" style="background:#fff; padding:18px 24px; border:1px solid var(--color-border); border-radius:var(--radius-xs); margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <strong style="color:var(--color-primary-navy); font-size:14px; text-transform:uppercase;">Check Another Transaction Status:</strong>
+          <div style="font-size:12px; color:var(--color-text-muted);">Enter official Tracking Reference ID (e.g. SET-PAY-...)</div>
+        </div>
+        <form id="trackForm" style="display:flex; gap:10px;">
+          <input type="text" id="trackInput" class="form-control" placeholder="e.g. SET-PAY-..." required style="width:240px; padding:8px 12px; font-size:13px;">
+          <button type="submit" class="btn btn-primary" style="padding:8px 16px; font-size:12.5px;">TRACK</button>
+        </form>
+      </div>
+
+      <div id="statusLoadingBox" style="text-align: center; padding: 80px 20px; color: var(--color-text-secondary);">
+        <h3>Verifying payment submission with campus ledger...</h3>
+        <p>Please wait while we retrieve your transaction record.</p>
+      </div>
+
+      <!-- PENDING STATE CARD -->
+      <div id="pendingStateCard" style="display: none;">
+        <div class="pending-banner-box">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <span style="font-size: 24px;">⏳</span>
+            <h3 style="font-family: var(--font-heading); font-size: 20px; color: #92400E; margin: 0;">
+              VERIFICATION IN PROGRESS AT CAMPUS DESK
+            </h3>
+          </div>
+          <p style="font-size: 14px; color: #78350F; line-height: 1.5; margin: 0 0 12px 0;">
+            Your UPI payment submission has been recorded. Our administrative staff is manually verifying your submitted 12-digit UTR number against the institutional bank statement. Your official receipt will be issued as soon as verification is confirmed.
+          </p>
+          <div style="background: rgba(255, 255, 255, 0.7); padding: 10px 14px; border-radius: var(--radius-xs); font-size: 13px; color: #92400E;">
+            <strong>Tracking Reference Number:</strong> <code id="pendingRefCode" style="font-weight: 700; color: var(--color-primary-navy);">SET-PAY-...</code> (Please save this for your records).
+          </div>
+        </div>
+
+        <div class="receipt-container" style="border-top-color: var(--color-accent-yellow);">
+          <div class="receipt-header-banner">
+            <div>
+              <div style="font-size: 11px; letter-spacing: 1px; color: var(--color-supporting-blue); font-weight: 700;">
+                SUBMISSION RECORD
+              </div>
+              <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--color-primary-navy); margin: 2px 0 0 0;" id="pendingInstName">
+                Sarveshwaree Mahavidyalaya
+              </h3>
+            </div>
+            <span class="badge-status badge-pending" style="font-size: 13px; padding: 6px 14px;">
+              PENDING VERIFICATION
+            </span>
+          </div>
+
+          <div class="receipt-body">
+            <div class="receipt-grid">
+              <div class="receipt-field-group">
+                <span class="receipt-field-label">Student Name</span>
+                <span class="receipt-field-value" id="pendingStudentName">-</span>
+              </div>
+              <div class="receipt-field-group">
+                <span class="receipt-field-label">Roll / Reference No</span>
+                <span class="receipt-field-value" id="pendingRollNo">-</span>
+              </div>
+              <div class="receipt-field-group">
+                <span class="receipt-field-label">Fee Category</span>
+                <span class="receipt-field-value" id="pendingFeeName">-</span>
+              </div>
+              <div class="receipt-field-group">
+                <span class="receipt-field-label">Submitted UPI UTR</span>
+                <span class="receipt-field-value"><code id="pendingUtrVal">-</code></span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 18px;">
+              <div>
+                <span style="font-size: 12px; color: var(--color-text-muted);">Amount Submitted:</span>
+                <div style="font-family: var(--font-heading); font-size: 24px; color: var(--color-primary-navy); font-weight: 700;">
+                  ₹<span id="pendingAmountVal">0</span>
+                </div>
+              </div>
+              <div class="no-print">
+                <button type="button" class="btn btn-outline-navy" onclick="window.location.reload()" style="padding: 8px 16px; font-size: 13px;">
+                  🔄 Check Verification Status
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VERIFIED RECEIPT CARD -->
+      <div id="receiptCard" class="receipt-container" style="display: none;">
+        
+        <!-- Header Banner -->
+        <div class="receipt-header-banner">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <img src="assets/logo.png" alt="Emblem" style="width: 54px; height: 54px;">
+            <div>
+              <div style="font-size: 11px; letter-spacing: 1px; color: var(--color-supporting-blue); font-weight: 700; text-transform: uppercase;">
+                OFFICIAL INSTITUTIONAL RECEIPT
+              </div>
+              <h2 style="font-family: var(--font-heading); font-size: 22px; color: var(--color-primary-navy); margin: 2px 0 0 0;">
+                SHOBHA EDUCATION TRUST
+              </h2>
+              <div id="receiptInstName" style="font-size: 13px; color: var(--color-text-secondary); font-weight: 500;">
+                Sarveshwaree Mahavidyalaya
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: right;">
+            <span id="statusBadge" class="badge-status badge-successful" style="font-size: 13px; padding: 6px 14px;">
+              VERIFIED & APPROVED
+            </span>
+            <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 6px;" id="receiptTimestamp">
+              Verified: 12 Oct 2026
+            </div>
+          </div>
+        </div>
+
+        <!-- Receipt Body Details -->
+        <div class="receipt-body">
+          
+          <div class="receipt-grid">
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Receipt / Reference No</span>
+              <span class="receipt-field-value" id="valReceiptNo">SET-PAY-...</span>
+            </div>
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Verified UPI UTR Number</span>
+              <span class="receipt-field-value"><code id="valUtrNo">428910293812</code></span>
+            </div>
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Student Full Name</span>
+              <span class="receipt-field-value" id="valStudentName">Rahul Verma</span>
+            </div>
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Admission / Roll Reference</span>
+              <span class="receipt-field-value" id="valRollNo">SM/2026/0142</span>
+            </div>
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Fee Category</span>
+              <span class="receipt-field-value" id="valFeeName">D.El.Ed Annual Tuition Fee</span>
+            </div>
+            <div class="receipt-field-group">
+              <span class="receipt-field-label">Academic Session</span>
+              <span class="receipt-field-value" id="valSession">2026-2027</span>
+            </div>
+          </div>
+
+          <div class="receipt-amount-banner">
+            <div>
+              <span style="font-size: 12px; font-weight: 700; color: #166534; text-transform: uppercase; letter-spacing: 0.8px; display: block;">
+                Total Fee Paid & Captured (INR)
+              </span>
+              <span style="font-size: 13px; color: #15803D;" id="valVerifiedByText">Verified by Administrative Desk</span>
+            </div>
+            <div class="amt-val">
+              ₹<span id="valAmountRupees">0</span>
+            </div>
+          </div>
+
+          <div class="receipt-footer-security">
+            <div>
+              <strong>Cryptographic Verification Code:</strong><br>
+              <code id="valVerificationHash" style="font-size: 13px; font-weight: 700; color: var(--color-primary-navy);">SHA256-SET-XXXX</code>
+            </div>
+            <div class="no-print" style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-outline-navy" onclick="window.print()" style="padding: 8px 18px; font-size: 13px;">
+                🖨️ Print Receipt
+              </button>
+              <a href="fee-payment.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 13px; text-decoration: none;">
+                Done
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- REJECTED STATE CARD -->
+      <div id="rejectedStateCard" style="display: none; background: #fff; padding: 40px; border-radius: var(--radius-xs); border: 1px solid var(--color-border); border-left: 6px solid #DC2626;">
+        <h3 style="color: #DC2626; margin-bottom: 8px; font-family: var(--font-heading); font-size: 22px;">PAYMENT VERIFICATION REJECTED</h3>
+        <p style="color: var(--color-text-secondary); margin-bottom: 16px;">
+          The administrative desk was unable to match this transaction with the institutional bank account statement.
+        </p>
+        <div style="background: #FEF2F2; padding: 14px; border-radius: var(--radius-xs); margin-bottom: 20px; font-size: 13.5px; color: #991B1B;">
+          <strong>Desk Notes:</strong> <span id="rejectionNotesText">UTR number not found in bank ledger.</span>
+        </div>
+        <p style="font-size: 13px; color: var(--color-text-muted);">
+          Please check your transaction slip and re-submit with the correct 12-digit UTR, or contact the administrative office at 8318784268.
+        </p>
+        <a href="fee-payment.html" class="btn btn-primary" style="margin-top: 12px; display: inline-block;">Re-submit Fee Payment</a>
+      </div>
+
+      <!-- Error / Not Found Box -->
+      <div id="statusErrorBox" style="display: none; background: #fff; padding: 40px; border-radius: var(--radius-xs); border: 1px solid var(--color-border); text-align: center;">
+        <h3 style="color: #DC2626; margin-bottom: 8px;">Record Not Found</h3>
+        <p id="statusErrorMessage" style="color: var(--color-text-secondary); margin-bottom: 20px;">
+          The requested payment reference is invalid or could not be verified.
+        </p>
+        <a href="fee-payment.html" class="btn btn-primary">Return to Online Fee Payment</a>
+      </div>
+
+  </main>
+
+  <!-- Institutional Footer -->
+  <footer class="site-footer" id="contact" aria-label="Institutional Footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- Column 1: Trust Identity & Motto -->
+        <div class="footer-col">
+          <div class="footer-trust-motto">अँधेरे से उजाले की ओर</div>
+          <h4 class="footer-col-title">SHOBHA EDUCATION TRUST</h4>
+          <p class="footer-brand-summary">
+            A pioneering institutional body established in 2005 in Jaunpur, Uttar Pradesh. Committed to expanding access to higher, vocational, and technical education while upholding rural service.
+          </p>
+          <div style="font-size: 13px; color: #8FA2C2;">
+            Campus: 15 Acres • Est. 2005 • Jaunpur, UP
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Trust</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="campus.html">Campus & Facilities</a></li>
+            <li><a href="community.html">Community Initiatives</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="contact.html">Contact Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Student Resources (100% Public - Strictly NO Login) -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">STUDENT RESOURCES</h4>
+          <ul class="footer-links-list">
+            <li><a href="student-corner.html">Public Notices</a></li>
+            <li><a href="student-corner.html">Academic Calendar</a></li>
+            <li><a href="student-corner.html">Class Timetable</a></li>
+            <li><a href="student-corner.html">Course Syllabus</a></li>
+            <li><a href="student-corner.html">University Examinations</a></li>
+            <li><a href="student-corner.html">Results Information</a></li>
+            <li><a href="fee-payment.html">Online Fee Payment</a></li>
+            <li><a href="student-corner.html">Forms & Downloads</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Institutions -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">INSTITUTIONS</h4>
+          <ul class="footer-links-list">
+            <li><a href="institutions.html#maha">Sarveshwaree Mahavidyalaya</a></li>
+            <li><a href="institutions.html#deled">D.El.Ed / BTC Pathway</a></li>
+            <li><a href="institutions.html#iti">Sarveshwaree Private ITI</a></li>
+            <li><a href="institutions.html#paraveterinary">Paraveterinary Initiative (Under Process)</a></li>
+            <li><a href="community.html">Saheli Book Bank</a></li>
+            <li><a href="community.html">Community Eye Care Camp</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Campus Address & Contact -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">CAMPUS CONTACT</h4>
+          
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Kamruddinpur, Noorpur, Rampur, Jaunpur, Uttar Pradesh – 222203</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🏛️</span>
+            <span>Affiliated with VBS Purvanchal University, Jaunpur</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span><a href="mailto:sanjayjourno2009@gmail.com" style="color: #D1DBEB; text-decoration: none;">sanjayjourno2009@gmail.com</a></span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span><a href="tel:8318784268" style="color: #D1DBEB; text-decoration: none;">8318784268</a>, <a href="tel:8765926859" style="color: #D1DBEB; text-decoration: none;">8765926859</a></span>
+          </div>
+
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">⏰</span>
+            <span>Office: 10:00 AM – 3:00 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Legal Bar -->
+      <div class="sub-footer">
+        <div>© 2026 Shobha Education Trust. All Rights Reserved.</div>
+        <div class="sub-footer-links">
+          <a href="student-corner.html">Mandatory Disclosure</a>
+          <a href="student-corner.html">Public Documents</a>
+          <a href="admin/login.html" class="admin-portal-discreet" title="Authorized Administrative Access Only">Admin Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Sticky Author Footer -->
+  <aside class="sticky-author-bar" aria-label="Creator Credit">
+    <div class="sticky-author-container">
+      <span>Built with <span class="heart-icon">❤️</span> by <strong>Harsh Singh</strong></span>
+    </div>
+  </aside>
+
+  <script>
+    document.getElementById('trackForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = document.getElementById('trackInput').value.trim();
+      if (val) {
+        window.location.search = `?ref=${encodeURIComponent(val)}`;
+      }
+    });
+
+    function formatCurrencyRupees(orderObj) {
+      if (!orderObj) return '0';
+      if (typeof orderObj.amount === 'number' && !isNaN(orderObj.amount)) {
+        return orderObj.amount.toLocaleString('en-IN');
+      }
+      if (typeof orderObj.amountPaise === 'number' && !isNaN(orderObj.amountPaise)) {
+        return (orderObj.amountPaise / 100).toLocaleString('en-IN');
+      }
+      if (orderObj.amountRupees !== undefined && orderObj.amountRupees !== null) {
+        const raw = String(orderObj.amountRupees).replace(/[^0-9.]/g, '');
+        const num = parseFloat(raw);
+        if (!isNaN(num)) return num.toLocaleString('en-IN');
+        return String(orderObj.amountRupees);
+      }
+      return '0';
+    }
+
+    async function loadStatus() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const reference = (urlParams.get('ref') || window.location.pathname.split('/').pop() || '').trim();
+
+      const loadingBox = document.getElementById('statusLoadingBox');
+      const pendingCard = document.getElementById('pendingStateCard');
+      const receiptCard = document.getElementById('receiptCard');
+      const rejectedCard = document.getElementById('rejectedStateCard');
+      const errorBox = document.getElementById('statusErrorBox');
+      const errorMsg = document.getElementById('statusErrorMessage');
+
+      if (!reference || reference.includes('status.html') || reference === '') {
+        loadingBox.style.display = 'none';
+        errorBox.style.display = 'block';
+        errorMsg.textContent = 'Please enter an official Tracking Reference ID (e.g. SET-PAY-...) above to check verification status.';
+        return;
+      }
+
+      if (/^\d{10,14}$/.test(reference)) {
+        loadingBox.style.display = 'none';
+        errorBox.style.display = 'block';
+        errorMsg.textContent = 'Status lookup is strictly restricted to your official Tracking Reference ID (e.g. SET-PAY-...). UPI UTR numbers cannot be used for search.';
+        return;
+      }
+
+      try {
+        const statusRes = await fetch(`/api/payments/status/${encodeURIComponent(reference)}`);
+        const statusData = await statusRes.json();
+
+        loadingBox.style.display = 'none';
+
+        if (!statusRes.ok || !statusData.success || !statusData.order) {
+          errorBox.style.display = 'block';
+          errorMsg.textContent = statusData.error || 'Transaction record not found. Please verify your official Reference ID (e.g. SET-PAY-...).';
+          return;
+        }
+
+        const order = statusData.order;
+        const formattedAmount = formatCurrencyRupees(order);
+
+        if (order.status === 'pending' || order.status === 'initiated') {
+          // PENDING STATE
+          pendingCard.style.display = 'block';
+          document.getElementById('pendingRefCode').textContent = order.referenceId;
+          document.getElementById('pendingInstName').textContent = order.institution;
+          document.getElementById('pendingStudentName').textContent = order.studentName;
+          document.getElementById('pendingRollNo').textContent = order.rollNumber;
+          document.getElementById('pendingFeeName').textContent = order.feeName;
+          document.getElementById('pendingUtrVal').textContent = order.utrNumber || 'Under Review';
+          document.getElementById('pendingAmountVal').textContent = formattedAmount;
+        } else if (order.status === 'verified' || order.status === 'successful') {
+          // VERIFIED STATE -> Fetch full receipt
+          const rcptRes = await fetch(`/api/payments/receipt/${encodeURIComponent(order.referenceId)}`);
+          const rcptData = await rcptRes.json();
+          const receipt = rcptData.receipt || {};
+
+          receiptCard.style.display = 'block';
+          document.getElementById('receiptInstName').textContent = order.institution;
+          document.getElementById('valReceiptNo').textContent = order.referenceId;
+          document.getElementById('valUtrNo').textContent = order.utrNumber || receipt.utrNumber || 'N/A';
+          document.getElementById('valStudentName').textContent = order.studentName;
+          document.getElementById('valRollNo').textContent = order.rollNumber;
+          document.getElementById('valFeeName').textContent = order.feeName;
+          document.getElementById('valSession').textContent = order.academicSession;
+          document.getElementById('valAmountRupees').textContent = formatCurrencyRupees(receipt.amountRupees ? receipt : order);
+          document.getElementById('valVerificationHash').textContent = receipt.verificationHash || 'VERIFIED-SHA256';
+          document.getElementById('valVerifiedByText').textContent = `Verified by: ${order.verifiedBy || 'Campus Administrative Desk'}`;
+          document.getElementById('receiptTimestamp').textContent = `Verified: ${new Date(order.verifiedAt || order.submittedAt).toLocaleString()}`;
+        } else if (order.status === 'rejected') {
+          // REJECTED STATE
+          rejectedCard.style.display = 'block';
+          document.getElementById('rejectionNotesText').textContent = order.adminNotes || 'Verification could not be confirmed.';
+        }
+
+      } catch (err) {
+        loadingBox.style.display = 'none';
+        errorBox.style.display = 'block';
+        errorMsg.textContent = err.message || 'Unable to retrieve status.';
+      }
+    }
+
+    loadStatus();
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

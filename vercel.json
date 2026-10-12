@@ -5,6 +5,24 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/admin/",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/api/:match*",
+      "destination": "https://shobha-college-api.onrender.com/api/:match*"
+    },
+    {
+      "source": "/uploads/:match*",
+      "destination": "https://shobha-college-api.onrender.com/uploads/:match*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

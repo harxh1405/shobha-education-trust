@@ -22,3 +22,7 @@ yarn-error.log*
 # Persistent database and upload data
 data/
 
+# Local reference and testing assets
+reference/
+testing/
+
