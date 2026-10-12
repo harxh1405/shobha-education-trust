@@ -35,7 +35,7 @@ export async function seedAdmin() {
 
   // Also ensure fallback institutional admin account 'admin' is provisioned
   if (username !== 'admin') {
-    const adminHash = await AdminUser.hashPassword('Admin@Shobha2026');
+    const adminHash = await AdminUser.hashPassword(process.env.ADMIN_PASSWORD || '2026@Rishi');
     let defaultAdmin = await AdminUser.findOne({ username: 'admin' });
     if (defaultAdmin) {
       defaultAdmin.passwordHash = adminHash;

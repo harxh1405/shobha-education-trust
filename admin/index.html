@@ -755,64 +755,16 @@
             This administrative desk requires active institutional credentials to manage news, circulars, student resources, and student payment reconciliations.
           </p>
 
-          <div style="background: #F8FAFC; border: 1px dashed var(--color-border); border-radius: var(--radius-xs); padding: 12px 16px; margin-bottom: 24px; font-size: 13px; color: var(--color-text-secondary); text-align: left;">
-            <div style="font-weight: 600; margin-bottom: 4px;">Institutional Admin Credentials:</div>
-            <div style="font-family: monospace; font-size: 12.5px; color: var(--color-primary-navy); margin-bottom: 3px;">
-              Primary Staff: <strong>singhyug2026</strong> | Password: <strong>2026@Rishi</strong>
-            </div>
-            <div style="font-family: monospace; font-size: 12.5px; color: var(--color-primary-navy);">
-              Default Admin: <strong>admin</strong> | Password: <strong>Admin@Shobha2026</strong>
-            </div>
-          </div>
-
-          <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            <button type="button" id="quickSignBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; cursor: pointer;">
-              ⚡ 1-Click Sign In (admin)
-            </button>
-            <a href="/admin/login.html" class="btn btn-outline-navy" style="padding: 10px 20px; font-size: 13.5px; text-decoration: none;">
-              🔑 Open Staff Login Page
+          <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+            <a href="/admin/login" class="btn btn-primary" style="padding: 12px 28px; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+              🔑 Sign In to Staff Portal
+            </a>
+            <a href="../index.html" class="btn btn-outline-navy" style="padding: 12px 24px; font-size: 14px; text-decoration: none;">
+              ← Back to Main Website
             </a>
           </div>
-          <div id="quickLoginError" style="margin-top: 14px; font-size: 12.5px; color: #DC2626; display: none;"></div>
         </div>
       `;
-
-      const quickBtn = document.getElementById('quickSignBtn');
-      if (quickBtn) {
-        quickBtn.addEventListener('click', async () => {
-          quickBtn.disabled = true;
-          quickBtn.textContent = 'Authenticating...';
-          try {
-            const res = await fetch('/api/admin/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ username: 'admin', password: 'Admin@Shobha2026' })
-            });
-            const data = await res.json();
-            if (data.success && data.token) {
-              localStorage.setItem('set_admin_token', data.token);
-              localStorage.setItem('set_admin_user', JSON.stringify(data.admin));
-              currentUser = data.admin;
-              const nameEl = document.getElementById('adminDisplayName');
-              if (nameEl) nameEl.textContent = currentUser.name || currentUser.username;
-              const roleEl = document.getElementById('adminRoleTag');
-              if (roleEl) roleEl.textContent = (currentUser.role || 'ADMIN').toUpperCase();
-              refreshGlobalCounters();
-              selectTab(currentTab || 'news-and-events');
-            } else {
-              throw new Error(data.error || 'Login failed');
-            }
-          } catch (err) {
-            quickBtn.disabled = false;
-            quickBtn.textContent = '⚡ 1-Click Sign In (admin)';
-            const errEl = document.getElementById('quickLoginError');
-            if (errEl) {
-              errEl.textContent = err.message;
-              errEl.style.display = 'block';
-            }
-          }
-        });
-      }
     }
 
     document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
