@@ -19,6 +19,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+// Trust reverse proxies (Vercel edge, Render load balancer, Cloudflare)
+app.set('trust proxy', 1);
+
 // Ensure upload directory exists
 const uploadDir = path.resolve(process.env.UPLOAD_DIR || 'data/uploads');
 if (!fs.existsSync(uploadDir)) {
@@ -111,6 +114,7 @@ app.use('/api/public/enquiries', enquiryRoutes);
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
+    version: '2026.10.13-v2',
     timestamp: new Date().toISOString(),
     organization: 'Shobha Education Trust'
   });
